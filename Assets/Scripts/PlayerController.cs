@@ -87,14 +87,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void FindHealthText(){
-    	if (isPlayer1){
-    		playerHealthText = GameObject.FindWithTag("P1Health").GetComponent<Text>();;
-    	} else {
-    		playerHealthText = GameObject.FindWithTag("P2Health").GetComponent<Text>();;
-    	}
-    }
-
     public void Initialize(int type, bool player1){
     	isPlayer1 = player1;
     	playerType = type;
@@ -116,6 +108,14 @@ public class PlayerController : MonoBehaviour
         SetStats();
         DirectionCheck();
         initialized = true;
+    }
+
+    void FindHealthText(){
+    	if (isPlayer1){
+    		playerHealthText = GameObject.FindWithTag("P1Health").GetComponent<Text>();;
+    	} else {
+    		playerHealthText = GameObject.FindWithTag("P2Health").GetComponent<Text>();;
+    	}
     }
 
     void SetBools()
@@ -180,19 +180,19 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-    	//print("!!! In OnCollisionEnter2D...");
     	if (col.collider.tag == "Ground"){
     		isInAir = false;
     		if (falling){
     			falling = false;
     			SetAnimBools(DOWN);
+    		} else {
+    			Idle();
     		}
     	} 
     }
 
     void OnCollisionExit2D(Collision2D col)
     {
-    	//print("!!! In OnCollisionExit2D...");
     	if (col.collider.tag == "Ground"){
     		isInAir = true;
     	}
@@ -286,7 +286,12 @@ public class PlayerController : MonoBehaviour
     public void Grapple()
     {
 		print("### The other dude should be getting grappled");
-		enemy.gameObject.GetComponent<PlayerController>().SetAnimBools(GET_GRAPPLED);
+		enemy.gameObject.GetComponent<PlayerController>().GetGrappled();
+    }
+
+    public void GetGrappled(){
+    	health -= GRAPPLE_DAMAGE;
+    	SetAnimBools(GET_GRAPPLED);
     }
 
     // *** Getters for player bools *** //
@@ -302,6 +307,17 @@ public class PlayerController : MonoBehaviour
     public float GetMyHealth(){ return health; }
 
     public float GetEnemyHealth() { return enemy.gameObject.GetComponent<PlayerController>().GetMyHealth(); }
+
+    public void SetStateToIdle(){
+    	print("!!! Setting animation to IDLE...");
+    	if (isInAir){
+    		SetAnimBools(JUMP);
+    	} else if (crouching && (kicking || punching)) {
+    		SetAnimBools(CROUCH);
+    	} else {
+    		SetAnimBools(IDLE);
+    	}
+    }
 
     public void SetState(int state) 
     { 
@@ -323,9 +339,11 @@ public class PlayerController : MonoBehaviour
     	// 0 is reserved for NO ACTION
     	switch(action){
     		case 1:
+    			print("$$$ Setting kicking to true");
     			kicking = true;
     			break;
     		case 2:
+    			print("$$$ Setting punching to true");
     			punching = true;
     			break;
     		case 3:
@@ -342,7 +360,6 @@ public class PlayerController : MonoBehaviour
     			break;
     		case 7:
     			grappled = true;
-    			health -= GRAPPLE_DAMAGE;
     			break;
     	}
     }
@@ -375,10 +392,12 @@ public class PlayerController : MonoBehaviour
     // *** Actions *** //
 
     public void Idle(){
-    	if (!isInAir){
-    		SetAnimBools(IDLE);
-    	} else {
-    		SetAnimBools(JUMP);
+    	if (!kicking && !punching){
+    		if (!isInAir){
+    			SetAnimBools(IDLE);
+	    	} else {
+	    		SetAnimBools(JUMP);
+	    	}
     	}
     }
 
@@ -434,7 +453,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Crouch(){
-    	SetAnimBools(CROUCH);
+    	if (!kicking && !punching){
+    		SetAnimBools(CROUCH);
+    	}
     }
 
     public void Kick(){

@@ -50,6 +50,7 @@ public class SetupManager : MonoBehaviour
 
     		// passing 1 (dummy), true (player1)
     		player1.GetComponent<PlayerController>().Initialize(1, true);
+    		player1.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().color = new Color(.5f,0,0,1);
     		// passing 0 (human), false (player2)
     		player2.GetComponent<PlayerController>().Initialize(0, false);
 

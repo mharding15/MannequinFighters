@@ -40,7 +40,7 @@ public class HumanController : MonoBehaviour
 	void SetVars(){
 		first = true;
 		idleTimer = 0f;
-		idleTime = .5f;
+		idleTime = 2f;
 	}
 
 	// a "dummy" is a training partner who isn't supposed to do anything
@@ -72,7 +72,8 @@ public class HumanController : MonoBehaviour
 	        } else if (Input.GetKey(KeyCode.N)){
 	        	pc.Grab();
 	        } else if (Input.GetKey(KeyCode.B)){
-	        	pc.SetAnimBools(GET_GRAPPLED);
+	        	//pc.SetAnimBools(GET_GRAPPLED);
+	        	pc.SetAnimBools(DOWN);
 	        } else if (Input.GetKey(KeyCode.H)){
 	        	if (Input.GetKey(KeyCode.S)){
 	        		pc.SetAnimBools(CROUCH_HIT);
@@ -110,14 +111,14 @@ public class HumanController : MonoBehaviour
 	        		pc.WalkBack();
 	        	}
 	        } else {
-	        	if (idleTimer > idleTime){
-	        		if (!pc.GetIsInAir()){
-	        			pc.Idle();
-		        	} else {
-		        		pc.Jump();
-		        	}
-		        	idleTimer = 0f;
-	        	}
+	        	// if (idleTimer > idleTime){
+	        	// 	if (!pc.GetIsInAir()){
+	        	// 		pc.Idle();
+		        // 	} else {
+		        // 		pc.Jump();
+		        // 	}
+		        // 	idleTimer = 0f;
+	        	// }
 	        }
 	    } else if (pc.playerType == 1) {
 	    	// for the dummy, so I can change it's behavior while playing.
@@ -132,13 +133,14 @@ public class HumanController : MonoBehaviour
 	    		} else if (dummyPunch){
 	    			pc.Punch();
 	    		} else if (dummyProjectile){
-	    			pc.SetAnimBools(PROJECTILE);
+	    			pc.Projectile();
 	    		} else if (dummyBlock){
-	    			pc.SetAnimBools(STAND_BLOCK);
+	    			pc.Block();
 	    		} else if (dummyCrouchBlock){
-	    			pc.SetAnimBools(CROUCH_BLOCK);
+	    			pc.CrouchBlock();
 	    		} else if (first) {
 	    			pc.Jump();
+	    			first = false;
 	    		}
 	    		idleTimer = 0f;
 	    	} else {
@@ -146,6 +148,6 @@ public class HumanController : MonoBehaviour
 	    	}
 	    }
 
-	    idleTimer += Time.deltaTime;
+	   idleTimer += Time.deltaTime;
 	}
 }
