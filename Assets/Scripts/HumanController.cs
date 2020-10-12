@@ -66,9 +66,13 @@ public class HumanController : MonoBehaviour
 	        		pc.Block();
 	        	}
 	        } else if (Input.GetKey(KeyCode.J)){
-	        	pc.Projectile();
+	        	if (!Input.GetKey(KeyCode.S)){
+	        		pc.Projectile();
+	        	}
 	        } else if (Input.GetKey(KeyCode.K)){
-	        	pc.AntiAir();
+	        	if (!Input.GetKey(KeyCode.S)){
+	        		pc.AntiAir();
+	        	}
 	        } else if (Input.GetKey(KeyCode.N)){
 	        	pc.Grab();
 	        } else if (Input.GetKey(KeyCode.B)){

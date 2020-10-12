@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 					isInAir, leftSide;
 	private bool falling, first, idleKickSwitch,
 				 crouching, standing,
-				 kicking, punching, projectiling, antiAiring, blocking, hit, grappled,
+				 kicking, punching, projectiling, antiAiring, blocking, hit, grappled, down,
 				 initialized;
 
 	private int IDLE = 0,
@@ -58,34 +58,13 @@ public class PlayerController : MonoBehaviour
 
 	private Text playerHealthText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-  //   	if (playerType == 0){
-		// 	print("!!! I am the human and the I am in the START() method....");
-		// } else if (playerType == 1){
-		// 	print("@@@ I am the dummy and the I am in the START() method....");
-		// } else {
-		// 	print("### I am Neither the Human or the Dummy and I am in the start method");
-		// }
-  //       animator = GetComponent<Animator>();
-  //       rb2d = GetComponent<Rigidbody2D>();
-  //       GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-  //       foreach (GameObject go in players){
-  //       	if (go.transform != this.transform){
-  //       		if (playerType == 0){
-  //       			print("!!! I am the human and the enemy is getting set....");
-  //       		} else if (playerType == 1){
-  //       			print("@@@ I am the dummy and the enemy is getting set...");
-  //       		}
-  //       		enemy = go.transform;
-  //       	}
-  //       }
-  //       SetBools();
-  //       SetStats();
-  //       DirectionCheck();
 
-    }
+    ///////////////////////////////////////
+    // *** Initialization Functions *** ///
+    ///////////////////////////////////////
+
+    // Start is called before the first frame update
+    void Start(){}
 
     public void Initialize(int type, bool player1){
     	isPlayer1 = player1;
@@ -118,8 +97,7 @@ public class PlayerController : MonoBehaviour
     	}
     }
 
-    void SetBools()
-    {
+    void SetBools(){
     	isCrouching = false;
     	isInAir = true;
     	isIdle = true;
@@ -127,23 +105,25 @@ public class PlayerController : MonoBehaviour
     	crouching = false;
     }
 
-    void SetStats()
-    {
+    void SetStats(){
     	health = 100;
     	SetHealthText();
     }
 
+
+    //////////////////////////////
+    // *** Update Functions *** //
+    //////////////////////////////
+
     // Update is called once per frame
-    void Update()
-	{
+    void Update(){
     	if (initialized){
     		GameOverCheck();
     		DirectionCheck();
     	}	
     }
 
-    void GameOverCheck()
-    {
+    void GameOverCheck(){
     	if (health <= 0){
     		if (isPlayer1){
     			print("*** This is the Player1...and I lost.");
@@ -153,8 +133,7 @@ public class PlayerController : MonoBehaviour
     	}
     }
 
-    void DirectionCheck()
-    {
+    void DirectionCheck(){
     	if (transform.position.x < enemy.position.x){
     		transform.localScale = new Vector2(-1f, 1f);
     		leftSide = true;
@@ -164,47 +143,49 @@ public class PlayerController : MonoBehaviour
     	}
     }
 
-    public float PlayerDistance()
-    {
+    public float PlayerDistance(){
     	float dist = transform.position.x - enemy.position.x;
     	return Mathf.Abs(dist);
     }
 
-    public float PlayerYDistance()
-    {
+    public float PlayerYDistance(){
     	float dist = transform.position.y - enemy.position.y;
     	return Mathf.Abs(dist);
     }
 
-    // *** Triggered Methods *** //
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
+    ///////////////////////////////
+    // *** Triggered Methods *** //
+    ///////////////////////////////
+
+    void OnCollisionEnter2D(Collision2D col){
     	if (col.collider.tag == "Ground"){
     		isInAir = false;
     		if (falling){
     			falling = false;
+                // print("!!@@ Setting down to true");
+    			down = true;
     			SetAnimBools(DOWN);
-    		} else {
+    		} else if (!down) {
+                // print("!!@@ Setting down to false");
+    			down = false;
     			Idle();
     		}
     	} 
     }
 
-    void OnCollisionExit2D(Collision2D col)
-    {
-    	if (col.collider.tag == "Ground"){
+    void OnCollisionExit2D(Collision2D col){
+    	if (col.collider.tag == "Ground" && !crouching){
     		isInAir = true;
     	}
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-    	print("!@#$ Should be recognizing that there was a trigger at least...");
+    void OnTriggerEnter2D(Collider2D col){
+    	// print("!@#$ Should be recognizing that there was a trigger at least...");
     	// set the appropriate animation
     	if (isInAir){
     		if (col.tag != "Player"){
-    			print("### I'm in the air =====");
+    			// print("### I'm in the air =====");
 				float xvel = -5f;
 				if (transform.position.x > enemy.position.x){
 					xvel *= -1f;
@@ -217,10 +198,10 @@ public class PlayerController : MonoBehaviour
 		} else if (!blocking && col.tag != "Player"){
 			hit = true;
 			if (!crouching) {
-    			print("$$$ Setting the hit bool...");
+    			// print("$$$ Setting the hit bool...");
     			SetAnimBools(STAND_HIT);
     		} else {
-    			print("$$$ Setting the CROUCH hit bool...");
+    			// print("$$$ Setting the CROUCH hit bool...");
     			SetAnimBools(CROUCH_HIT);
     		}
 		}
@@ -253,8 +234,7 @@ public class PlayerController : MonoBehaviour
     	SetHealthText();
     }
 
-    void ShootFireball()
-    {
+    void ShootFireball(){
     	float fireBallSpace = 0.8f, fireBallVelocity = 5f, fireBallDirection = -1f;
     	if (!leftSide){
     		fireBallSpace *= -1f;
@@ -270,8 +250,8 @@ public class PlayerController : MonoBehaviour
     	Destroy(fb, 10);
     }
 
-    public void AntiAirMotion(int start)
-    {
+    // this function takes care of movie the character during an anti-air
+    public void AntiAirMotion(int start){
     	if (start == 0){
     		if (leftSide){
     			rb2d.velocity = new Vector2(dpforward, jumpForce);
@@ -283,8 +263,7 @@ public class PlayerController : MonoBehaviour
     	}
     }
 
-    public void Grapple()
-    {
+    public void Grapple(){
 		print("### The other dude should be getting grappled");
 		enemy.gameObject.GetComponent<PlayerController>().GetGrappled();
     }
@@ -309,18 +288,18 @@ public class PlayerController : MonoBehaviour
     public float GetEnemyHealth() { return enemy.gameObject.GetComponent<PlayerController>().GetMyHealth(); }
 
     public void SetStateToIdle(){
-    	print("!!! Setting animation to IDLE...");
+    	// print("!!! Setting animation to IDLE...");
     	if (isInAir){
     		SetAnimBools(JUMP);
-    	} else if (crouching && (kicking || punching)) {
+    	} else if (crouching && (kicking || punching || hit)) {
     		SetAnimBools(CROUCH);
     	} else {
     		SetAnimBools(IDLE);
+            down = false;
     	}
     }
 
-    public void SetState(int state) 
-    { 
+    public void SetState(int state){ 
     	int action = state % 10;
     	int stature = (state / 10) % 10;
 
@@ -339,11 +318,11 @@ public class PlayerController : MonoBehaviour
     	// 0 is reserved for NO ACTION
     	switch(action){
     		case 1:
-    			print("$$$ Setting kicking to true");
+    			// print("$$$ Setting kicking to true");
     			kicking = true;
     			break;
     		case 2:
-    			print("$$$ Setting punching to true");
+    			// print("$$$ Setting punching to true");
     			punching = true;
     			break;
     		case 3:
@@ -364,14 +343,12 @@ public class PlayerController : MonoBehaviour
     	}
     }
 
-    void SetStaturesToFalse()
-    {
+    void SetStaturesToFalse(){
     	crouching = false;
     	standing = false;
     }
 
-    void SetActionsToFalse()
-    {
+    void SetActionsToFalse(){
     	kicking = false;
     	punching = false;
     	projectiling = false;
@@ -383,13 +360,19 @@ public class PlayerController : MonoBehaviour
 
     //public bool GetIsBlocking(){ return isBlocking; }
 
+
+    /////////////////////////
     // *** UI Elements *** //
+    /////////////////////////
 
     void SetHealthText(){
     	playerHealthText.text = health.ToString();
     }
 
+
+    /////////////////////
     // *** Actions *** //
+    /////////////////////
 
     public void Idle(){
     	if (!kicking && !punching){
@@ -402,7 +385,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void WalkForward(){
-    	if (!isInAir && !grappled){
+    	if (!isInAir && !grappled && !kicking && !punching && !projectiling && !down){
     		if (leftSide){
     			transform.Translate(new Vector2(speed * Time.deltaTime, 0f));
     		} else {
@@ -413,7 +396,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void WalkBack(){
-    	if (!isInAir && !grappled){
+    	if (!isInAir && !grappled && !kicking && !punching && !projectiling && !down){
     		if (leftSide){
     			transform.Translate(new Vector2(-1f * speed * Time.deltaTime, 0f));
     		} else {
@@ -424,14 +407,15 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Jump(){
-    	if (!isInAir && !grappled){
+        // print("In JUMP and down is: " + down);
+    	if (!isInAir && !grappled && !down){
     		rb2d.velocity = new Vector2(0f, jumpForce);
     		SetAnimBools(JUMP);
     	}
     }
 
     public void JumpForward(){
-    	if (!isInAir && !grappled){
+    	if (!isInAir && !grappled && !down){
     		float xvel = -1f * speed;
     		if (leftSide){
     			xvel = speed;
@@ -442,7 +426,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void JumpBack(){
-    	if (!isInAir && !grappled){
+    	if (!isInAir && !grappled && !down){
     		float xvel = speed;
     		if (leftSide){
     			xvel = -1f * speed;
@@ -453,61 +437,81 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Crouch(){
-    	if (!kicking && !punching){
+    	if (!kicking && !punching && !hit && !isInAir && !down){
     		SetAnimBools(CROUCH);
     	}
     }
 
     public void Kick(){
-    	if (isInAir){
-    		SetAnimBools(JUMP_KICK);
-    	} else{
-    		SetAnimBools(STAND_KICK);
-    	}
+        if (!kicking && !down){
+            if (isInAir){
+            SetAnimBools(JUMP_KICK);
+            } else {
+                SetAnimBools(STAND_KICK);
+            }
+        }
     }
 
     public void CrouchKick(){
-    	SetAnimBools(CROUCH_KICK);
+    	if (!isInAir && !down){
+    		SetAnimBools(CROUCH_KICK);
+    	}
     }
 
     public void Punch(){
-    	if (isInAir){
-    		SetAnimBools(JUMP_PUNCH);
-    	} else {
-    		SetAnimBools(STAND_PUNCH);
-    	}
+        if (!punching && !down){
+            if (isInAir){
+            SetAnimBools(JUMP_PUNCH);
+            } else {
+                SetAnimBools(STAND_PUNCH);
+            }
+        }
     }
 
     public void CrouchPunch(){
-    	SetAnimBools(CROUCH_PUNCH);
+    	if (!isInAir && !down){
+    		SetAnimBools(CROUCH_PUNCH);
+    	}
     }
 
     public void Block(){
-    	SetAnimBools(STAND_BLOCK);
+    	if (!isInAir && !down){
+    		SetAnimBools(STAND_BLOCK);
+	    }
     }
 
     public void CrouchBlock(){
-    	SetAnimBools(CROUCH_BLOCK);
+    	if (!isInAir && !down){
+    		SetAnimBools(CROUCH_BLOCK);
+    	}
     }
 
     public void Projectile(){
-    	SetAnimBools(PROJECTILE);
+    	if (!isInAir && !crouching && !projectiling && !down){
+    		SetAnimBools(PROJECTILE);
+    	}
     }
 
     public void AntiAir(){
-    	SetAnimBools(ANTI_AIR);
+    	if (!isInAir && !antiAiring && !down){
+    		SetAnimBools(ANTI_AIR);
+    	}
     }
 
     public void Grab(){
-    	if (PlayerDistance() < 2f && PlayerYDistance() < 1f){
+    	if (!isInAir && !down){
+    		if (PlayerDistance() < 2f && PlayerYDistance() < 1f){
     		SetAnimBools(GRAPPLE);
-    	} else {
-    		SetAnimBools(GRAPPLE_WHIFF);
+	    	} else {
+	    		SetAnimBools(GRAPPLE_WHIFF);
+	    	}
     	}
-    	
     }
 
-    // *** ANIMATIONS *** //
+
+    //////////////////////////
+    /// *** ANIMATIONS *** ///
+    //////////////////////////
 
     // this method can be called from outside of this script to set the animation for the character
     public void SetAnimBools(int state)

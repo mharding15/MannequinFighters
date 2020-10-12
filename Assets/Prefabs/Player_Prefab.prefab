@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2110553963517952856}
   - component: {fileID: 4785624761574877482}
+  - component: {fileID: 2315867945684925337}
   m_Layer: 0
   m_Name: Jumping Punch
   m_TagString: Punch
@@ -57,6 +58,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!50 &2315867945684925337
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693590445368967402}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &809403898785345977
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 424281857914552480}
   - component: {fileID: 5074353908586098675}
+  - component: {fileID: 6233796980047642404}
   m_Layer: 0
   m_Name: Standing Punch
   m_TagString: Punch
@@ -114,6 +137,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!50 &6233796980047642404
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809403898785345977}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1401394765025875813
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2963268910937282818}
   - component: {fileID: 3403662799405138799}
+  - component: {fileID: 4230207073291617396}
   m_Layer: 0
   m_Name: Jumping Kick
   m_TagString: Kick
@@ -504,6 +549,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!50 &4230207073291617396
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4150513529749390500}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4352099015987049783
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3503572595145915702}
   - component: {fileID: 2483337441069451692}
+  - component: {fileID: 434858417637783339}
   m_Layer: 0
   m_Name: 'AntiAir '
   m_TagString: AntiAir
@@ -640,6 +707,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!50 &434858417637783339
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327801419411615820}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7646837108713888241
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2662182607751804036}
   - component: {fileID: 317339073010638424}
+  - component: {fileID: 8798377165938930453}
   m_Layer: 0
   m_Name: Standing Kick
   m_TagString: Kick
@@ -697,6 +786,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!50 &8798377165938930453
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646837108713888241}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7736793669266171593
 GameObject:
   m_ObjectHideFlags: 0

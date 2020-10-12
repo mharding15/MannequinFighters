@@ -326,8 +326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6d78a434b07cd48b58d4f9c98aa293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameType: 0
-  agentName: testAgent2
+  gameType: 3
+  population: 0
+  agentFile1: testAgent1
+  agentFile2: testAgent2
+  gpAgentsFile: gpAgents
   character: {fileID: 3251405274546204430, guid: ad044e1dba544804eb234b6114d7baa8,
     type: 3}
 --- !u!4 &365579298
@@ -421,7 +424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -958,7 +961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229197158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.67, y: 1.02, z: 0}
+  m_LocalPosition: {x: -13.5, y: 1.02, z: 0}
   m_LocalScale: {x: 2, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1209,7 +1212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490484149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.97, y: 1.02, z: 0}
+  m_LocalPosition: {x: 13.5, y: 1.02, z: 0}
   m_LocalScale: {x: 2, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

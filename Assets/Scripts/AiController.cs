@@ -11,35 +11,30 @@ public class AiController : MonoBehaviour
 	private bool makeDecision;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
     	pc = GetComponent<PlayerController>(); 
     	SetVars();
     }
 
     void SetVars(){
 		idleTimer = 0f;
-		idleTime = .1f;
+		idleTime = .15f;
 		makeDecision = true;
 	}
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
+        print("In AiController Update()...");
         if (pc.GetInitialized() && pc.playerType == 2){
+            print("In AiController and about in the if....");
         	// don't need to make a decision every frame (might adjust this value though)
         	if (idleTimer > idleTime){
-        		if (makeDecision){
-        			// gather info to make decision based on
-		        	float[] decisionData = getDecisionData();
-		        	// get decision
-		        	int action = dt.Decide(decisionData);
-		        	// do the action
-		        	DoAction(action);
-        		} else {
-        			pc.Idle();
-        		}
-        		makeDecision = !makeDecision;
+    			// gather info to make decision based on
+	        	float[] decisionData = getDecisionData();
+	        	// get decision
+	        	int action = dt.Decide(decisionData);
+	        	// do the action
+	        	DoAction(action);
         	} 
         }
         idleTimer += Time.deltaTime;
@@ -64,7 +59,7 @@ public class AiController : MonoBehaviour
     float GetFireballDistance(){
     	float minDist = 30f; // basically infinite distance
     	GameObject[] fireballs = GameObject.FindGameObjectsWithTag("Fireball");
-    	print("### The number of fireballs is: " + fireballs.Length);
+    	// print("### The number of fireballs is: " + fireballs.Length);
     	foreach (GameObject go in fireballs){
     		float vel = go.GetComponent<Rigidbody2D>().velocity.x;
     		float dist = transform.position.x - go.transform.position.x;
