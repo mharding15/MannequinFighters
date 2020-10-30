@@ -327,7 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameType: 3
-  population: 0
+  populationSize: 4
+  totalRounds: 3
   agentFile1: testAgent1
   agentFile2: testAgent2
   gpAgentsFile: gpAgents

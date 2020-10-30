@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class DecisionTree
 {
@@ -44,12 +45,12 @@ public class DecisionTree
          Node newNode = new Node();
 
    		// there might be a more efficient way to do this
-   		float rand = Random.Range(0f, 1f);
+   		float rand = UnityEngine.Random.Range(0f, 1f);
 
          // create a feature
    		if (actionProb < rand){
-   			newNode.featureIdx = Random.Range(0, numFeatures);
-   			newNode.threshold = Random.Range(0f, 30f);
+   			newNode.featureIdx =UnityEngine.Random.Range(0, numFeatures);
+   			newNode.threshold =UnityEngine.Random.Range(0f, 30f);
 
             // increase the probability of getting an action in the next iteration, unless at the .8 threshold
    			float newActionProb = actionProb;
@@ -61,7 +62,7 @@ public class DecisionTree
 
          // create an action
    		} else {
-   			newNode.action = Random.Range(0, numActions);
+   			newNode.action =UnityEngine.Random.Range(0, numActions);
    		}
 
    		return newNode;
@@ -92,26 +93,26 @@ public class DecisionTree
 
    		// we are at a leaf node (i.e. action node)
    		if (curr.action != -1){
-   			float randNum = Random.Range(0f, 1f);
+   			float randNum =UnityEngine.Random.Range(0f, 1f);
    			// change the action to another action
    			if (randNum < _probAction2Action){
    				DebugMsg(methodName, " Changing from action to another action");
-   				curr.action = Random.Range(0, numActions);
+   				curr.action =UnityEngine.Random.Range(0, numActions);
 
    			// change the action to a feature
    			} else if (randNum < _probAction2Feature){
    				DebugMsg(methodName, " Changing from action to a feature");
 
    				curr.action = -1;
-   				curr.featureIdx = Random.Range(0, numFeatures);
-   				curr.threshold = Random.Range(0f, 30f);
+   				curr.featureIdx =UnityEngine.Random.Range(0, numFeatures);
+   				curr.threshold =UnityEngine.Random.Range(0f, 30f);
 
                // need to create actions as children for this new feature
    				Node newLeft = new Node();
    				Node newRight = new Node();
 
-   				newLeft.action = Random.Range(0, numActions);
-   				newRight.action = Random.Range(0, numActions);
+   				newLeft.action =UnityEngine.Random.Range(0, numActions);
+   				newRight.action =UnityEngine.Random.Range(0, numActions);
 
    				curr.left = newLeft;
    				curr.right = newRight;
@@ -119,18 +120,18 @@ public class DecisionTree
 
          // we are at an internal node (feature node)
    		} else {
-   			float randNum = Random.Range(0f, 1f);
+   			float randNum =UnityEngine.Random.Range(0f, 1f);
    			// change the feature to an action (and don't try to traverse down anymore)
    			if (randNum < _probFeature2Action){
    				DebugMsg(methodName, " Changing from feature to an action");
-   				curr.action = Random.Range(0, numActions);
+   				curr.action =UnityEngine.Random.Range(0, numActions);
    				curr.left = null;
    				curr.right = null;
    				return;
    			// change the feature to another feature
    			} else if (randNum < _probFeature2Feature){
    				DebugMsg(methodName, " Changing from feature to another feature");
-   				curr.featureIdx = Random.Range(0, numFeatures);
+   				curr.featureIdx =UnityEngine.Random.Range(0, numFeatures);
    			// decrease the current threshold
    			} else if (randNum < _probDecreaseThreshold){
    				DebugMsg(methodName, " Decreasing threshold");
@@ -161,11 +162,11 @@ public class DecisionTree
    		Queue<int> randPermOne = RandomPerm(treeOneCount);
    		Queue<int> randPermTwo = RandomPerm(treeTwoCount);
 
-   		Node randomInternalNodeOne = RandomInternalNode(randPermOne, Random.Range(0, randPermOne.Count));
-   		Node randomInternalNodeTwo = otherTree.RandomInternalNode(randPermTwo, Random.Range(0, randPermTwo.Count));
+   		Node randomInternalNodeOne = RandomInternalNode(randPermOne,UnityEngine.Random.Range(0, randPermOne.Count));
+   		Node randomInternalNodeTwo = otherTree.RandomInternalNode(randPermTwo,UnityEngine.Random.Range(0, randPermTwo.Count));
 
          // randomly swap the children of the given internal nodes
-   		float randSwap = Random.Range(0f, 1f);
+   		float randSwap =UnityEngine.Random.Range(0f, 1f);
    		if (randSwap < .25f){
    			Node temp = randomInternalNodeOne.left;
    			randomInternalNodeOne.left = randomInternalNodeTwo.left;
@@ -193,7 +194,7 @@ public class DecisionTree
    			list.Add(i);
    		}
    		while (list.Count > 0){
-   			int rand = Random.Range(0, list.Count);
+   			int rand =UnityEngine.Random.Range(0, list.Count);
    			q.Enqueue(rand);
    			list.Remove(rand);
    		}
@@ -349,6 +350,21 @@ public class DecisionTree
    			Debug.Log(methodName + " ::: " + msg);
    		}
    	}
+
+      public void CalculateFitness(float myhealth, float opponentHealth, float distance){
+         float healthFactor = myhealth - opponentHealth;
+         // as long as the distance factor is guaranteed to be less than 1, then it will only make any difference if the health is tied.
+         float distanceFactor = (float)distance * .01f;
+         // this is really just a guess, but I'm gonna say that once the tree has a height of more than 50 it will really start to cause issues (I'm sure this is something I will have to play with a lot)
+         float treeDepthFactor = Mathf.Log10((float)GetHeight()) * Mathf.Log10(Mathf.Pow((float)GetHeight(), 3f)) - 5f;
+         if (treeDepthFactor < 0){
+            treeDepthFactor = 0;
+         }
+
+         Debug.Log("Calculating fitness, healthFactor: " + healthFactor + ", distanceFactor: " + distanceFactor + ", treeDepthFactor: " + treeDepthFactor);
+
+         fitness = healthFactor - distanceFactor - treeDepthFactor;
+      }
 
       // the height of the tree will help when finding the fitness for the tree
       public int GetHeight(){

@@ -26,7 +26,7 @@ public class AiController : MonoBehaviour
     void Update(){
         print("In AiController Update()...");
         if (pc.GetInitialized() && pc.playerType == 2){
-            print("In AiController and about in the if....");
+            print("In AiController and in the if....");
         	// don't need to make a decision every frame (might adjust this value though)
         	if (idleTimer > idleTime){
     			// gather info to make decision based on
@@ -69,7 +69,6 @@ public class AiController : MonoBehaviour
     			}
     		}
     	}
-    	print("@@@ The min dist fireball is: " + minDist);
     	return minDist;
     }
 
