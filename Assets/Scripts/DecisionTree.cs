@@ -6,8 +6,8 @@ using System;
 public class DecisionTree
 {
       public float fitness {set; get;}
-      
-   	private Node head;
+      public Node head {set; get;}
+
    	private bool debug = false;
    	private int numFeatures = 3, numActions = 3;
   	   private float thresholdDelta = 1.5f; // this is the value that the threshold will either increase or decrease during mutation
@@ -22,6 +22,32 @@ public class DecisionTree
    	// *** Creating Trees *** //
       ////////////////////////////
 
+      public DecisionTree Copy(){
+         DecisionTree copy = new DecisionTree();
+         copy.head = CopyHelp(head);
+         copy.fitness = fitness;
+         return copy;
+      }
+
+      private Node CopyHelp(Node curr){
+
+         Node newNode = new Node();
+
+         // at a leaf
+         if (curr.action != -1){
+            newNode.action = curr.action;
+            return newNode;
+         }
+
+         newNode.featureIdx = curr.featureIdx;
+         newNode.threshold = curr.threshold;
+
+         newNode.left = CopyHelp(curr.left);
+         newNode.right = CopyHelp(curr.right);
+
+         return newNode;
+      }
+
    	public void RandomTree(int numFeatures, int numActions)
    	{
    		Debug.Log("*** In RandomTree ***");
@@ -30,8 +56,6 @@ public class DecisionTree
    		for (int i = 0; i < numFeatures; i++){
    			remainingFeatures.Add(i);
    		}
-
-   		printRemainingFeatures(remainingFeatures);
 
    		head = CreateRandomTree(numFeatures, numActions, 0f);
    	}
@@ -66,16 +90,6 @@ public class DecisionTree
    		}
 
    		return newNode;
-   	}
-
-   	void printRemainingFeatures(List<int> rfeatures)
-   	{
-   		Debug.Log("*** In printRemainingFeatures ***");
-   		string featureStr = "";
-   		foreach (int i in rfeatures){
-   			featureStr += "" + i;
-   		}
-   		Debug.Log("444 ::: remaining features: " + featureStr);
    	}
 
 
@@ -154,32 +168,46 @@ public class DecisionTree
    	}
 
    	// I could prbably make this a lot simpler by putting everything that has to do with getting the random node in the class itself and just call that on the otherTree.
-   	public void Crossover(DecisionTree otherTree)
-   	{
+   	public void Crossover(DecisionTree otherTree) {
+         Debug.Log("In Crossover....");
+
    		int treeOneCount = NodeCount();
    		int treeTwoCount = otherTree.NodeCount();
 
-   		Queue<int> randPermOne = RandomPerm(treeOneCount);
-   		Queue<int> randPermTwo = RandomPerm(treeTwoCount);
+   		Queue<int> q1 = GetNodeQueue(treeOneCount);
+   		Queue<int> q2 = GetNodeQueue(treeTwoCount);
 
-   		Node randomInternalNodeOne = RandomInternalNode(randPermOne,UnityEngine.Random.Range(0, randPermOne.Count));
-   		Node randomInternalNodeTwo = otherTree.RandomInternalNode(randPermTwo,UnityEngine.Random.Range(0, randPermTwo.Count));
+         int randomIndexOne = UnityEngine.Random.Range(0, q1.Count);
+         int randomIndexTwo = UnityEngine.Random.Range(0, q2.Count);
+
+         Debug.Log("Random index 1: " + randomIndexOne);
+         Debug.Log("Random index 2: " + randomIndexTwo);
+
+   		Node randomInternalNodeOne = RandomInternalNode(q1, randomIndexOne);
+   		Node randomInternalNodeTwo = otherTree.RandomInternalNode(q2, randomIndexTwo);
+
+         Debug.Log("The RandomInternalNodeOne is: " + randomInternalNodeOne.featureIdx + "," + randomInternalNodeOne.threshold);
+         Debug.Log("The RandomInternalNodeTwo is: " + randomInternalNodeTwo.featureIdx + "," + randomInternalNodeTwo.threshold);
 
          // randomly swap the children of the given internal nodes
-   		float randSwap =UnityEngine.Random.Range(0f, 1f);
+   		float randSwap = UnityEngine.Random.Range(0f, 1f);
    		if (randSwap < .25f){
+            Debug.Log("Swap 1");
    			Node temp = randomInternalNodeOne.left;
    			randomInternalNodeOne.left = randomInternalNodeTwo.left;
    			randomInternalNodeTwo.left = temp;
    		} else if (randSwap < .5f){
+            Debug.Log("Swap 2");
    			Node temp = randomInternalNodeOne.left;
    			randomInternalNodeOne.left = randomInternalNodeTwo.right;
    			randomInternalNodeTwo.right = temp;
    		} else if (randSwap < .75f){
+            Debug.Log("Swap 3");
    			Node temp = randomInternalNodeOne.right;
    			randomInternalNodeOne.right = randomInternalNodeTwo.left;
    			randomInternalNodeTwo.left = temp;
    		} else {
+            Debug.Log("Swap 4");
    			Node temp = randomInternalNodeOne.right;
    			randomInternalNodeOne.right = randomInternalNodeTwo.right;
    			randomInternalNodeTwo.right = temp;
@@ -187,17 +215,11 @@ public class DecisionTree
    	}
 
       // return a random permutation of all the numbers in [0, limit)
-   	Queue<int> RandomPerm(int limit){
+   	public Queue<int> GetNodeQueue(int limit){
    		Queue<int> q = new Queue<int>();
-   		List<int> list = new List<int>();
-   		for (int i = 0; i < limit; i++){
-   			list.Add(i);
-   		}
-   		while (list.Count > 0){
-   			int rand =UnityEngine.Random.Range(0, list.Count);
-   			q.Enqueue(rand);
-   			list.Remove(rand);
-   		}
+         for (int i = 0; i < limit; i++){
+            q.Enqueue(i);
+         }
    		return q;
    	}
 
@@ -206,12 +228,14 @@ public class DecisionTree
    	}
 
    	Node RandomInternalNodeHelper(Node curr, Queue<int> q, int x){
-   		if (curr.action == -1){
+         // if this is a leaf node
+   		if (curr.action != -1){
    			return null;
    		}
 
    		int num = q.Dequeue();
    		if (num == x){
+            Debug.Log("The InternalNode is #: " + x);
    			return curr;
    		}
 
@@ -233,7 +257,8 @@ public class DecisionTree
    	}
 
    	int NodeCountHelper(Node curr){
-   		if (curr.action == -1){
+         // we are at a leaf, so this should not be counted
+   		if (curr.action != -1){
    			return 0;
    		}
 

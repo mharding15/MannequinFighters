@@ -332,6 +332,7 @@ MonoBehaviour:
   agentFile1: testAgent1
   agentFile2: testAgent2
   gpAgentsFile: gpAgents
+  fitnessLogFile: fitnessLog
   character: {fileID: 3251405274546204430, guid: ad044e1dba544804eb234b6114d7baa8,
     type: 3}
 --- !u!4 &365579298

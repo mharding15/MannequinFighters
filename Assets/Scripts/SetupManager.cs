@@ -9,7 +9,7 @@ public class SetupManager : MonoBehaviour
     public int gameType; // 0 -> training (dummy), 1 -> human vs. ai, 2 -> ai vs. ai, 3 -> GP traning
     public int populationSize; // should match the number of agents in the "gpAgentsFile" if there is stuff in that file
     public int totalRounds; // # of rounds of GP to do
-    public string agentFile1, agentFile2, gpAgentsFile;
+    public string agentFile1, agentFile2, gpAgentsFile, fitnessLogFile;
     public GameObject character;
 
     private int move_forward = 0,
@@ -48,6 +48,7 @@ public class SetupManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
+
         // dummy training
         if (gameType == 0){
             // create both players
@@ -73,20 +74,7 @@ public class SetupManager : MonoBehaviour
             p1.GetComponent<PlayerController>().Initialize(2, true);
             p2.GetComponent<PlayerController>().Initialize(2, false);
         // GP Training
-        } else {
-            // // 1. Load all decision trees from the file into the array
-            //    // a. check if there is data to use
-            //        // i. if there is
-            //            // save the current data in the "previousData" file
-            //        // ii. if there is not
-            //            // create x random decision trees and write them to the file
-            // // 2. for i in n rounds do
-            //   // a. load the data from the file into the players and add players to the array
-            //    // b. create a random purmutation of x (the population)
-            //    // c. have each player play its corresponding random opponent (can just be the one after it in the array)
-            //    // d. for each above match calculate the fitness of each player
-            //    // e. store the highest fitness player's strategy (erase the file and write this line at the top)
-            //    // f. user tournament selection to fill out the rest of the next rounds population
+        } else if (gameType == 3) {
 
             population = new DecisionTree[populationSize];
             // 1)
@@ -105,7 +93,7 @@ public class SetupManager : MonoBehaviour
                 // testing saving the trees to a file
                 SaveDecisionTrees();
             } else {
-                round = Int32.Parse(firstLine.Split(' ')[2]);
+                round = Int32.Parse(firstLine.Split(' ')[4]);
                 print("The file is not empty, need to load the agents from the file.");
                 int count = 0;
                 string line = file.ReadLine();
@@ -128,7 +116,6 @@ public class SetupManager : MonoBehaviour
     }
 
     GameObject CreatePlayer(int playerType, bool isPlayer1){
-        print("In initializePlayer() and playerType is: " + playerType + ", isPlayer1 is: " + isPlayer1);
         GameObject player = null;
         // instantiate the player
         if (isPlayer1){
@@ -140,7 +127,6 @@ public class SetupManager : MonoBehaviour
 
         // if the player is an AI, create its decision tree
         if (playerType == 2){
-            print("In SetupManager.Start() and gameType was: " + gameType);
             player.GetComponent<AiController>().dt = GetDecisionTree(isPlayer1);
         }
 
@@ -158,7 +144,6 @@ public class SetupManager : MonoBehaviour
         Queue<string> q = new Queue<string>(line.Split(' '));
         DecisionTree dt = new DecisionTree();
         dt.Load(q);
-        print("*** The serialized tree is: " + dt.SerializeTree());
 
         file.Close();
 
@@ -166,10 +151,7 @@ public class SetupManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update() {}
 
 
     //////////////////////////
@@ -188,8 +170,6 @@ public class SetupManager : MonoBehaviour
 
         player1 = CreatePlayer(2, true);
         player2 = CreatePlayer(2, false);
-
-        print("Created both players...");
 
         player1.GetComponent<AiController>().dt = population[currentMatch - 1];
         player2.GetComponent<AiController>().dt = population[currentMatch];
@@ -224,70 +204,90 @@ public class SetupManager : MonoBehaviour
         }
     }
 
+    // this function is called when the round is over so that the next generation's population can be found
     void RoundOver(){
 
-        print("In RoundOver()......");
-        if (player1 != null){
-            Destroy(player1);
+        int tournamentSize = 2;
+        float mutateProb = 0.1f, crossoverProb = 0.1f;
+
+        DecisionTree[] temp = new DecisionTree[populationSize];
+        float absolutMaxFitness = float.MinValue;
+        DecisionTree absoluteFittest = null;
+
+        // do tournament selection to fill in the next population
+        for (int count = 1; count < populationSize; count++){
+            print("--In tournament, count is: " + count);
+            List<int> indices = new List<int>();
+            // get the random indices to compare
+            while(indices.Count < tournamentSize){
+                int r = UnityEngine.Random.Range(0, populationSize);
+                // need to pick n different indices to use.
+                while (indices.Contains(r)){
+                    r = UnityEngine.Random.Range(0, populationSize);
+                }
+                print("Adding " + r + " to the list of indices.");
+                indices.Add(r);
+            }
+
+            // of those indices grab the one with the highest fitness
+            float maxFitness = population[indices[0]].fitness;
+            DecisionTree fittest = population[indices[0]];
+            for (int i = 1; i < tournamentSize; i++){
+                float fitness = population[indices[i]].fitness;
+                if (fitness > maxFitness){
+                    maxFitness = fitness;
+                    fittest = population[indices[i]];
+                }
+                if (fitness > absolutMaxFitness){
+                    absolutMaxFitness = fitness;
+                    absoluteFittest = population[indices[i]].Copy();
+                }
+            }
+            temp[count] = fittest.Copy();
         }
-        if (player2 != null){
-            Destroy(player2);
+
+        // using elitism so the best tree will move on without being mutated or crossed over
+        temp[0] = absoluteFittest;
+
+        // test that the temp array is really what I want
+        print("----Printing the temp array");
+        for (int i = 1; i < temp.Length; i++){
+            print("--------Temp array[" + i + "]: " + temp[i].SerializeTree());
         }
-        // DecisionTree[] temp = new DecisionTree[populationSize];
-        // int tournamentSize = 2;
-        // float absolutMaxFitness = float.MinValue;
-        // DecisionTree absoluteFittest = null;
-        // // do tournament selection to fill in the next population
-        // for (int count = 1; count < populationSize; count++){
-        //     List<int> indices = new List<int>();
-        //     // get the random indices to compare
-        //     while(indices.Count < tournamentSize){
-        //         int r = UnityEngine.Random.Range(0, populationSize);
-        //         while (indices.Contains(r)){
-        //             r = UnityEngine.Random.Range(0, populationSize);
-        //         }
-        //     }
-        //     // of those indices grab the one with the highest fitness
-        //     float maxFitness = population[indices[0]].fitness;
-        //     DecisionTree fittest = population[indices[0]];
-        //     for (int i = 1; i < tournamentSize; i++){
-        //         float fitness = population[indices[i]].fitness;
-        //         if (fitness > maxFitness){
-        //             maxFitness = fitness;
-        //             fittest = population[indices[i]];
-        //         }
-        //         if (fitness > absolutMaxFitness){
-        //             absolutMaxFitness = fitness;
-        //             absoluteFittest = population[indices[i]];
-        //         }
-        //     }
-        //     temp[count] = fittest;
-        // }
-        // temp[0] = absoluteFittest;
         
-        // for (int i = 1; i < populationSize; i++){
-        //     // with some probability mutate
+        // mutate and crossover
+        for (int i = 1; i < populationSize; i++){
+            // with some probability mutate
+            if (UnityEngine.Random.Range(0f, 1f) < mutateProb){
+                print("Mutating tree: " + i);
+                temp[i].Mutate();
+            }
+            // // with some probability do crossover
+            // if (i%2 == 0){
+            //     if (UnityEngine.Random.Range(0f, 1f) < crossoverProb){
+            //         print("Crossing over " + i + " and " + (i - 1));
+            //         temp[i].Crossover(temp[i - 1]);
+            //     }
+            // }
+        }
 
-        //     // with some probability do crossover
-        //     if (i%2 == 0){
-        //         temp[i].Crossover(temp[i - 1]);
-        //     }
-        // }
+        population = temp;
 
-        // round++;
-        // if (round == totalRounds){
-        //     Finish();
-        // }
+        SaveFitnesses();
 
-        // currentMatch = 1; 
-        // CreateGPMatch();
+        round++;
+        if (round >= totalRounds){
+            Finish();
+        } else {
+            currentMatch = 1; 
+            CreateGPMatch();
+        }
     }
 
     IEnumerator Wait(){       
         //yield on a new YieldInstruction that waits for 10 seconds.
         yield return new WaitForSeconds(10);
         print("The 10 seconds are up, calling MatchOver........");
-        print("Would be calling match over, but not going to now....");
         MatchOver();
     }
 
@@ -318,11 +318,75 @@ public class SetupManager : MonoBehaviour
         System.IO.File.WriteAllLines(@"Assets/Output/GeneticAgents/" + gpAgentsFile + ".txt", serializedTrees);
     }
 
+    void SaveFitnesses(){
+        // store the fitnesses
+        string path = @"Assets/Output/GeneticAgents/" + fitnessLogFile + ".txt";
+        StreamWriter sw;
+        if (File.Exists(path)){
+            sw = File.AppendText(path);
+        } else {
+            sw = new StreamWriter(path);
+        }
+        
+        sw.WriteLine("population size: " + populationSize + " round: " + round + " saved: " + GetTimestamp(DateTime.Now));
+        sw.WriteLine("Avg Fitness: " + AvgFitness());
+
+        float[] sortedFitnesses = SortFitnesses();
+        int numFitnessesToStore = 5;
+        if (populationSize < 5){
+            numFitnessesToStore = populationSize;
+        }
+        string fitLine = "";
+        for (int i = 0; i < numFitnessesToStore; i++){
+            fitLine += sortedFitnesses[i] + " ";
+        }
+        sw.WriteLine(fitLine);
+        sw.WriteLine("=======================");
+        sw.Close();
+    }
+
     String GetTimestamp(DateTime value){
         return value.ToString("yyyy-MM-dd HH:mm:ss.ffff");
     }
 
     void Finish(){
         print("### GP is Finished ###");
+        SaveDecisionTrees();
     }
+
+
+    ///////////////////////////////
+    // *** Utility Functions *** //
+    ///////////////////////////////
+
+    float AvgFitness(){
+        float total = 0f;
+        for (int i = 0; i < populationSize; i++){
+            total += population[i].fitness;
+        }
+        return total/(float)populationSize;
+    }
+
+    float[] SortFitnesses(){
+        float[] sortedFitness = new float[populationSize];
+        for (int i = 0; i < populationSize; i++){
+            sortedFitness[i] = population[i].fitness;
+        }
+
+        float temp;
+        for (int i = 0; i < populationSize; i++){
+            int maxIdx = i;
+            for (int j = i + 1; j < populationSize; j++){
+                if (sortedFitness[j] > sortedFitness[maxIdx]){
+                    maxIdx = j;
+                }
+            }
+            temp = sortedFitness[i];
+            sortedFitness[i] = sortedFitness[maxIdx];
+            sortedFitness[maxIdx] = temp; 
+        }
+
+        return sortedFitness;
+    }
+
 }
