@@ -12,6 +12,8 @@ TagManager:
   - P1Health
   - P2Health
   - GameTime
+  - GpRound
+  - GpMatch
   layers:
   - Default
   - TransparentFX
