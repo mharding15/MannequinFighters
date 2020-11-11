@@ -1,48 +1,57 @@
-population size: 4 round: 3 saved: 2020-11-02 20:59:40.5508
-Avg Fitness: 0
-0 0 0 0 
+
+population size: 10 round: 0 saved: 2020-11-09 22:18:28.9526
+Avg Fitness: 377.3538
+382.1141 382.1141 382.1141 382.1141 381.6141 
 =======================
-population size: 4 round: 4 saved: 2020-11-02 21:00:00.5756
-Avg Fitness: 0
-0 0 0 0 
+population size: 10 round: 0 saved: 2020-11-09 22:21:16.5814
+Avg Fitness: 25.97747
+59.915 59.915 59.915 59.915 3.591915 
 =======================
-population size: 4 round: 5 saved: 2020-11-02 21:00:20.5720
-Avg Fitness: 0
-0 0 0 0 
+population size: 10 round: 1 saved: 2020-11-09 22:22:31.5842
+Avg Fitness: 29.33522
+59.915 59.915 59.915 59.915 19.89696 
 =======================
-population size: 4 round: 6 saved: 2020-11-02 21:00:40.5773
-Avg Fitness: 0
-0 0 0 0 
+population size: 10 round: 2 saved: 2020-11-09 22:23:46.6004
+Avg Fitness: 43.75214
+62.8298 62.8298 62.8298 62.8298 62.8298 
 =======================
-population size: 4 round: 7 saved: 2020-11-02 21:01:00.5848
-Avg Fitness: 0
-0 0 0 0 
+population size: 10 round: 3 saved: 2020-11-09 22:25:01.6085
+Avg Fitness: 37.02028
+59.915 59.915 59.915 59.915 59.915 
 =======================
-population size: 4 round: 8 saved: 2020-11-02 21:01:20.5891
-Avg Fitness: 0
-0 0 0 0 
+population size: 10 round: 4 saved: 2020-11-09 22:26:16.6248
+Avg Fitness: 42.06274
+59.915 59.915 59.915 59.915 59.915 
 =======================
-population size: 4 round: 9 saved: 2020-11-02 21:01:40.5921
-Avg Fitness: 0
-0 0 0 0 
+population size: 6 round: 0 saved: 2020-11-11 18:02:28.4098
+Avg Fitness: 2.367015
+2.382003 2.382003 2.382003 2.382003 2.382003 
 =======================
-population size: 4 round: 10 saved: 2020-11-02 21:02:00.5953
-Avg Fitness: 0
-0 0 0 0 
+population size: 6 round: 1 saved: 2020-11-11 18:02:58.4199
+Avg Fitness: 2.388002
+2.389002 2.389002 2.389002 2.389002 2.389002 
 =======================
-population size: 4 round: 11 saved: 2020-11-02 21:02:20.6007
-Avg Fitness: 0
-0 0 0 0 
+population size: 6 round: 2 saved: 2020-11-11 18:03:28.4864
+Avg Fitness: 2.389002
+2.389002 2.389002 2.389002 2.389002 2.389002 
 =======================
-population size: 4 round: 12 saved: 2020-11-02 21:02:40.6074
-Avg Fitness: 0
-0 0 0 0 
+population size: 6 round: 3 saved: 2020-11-11 18:03:58.4871
+Avg Fitness: 2.385002
+2.385002 2.385002 2.385002 2.385002 2.385002 
 =======================
-population size: 4 round: 3 saved: 2020-11-02 21:16:06.8696
-Avg Fitness: 0
-0 0 0 0 
+population size: 8 round: 0 saved: 2020-11-11 18:06:19.0941
+Avg Fitness: 38.35599
+100.0998 100.0998 100.0998 2.186017 2.186017 
 =======================
-population size: 4 round: 4 saved: 2020-11-02 21:18:57.7715
-Avg Fitness: -0.2406414
--0.240563 -0.240563 -0.240563 -0.2408767 
+population size: 8 round: 1 saved: 2020-11-11 18:06:59.1029
+Avg Fitness: 1.927145
+2.199016 2.199016 2.198016 2.198016 2.198016 
+=======================
+population size: 8 round: 2 saved: 2020-11-11 18:07:39.1261
+Avg Fitness: 2.222014
+2.222014 2.222014 2.222014 2.222014 2.222014 
+=======================
+population size: 8 round: 3 saved: 2020-11-11 18:08:19.1433
+Avg Fitness: 2.218014
+2.218014 2.218014 2.218014 2.218014 2.218014 
 =======================

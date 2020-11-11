@@ -15,7 +15,7 @@ public class DecisionTree
                     _probAction2Feature    = .05f,
                     _probFeature2Action    = .025f,
                     _probFeature2Feature   = .05f,
-                    _probDecreaseThreshold = .75f,
+                    _probDecreaseThreshold = .1f,
                     _probIncreaseThreshold = .1f;
 
       ////////////////////////////
@@ -48,7 +48,8 @@ public class DecisionTree
          return newNode;
       }
 
-   	public void RandomTree(int numFeatures, int numActions)
+      // Create a random decision tree. Type says if the tree should be neutral (0), aggro (1), or defensive (2)
+   	public void RandomTree(int numFeatures, int numActions, int type)
    	{
    		Debug.Log("*** In RandomTree ***");
 
@@ -57,11 +58,15 @@ public class DecisionTree
    			remainingFeatures.Add(i);
    		}
 
-   		head = CreateRandomTree(numFeatures, numActions, 0f);
+         // the aggro action numbers
+         int[] aggroActions = {0, 3, 6, 7, 8, 9, 10, 11, 12};
+         int[] defActions = {1, 4, 13, 14};
+
+   		head = CreateRandomTree(numFeatures, numActions, 0f, type, aggroActions, defActions);
    	}
 
    	// this method does NOT care if there are multiple nodes with the same feature in a path to the root
-   	Node CreateRandomTree(int numFeatures, int numActions, float actionProb)
+   	Node CreateRandomTree(int numFeatures, int numActions, float actionProb, int type, int[] aggroActions, int[] defActions)
    	{
    		string methodName = "*** Create Random Tree ***";
    		DebugMsg(methodName, "");
@@ -73,20 +78,33 @@ public class DecisionTree
 
          // create a feature
    		if (actionProb < rand){
-   			newNode.featureIdx =UnityEngine.Random.Range(0, numFeatures);
-   			newNode.threshold =UnityEngine.Random.Range(0f, 30f);
+   			newNode.featureIdx = UnityEngine.Random.Range(0, numFeatures);
+   			newNode.threshold = UnityEngine.Random.Range(0f, 30f);
 
             // increase the probability of getting an action in the next iteration, unless at the .8 threshold
    			float newActionProb = actionProb;
    			if (actionProb < .8f){
    				newActionProb += .1f;
    			}
-   			newNode.left = CreateRandomTree(numFeatures, numActions, newActionProb);
-   			newNode.right = CreateRandomTree(numFeatures, numActions, newActionProb);
+   			newNode.left = CreateRandomTree(numFeatures, numActions, newActionProb, type, aggroActions, defActions);
+   			newNode.right = CreateRandomTree(numFeatures, numActions, newActionProb, type, aggroActions, defActions);
 
          // create an action
    		} else {
-   			newNode.action =UnityEngine.Random.Range(0, numActions);
+            // 50% chance that just any action will be chosen, 50% that Aggro or Def action will be chosen
+            float actionRand = UnityEngine.Random.Range(0f, 1f);
+            // neutral action (just pick any action)
+            if (type == 0 || actionRand < .5f){
+               newNode.action = UnityEngine.Random.Range(0, numActions);
+            // aggro action
+            } else if (type == 1){
+               int randAggroAction = UnityEngine.Random.Range(0, aggroActions.Length);
+               newNode.action = aggroActions[randAggroAction];
+            // defensive action
+            } else if (type == 2){
+               int randDefAction = UnityEngine.Random.Range(0, defActions.Length);
+               newNode.action = defActions[randDefAction];
+            }
    		}
 
    		return newNode;
@@ -111,15 +129,15 @@ public class DecisionTree
    			// change the action to another action
    			if (randNum < _probAction2Action){
    				DebugMsg(methodName, " Changing from action to another action");
-   				curr.action =UnityEngine.Random.Range(0, numActions);
+   				curr.action = UnityEngine.Random.Range(0, numActions);
 
    			// change the action to a feature
    			} else if (randNum < _probAction2Feature){
    				DebugMsg(methodName, " Changing from action to a feature");
 
    				curr.action = -1;
-   				curr.featureIdx =UnityEngine.Random.Range(0, numFeatures);
-   				curr.threshold =UnityEngine.Random.Range(0f, 30f);
+   				curr.featureIdx = UnityEngine.Random.Range(0, numFeatures);
+   				curr.threshold = UnityEngine.Random.Range(0f, 30f);
 
                // need to create actions as children for this new feature
    				Node newLeft = new Node();
@@ -167,7 +185,7 @@ public class DecisionTree
    		}
    	}
 
-   	// I could prbably make this a lot simpler by putting everything that has to do with getting the random node in the class itself and just call that on the otherTree.
+   	// Perform crossover wih the other tree
    	public void Crossover(DecisionTree otherTree) {
          Debug.Log("In Crossover....");
 
@@ -376,7 +394,7 @@ public class DecisionTree
    		}
    	}
 
-      public void CalculateFitness(float myhealth, float opponentHealth, float distance){
+      public void CalculateFitness(float myhealth, float opponentHealth, float distance, float moveFitness){
          float healthFactor = myhealth - opponentHealth;
          // as long as the distance factor is guaranteed to be less than 1, then it will only make any difference if the health is tied.
          float distanceFactor = (float)distance * .01f;
@@ -386,9 +404,9 @@ public class DecisionTree
             treeDepthFactor = 0;
          }
 
-         Debug.Log("Calculating fitness, healthFactor: " + healthFactor + ", distanceFactor: " + distanceFactor + ", treeDepthFactor: " + treeDepthFactor);
+         Debug.Log("Calculating fitness, healthFactor: " + healthFactor + ", distanceFactor: " + distanceFactor + ", treeDepthFactor: " + treeDepthFactor + ", moveFitness factor: " + moveFitness);
 
-         fitness = healthFactor - distanceFactor - treeDepthFactor;
+         fitness = healthFactor - distanceFactor - treeDepthFactor + moveFitness;
       }
 
       // the height of the tree will help when finding the fitness for the tree

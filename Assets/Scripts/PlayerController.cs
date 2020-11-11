@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 	public float speed = 5, jumpForce = 8, dpforward = 4;
+    public float moveFitness {get; set;}
 	public bool isPlayer1;
 	public GameObject fireball;
 	public int playerType { get; set; } // 0 = human, 1 = dummy, 2 = AI
@@ -13,7 +14,7 @@ public class PlayerController : MonoBehaviour
 	private Animator animator;
 	private Rigidbody2D rb2d;
 	private Transform enemy;
-	private float horizontal, vertical; //idleTime, idleTimer;
+	private float horizontal, vertical, fireballRecoveryTime, lastFireballTime;
 	private bool isIdle, isWalking, isStandBlocking, isStandKicking, isStandPunching, isAntiAir, isProjectile, isStandHit, 
 					isCrouching, isCrouchBlocking, isCrouchKicking, isCrouchPunching, isCrouchHit,
 					isJumping, isJumpKicking, isJumpPunching,
@@ -85,15 +86,16 @@ public class PlayerController : MonoBehaviour
         SetBools();
         FindHealthText();
         SetStats();
+        SetTimers();
         DirectionCheck();
         initialized = true;
     }
 
     void FindHealthText(){
     	if (isPlayer1){
-    		playerHealthText = GameObject.FindWithTag("P1Health").GetComponent<Text>();;
+    		playerHealthText = GameObject.FindWithTag("P1Health").GetComponent<Text>();
     	} else {
-    		playerHealthText = GameObject.FindWithTag("P2Health").GetComponent<Text>();;
+    		playerHealthText = GameObject.FindWithTag("P2Health").GetComponent<Text>();
     	}
     }
 
@@ -108,6 +110,12 @@ public class PlayerController : MonoBehaviour
     void SetStats(){
     	health = 100;
     	SetHealthText();
+        moveFitness = 0f;
+    }
+
+    void SetTimers(){
+        lastFireballTime = 0f;
+        fireballRecoveryTime = 2f;
     }
 
 
@@ -120,15 +128,16 @@ public class PlayerController : MonoBehaviour
     	if (initialized){
     		GameOverCheck();
     		DirectionCheck();
+            IncrementTimers();
     	}	
     }
 
     void GameOverCheck(){
     	if (health <= 0){
     		if (isPlayer1){
-    			print("*** This is the Player1...and I lost.");
+    			//print("*** This is the Player1...and I lost.");
     		} else {
-    			print("*** This is the Player2...and I lost.");
+    			//print("*** This is the Player2...and I lost.");
     		}
     	}
     }
@@ -141,6 +150,10 @@ public class PlayerController : MonoBehaviour
     		transform.localScale = new Vector2(1f, 1f);
     		leftSide = false;
     	}
+    }
+
+    void IncrementTimers(){
+        lastFireballTime += Time.deltaTime;
     }
 
     public float PlayerDistance(){
@@ -385,7 +398,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void WalkForward(){
-    	if (!isInAir && !grappled && !kicking && !punching && !projectiling && !down){
+        // it kinda messes things up when the characters get too close to each other. 1.1f is close enough (this is the distance from center to center).
+    	if (!isInAir && !grappled && !kicking && !punching && !projectiling && !down && PlayerDistance() >= 1.1f){
     		if (leftSide){
     			transform.Translate(new Vector2(speed * Time.deltaTime, 0f));
     		} else {
@@ -487,8 +501,10 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Projectile(){
-    	if (!isInAir && !crouching && !projectiling && !down){
+        bool canThrow = lastFireballTime > fireballRecoveryTime;
+    	if (!isInAir && !crouching && !projectiling && !down && canThrow){
     		SetAnimBools(PROJECTILE);
+            lastFireballTime = 0f;
     	}
     }
 
@@ -516,6 +532,11 @@ public class PlayerController : MonoBehaviour
     // this method can be called from outside of this script to set the animation for the character
     public void SetAnimBools(int state)
     {
+        // trying this and will see if it helps at all. 
+        if (state != 0){
+            moveFitness += .001f;
+        }
+
         SetAllToFalse();
 
         switch(state){

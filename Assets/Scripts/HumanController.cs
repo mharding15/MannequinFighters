@@ -127,7 +127,7 @@ public class HumanController : MonoBehaviour
 	    } else if (pc.playerType == 1) {
 	    	// for the dummy, so I can change it's behavior while playing.
 	    	if (idleTimer > idleTime){
-	    		print("The idletimer time is up...");
+	    		//print("The idletimer time is up...");
 	    		if (dummyStand){
 	    			pc.Idle();
 	    		} else if (dummyCrouch){
@@ -148,7 +148,7 @@ public class HumanController : MonoBehaviour
 	    		}
 	    		idleTimer = 0f;
 	    	} else {
-	    		print("The idletimer time is NOOOT up...");
+	    		//print("The idletimer time is NOOOT up...");
 	    	}
 	    }
 
