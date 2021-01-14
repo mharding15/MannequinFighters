@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-	public float speed = 5, jumpForce = 8, dpforward = 4;
+	public float speed = 0, jumpForce = 8, dpforward = 4;
     public float moveFitness {get; set;}
 	public bool isPlayer1;
 	public GameObject fireball;
@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 	private Animator animator;
 	private Rigidbody2D rb2d;
 	private Transform enemy;
-	private float horizontal, vertical, fireballRecoveryTime, lastFireballTime;
+	private float horizontal, vertical, fireballRecoveryTime, lastFireballTime, antiAirRecoveryTime, antiAirRecoveryTimer;
 	private bool isIdle, isWalking, isStandBlocking, isStandKicking, isStandPunching, isAntiAir, isProjectile, isStandHit, 
 					isCrouching, isCrouchBlocking, isCrouchKicking, isCrouchPunching, isCrouchHit,
 					isJumping, isJumpKicking, isJumpPunching,
@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 				 crouching, standing,
 				 kicking, punching, projectiling, antiAiring, blocking, hit, grappled, down,
 				 initialized;
+    private bool hitByAntiAir;
 
 	private int IDLE = 0,
 				WALK = 1,
@@ -99,12 +100,18 @@ public class PlayerController : MonoBehaviour
     	}
     }
 
+    public void SetPlayer1(bool player1){
+        isPlayer1 = player1;
+        FindHealthText();
+    }
+
     void SetBools(){
     	isCrouching = false;
     	isInAir = true;
     	isIdle = true;
     	falling = false;
     	crouching = false;
+        hitByAntiAir = false;
     }
 
     void SetStats(){
@@ -116,6 +123,8 @@ public class PlayerController : MonoBehaviour
     void SetTimers(){
         lastFireballTime = 0f;
         fireballRecoveryTime = 2f;
+        antiAirRecoveryTime = .5f;
+        antiAirRecoveryTimer = 0f;
     }
 
 
@@ -154,6 +163,13 @@ public class PlayerController : MonoBehaviour
 
     void IncrementTimers(){
         lastFireballTime += Time.deltaTime;
+        if (hitByAntiAir){
+            antiAirRecoveryTimer += Time.deltaTime;
+            if (antiAirRecoveryTimer >= antiAirRecoveryTime){
+                hitByAntiAir = false;
+                antiAirRecoveryTimer = 0f;
+            }
+        }
     }
 
     public float PlayerDistance(){
@@ -236,12 +252,13 @@ public class PlayerController : MonoBehaviour
     		if (!blocking){
     			health -= PUNCH_DAMAGE;
     		}
-    	} else if (col.tag == "AntiAir"){
+    	} else if (col.tag == "AntiAir" && !hitByAntiAir){
     		if (!blocking){
     			health -= ANTIAIR_DAMAGE;
     		} else {
     			health -= ANTIAIR_CHIP;
     		}
+            hitByAntiAir = true;
     	}
 
     	SetHealthText();
@@ -402,6 +419,7 @@ public class PlayerController : MonoBehaviour
     	if (!isInAir && !grappled && !kicking && !punching && !projectiling && !down && PlayerDistance() >= 1.1f){
     		if (leftSide){
     			transform.Translate(new Vector2(speed * Time.deltaTime, 0f));
+                print("I'm on the LEFT SIDE...");
     		} else {
     			transform.Translate(new Vector2(-1f * speed * Time.deltaTime, 0f));
     		}
@@ -467,7 +485,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void CrouchKick(){
-    	if (!isInAir && !down){
+        // 1/4/21, just added the !kicking requirement, not sure why I didn't do that before
+    	if (!isInAir && !down && !kicking){
     		SetAnimBools(CROUCH_KICK);
     	}
     }
@@ -483,7 +502,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void CrouchPunch(){
-    	if (!isInAir && !down){
+        // 1/4/21, just adding the !punching requirement, not sure why I didn't do that before
+    	if (!isInAir && !down && !punching){
     		SetAnimBools(CROUCH_PUNCH);
     	}
     }
@@ -516,8 +536,10 @@ public class PlayerController : MonoBehaviour
 
     public void Grab(){
     	if (!isInAir && !down){
-    		if (PlayerDistance() < 2f && PlayerYDistance() < 1f){
-    		SetAnimBools(GRAPPLE);
+            // 1/4/21, changing this to 2 vertical distance. I think it needs to be boosted a little. I'm pretty sure I did this for a reason, like maybe it looked weird 
+            //  or something, but right now grabbing is just that great of a move.
+    		if (PlayerDistance() < 2f && PlayerYDistance() < 2f){
+    		    SetAnimBools(GRAPPLE);
 	    	} else {
 	    		SetAnimBools(GRAPPLE_WHIFF);
 	    	}

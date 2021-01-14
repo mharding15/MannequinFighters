@@ -1,4 +1,0 @@
-population size: 4 round: 2 saved: 2020-11-02 20:52:40.0277
-Avg Fitness: 0
-System.Single[] System.Single[] System.Single[] System.Single[] 
-=======================

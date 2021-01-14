@@ -21,7 +21,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 5c85bdd721cf8484293a644cfc3936d8, type: 3}
-    - time: 0.083333336
+    - time: 0.8333333
       value: {fileID: 21300000, guid: 5c85bdd721cf8484293a644cfc3936d8, type: 3}
     attribute: m_Sprite
     path: Sprite
@@ -49,7 +49,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.1
+    m_StopTime: 0.84999996
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -76,7 +76,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 25
     messageOptions: 0
-  - time: 0.083333336
+  - time: 0.8333333
     functionName: SetStateToIdle
     data: 
     objectReferenceParameter: {fileID: 0}

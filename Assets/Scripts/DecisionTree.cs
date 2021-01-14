@@ -18,6 +18,10 @@ public class DecisionTree
                     _probDecreaseThreshold = .1f,
                     _probIncreaseThreshold = .1f;
 
+      public DecisionTree(){
+         fitness = 0f;
+      }
+
       ////////////////////////////
    	// *** Creating Trees *** //
       ////////////////////////////
@@ -34,8 +38,10 @@ public class DecisionTree
          Node newNode = new Node();
 
          // at a leaf
-         if (curr.action != -1){
-            newNode.action = curr.action;
+         if (curr.action1 != -1){
+            newNode.action1 = curr.action1;
+            newNode.action1Prob = curr.action1Prob;
+            newNode.action2 = curr.action2;
             return newNode;
          }
 
@@ -51,8 +57,6 @@ public class DecisionTree
       // Create a random decision tree. Type says if the tree should be neutral (0), aggro (1), or defensive (2)
    	public void RandomTree(int numFeatures, int numActions, int type)
    	{
-   		Debug.Log("*** In RandomTree ***");
-
    		List<int> remainingFeatures = new List<int>();
    		for (int i = 0; i < numFeatures; i++){
    			remainingFeatures.Add(i);
@@ -95,16 +99,22 @@ public class DecisionTree
             float actionRand = UnityEngine.Random.Range(0f, 1f);
             // neutral action (just pick any action)
             if (type == 0 || actionRand < .5f){
-               newNode.action = UnityEngine.Random.Range(0, numActions);
+               newNode.action1 = UnityEngine.Random.Range(0, numActions);
+               newNode.action2 = UnityEngine.Random.Range(0, numActions);
             // aggro action
             } else if (type == 1){
-               int randAggroAction = UnityEngine.Random.Range(0, aggroActions.Length);
-               newNode.action = aggroActions[randAggroAction];
+               int randAggroAction1 = UnityEngine.Random.Range(0, aggroActions.Length);
+               int randAggroAction2 = UnityEngine.Random.Range(0, aggroActions.Length);
+               newNode.action1 = aggroActions[randAggroAction1];
+               newNode.action2 = aggroActions[randAggroAction2];
             // defensive action
             } else if (type == 2){
-               int randDefAction = UnityEngine.Random.Range(0, defActions.Length);
-               newNode.action = defActions[randDefAction];
+               int randDefAction1 = UnityEngine.Random.Range(0, defActions.Length);
+               int randDefAction2 = UnityEngine.Random.Range(0, defActions.Length);
+               newNode.action1 = defActions[randDefAction1];
+               newNode.action2 = defActions[randDefAction2];
             }
+            newNode.action1Prob = UnityEngine.Random.Range(0.25f, 0.75f);
    		}
 
    		return newNode;
@@ -124,18 +134,34 @@ public class DecisionTree
    		string methodName = "*** MutateHelper ***";
 
    		// we are at a leaf node (i.e. action node)
-   		if (curr.action != -1){
-   			float randNum =UnityEngine.Random.Range(0f, 1f);
+   		if (curr.action1 != -1){
+   			float randNum = UnityEngine.Random.Range(0f, 1f);
    			// change the action to another action
    			if (randNum < _probAction2Action){
    				DebugMsg(methodName, " Changing from action to another action");
-   				curr.action = UnityEngine.Random.Range(0, numActions);
+               if (coinFlip()){
+                  curr.action1 = UnityEngine.Random.Range(0, numActions);
+               }
+   				if (coinFlip()){
+                  curr.action2 = UnityEngine.Random.Range(0, numActions);
+               }
+               if (coinFlip()){
+                  curr.action1Prob += 0.1f;
+                  if (curr.action1Prob > 0.75f){
+                     curr.action1Prob = 0.75f;
+                  }
+               } else {
+                  curr.action1Prob -= 0.1f;
+                  if (curr.action1Prob < 0.25f){
+                     curr.action1Prob = 0.25f;
+                  }
+               }
 
    			// change the action to a feature
    			} else if (randNum < _probAction2Feature){
    				DebugMsg(methodName, " Changing from action to a feature");
 
-   				curr.action = -1;
+   				curr.action1 = -1;
    				curr.featureIdx = UnityEngine.Random.Range(0, numFeatures);
    				curr.threshold = UnityEngine.Random.Range(0f, 30f);
 
@@ -143,8 +169,13 @@ public class DecisionTree
    				Node newLeft = new Node();
    				Node newRight = new Node();
 
-   				newLeft.action =UnityEngine.Random.Range(0, numActions);
-   				newRight.action =UnityEngine.Random.Range(0, numActions);
+   				newLeft.action1 = UnityEngine.Random.Range(0, numActions);
+               newLeft.action1Prob = UnityEngine.Random.Range(0.25f, 0.75f);
+               newLeft.action2 = UnityEngine.Random.Range(0, numActions);
+
+   				newRight.action1 = UnityEngine.Random.Range(0, numActions);
+               newRight.action1Prob = UnityEngine.Random.Range(0.25f, 0.75f);
+               newRight.action2 = UnityEngine.Random.Range(0, numActions);
 
    				curr.left = newLeft;
    				curr.right = newRight;
@@ -152,18 +183,20 @@ public class DecisionTree
 
          // we are at an internal node (feature node)
    		} else {
-   			float randNum =UnityEngine.Random.Range(0f, 1f);
+   			float randNum = UnityEngine.Random.Range(0f, 1f);
    			// change the feature to an action (and don't try to traverse down anymore)
    			if (randNum < _probFeature2Action){
    				DebugMsg(methodName, " Changing from feature to an action");
-   				curr.action =UnityEngine.Random.Range(0, numActions);
+   				curr.action1 = UnityEngine.Random.Range(0, numActions);
+               curr.action2 = UnityEngine.Random.Range(0, numActions);
+               curr.action1Prob = UnityEngine.Random.Range(0.25f, 0.75f);
    				curr.left = null;
    				curr.right = null;
    				return;
    			// change the feature to another feature
    			} else if (randNum < _probFeature2Feature){
    				DebugMsg(methodName, " Changing from feature to another feature");
-   				curr.featureIdx =UnityEngine.Random.Range(0, numFeatures);
+   				curr.featureIdx = UnityEngine.Random.Range(0, numFeatures);
    			// decrease the current threshold
    			} else if (randNum < _probDecreaseThreshold){
    				DebugMsg(methodName, " Decreasing threshold");
@@ -192,9 +225,16 @@ public class DecisionTree
    		int treeOneCount = NodeCount();
    		int treeTwoCount = otherTree.NodeCount();
 
+         // if either of the two trees is just the head, then don't try to crossover
+         if (treeOneCount == 0 || treeTwoCount == 0){
+            Debug.Log("One of the trees had a 0 internal nodes, so no crossover can take place.");
+            return;
+         }
+
    		Queue<int> q1 = GetNodeQueue(treeOneCount);
    		Queue<int> q2 = GetNodeQueue(treeTwoCount);
 
+         // Random.Range is exclusive on the upper limit
          int randomIndexOne = UnityEngine.Random.Range(0, q1.Count);
          int randomIndexTwo = UnityEngine.Random.Range(0, q2.Count);
 
@@ -247,13 +287,15 @@ public class DecisionTree
 
    	Node RandomInternalNodeHelper(Node curr, Queue<int> q, int x){
          // if this is a leaf node
-   		if (curr.action != -1){
+   		if (curr.action1 != -1){
    			return null;
    		}
 
    		int num = q.Dequeue();
+
+         Debug.Log("In RandomInternalNodeHelper and num is: " + num + " and x is: " + x);
    		if (num == x){
-            Debug.Log("The InternalNode is #: " + x);
+            Debug.Log("...and returning curr");
    			return curr;
    		}
 
@@ -276,7 +318,7 @@ public class DecisionTree
 
    	int NodeCountHelper(Node curr){
          // we are at a leaf, so this should not be counted
-   		if (curr.action != -1){
+   		if (curr.action1 != -1){
    			return 0;
    		}
 
@@ -300,8 +342,12 @@ public class DecisionTree
    		string methodName = "*** SerializeHelper ***";
    		DebugMsg(methodName, line);
 
-   		if (curr.action != -1){
-   			line += " " + curr.action;
+   		if (curr.action1 != -1){
+            if (curr == head){
+               line += curr.action1 + ":" + curr.action1Prob + ":" + curr.action2;
+            } else {
+               line += " " + curr.action1 + ":" + curr.action1Prob + ":" + curr.action2;
+            }
    			return line;
    		}
 
@@ -334,7 +380,10 @@ public class DecisionTree
    			newNode.left = LoadHelper(q);
    			newNode.right = LoadHelper(q);
    		} else {
-   			newNode.action = System.Int32.Parse(curr);
+            string[] vals = curr.Split(':');
+   			newNode.action1 = System.Int32.Parse(vals[0]);
+            newNode.action1Prob = float.Parse(vals[1]);
+            newNode.action2 = System.Int32.Parse(vals[2]);
    		}
 
    		return newNode;
@@ -346,14 +395,14 @@ public class DecisionTree
       //////////////////////////////
 
    	// when a character is deciding what to do, look at the features to figure it out.
-   	public int Decide(float[] features){
+   	public string Decide(float[] features){
    		return DecisionHelper(features, head);
    	}
 
-   	private int DecisionHelper(float[] features, Node curr){
+   	private string DecisionHelper(float[] features, Node curr){
    		// base case, this is a leaf node and an action is to be performed
-   		if (curr.action != -1){
-   			return curr.action;
+   		if (curr.action1 != -1){
+            return curr.action1 + ":" + curr.action1Prob + ":" + curr.action2;
    		}
 
    		// decide which way to go based on the value of the current feature
@@ -371,14 +420,15 @@ public class DecisionTree
    	public class Node 
    	{
    		public int featureIdx {set; get;}
-   		public int action {set; get;}
+   		public int action1 {set; get;}
+         public int action2 {set; get;}
+         public float action1Prob {set; get;}
    		public float threshold {set; get;}
    		public List<int> usedFeautures;
    		public Node left, right;
 
-   		public Node()
-   		{
-   			action = -1;
+   		public Node(){
+   			action1 = -1;
    		}
    	}
 
@@ -395,18 +445,26 @@ public class DecisionTree
    	}
 
       public void CalculateFitness(float myhealth, float opponentHealth, float distance, float moveFitness){
-         float healthFactor = myhealth - opponentHealth;
-         // as long as the distance factor is guaranteed to be less than 1, then it will only make any difference if the health is tied.
-         float distanceFactor = (float)distance * .01f;
-         // this is really just a guess, but I'm gonna say that once the tree has a height of more than 50 it will really start to cause issues (I'm sure this is something I will have to play with a lot)
-         float treeDepthFactor = Mathf.Log10((float)GetHeight()) * Mathf.Log10(Mathf.Pow((float)GetHeight(), 3f)) - 5f;
-         if (treeDepthFactor < 0){
-            treeDepthFactor = 0;
-         }
+         // float healthFactor = myhealth - opponentHealth;
+         // // as long as the distance factor is guaranteed to be less than 1, then it will only make any difference if the health is tied.
+         // float distanceFactor = (float)distance * .01f;
+         // // this is really just a guess, but I'm gonna say that once the tree has a height of more than 50 it will really start to cause issues (I'm sure this is something I will have to play with a lot)
+         // float treeDepthFactor = Mathf.Log10((float)GetHeight()) * Mathf.Log10(Mathf.Pow((float)GetHeight(), 3f)) - 5f;
+         // if (treeDepthFactor < 0){
+         //    treeDepthFactor = 0;
+         // }
 
-         Debug.Log("Calculating fitness, healthFactor: " + healthFactor + ", distanceFactor: " + distanceFactor + ", treeDepthFactor: " + treeDepthFactor + ", moveFitness factor: " + moveFitness);
+         // Debug.Log("Calculating fitness, healthFactor: " + healthFactor + ", distanceFactor: " + distanceFactor + ", treeDepthFactor: " + treeDepthFactor + ", moveFitness factor: " + moveFitness);
 
-         fitness = healthFactor - distanceFactor - treeDepthFactor + moveFitness;
+         // //fitness = healthFactor - distanceFactor - treeDepthFactor + moveFitness;
+         // // gonna try this for now and see how it works out, I might have to add some stuff later to jump start things, but I'm thinking I might not have to with a large population         
+         // float totalFitness = healthFactor - treeDepthFactor;
+
+         // 1/11/21, trying this out to see if it helps. I would like aggressive ones to be rewarded more than ones that do nothing
+         float damageDone = 100f - opponentHealth, damageTaken = 100f - myhealth;
+         float totalFitness = damageDone + (damageTaken * .5f);
+
+         fitness += totalFitness;
       }
 
       // the height of the tree will help when finding the fitness for the tree
@@ -418,7 +476,7 @@ public class DecisionTree
          // base case, either this node is null (don't think this is actually possible, but what the hell) or is a leaf
          if (node == null){
             return 0;
-         } else if (node.action != -1){
+         } else if (node.action1 != -1){
             return 1;
          }
 
@@ -426,5 +484,10 @@ public class DecisionTree
          int rightHeight = HeightHelper(node.right);
 
          return System.Math.Max(leftHeight, rightHeight) + 1;
+      }
+
+      bool coinFlip(){
+         float randNum = UnityEngine.Random.Range(0f, 1f);
+         return randNum < .5f;
       }
 }

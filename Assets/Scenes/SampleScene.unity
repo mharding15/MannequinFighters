@@ -425,14 +425,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6d78a434b07cd48b58d4f9c98aa293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameType: 3
-  populationSize: 8
-  totalRounds: 4
-  aggressiveness: 1
-  agentFile1: testAgent3
-  agentFile2: testAgent2
-  gpAgentsFile: gpAgents
-  fitnessLogFile: fitnessLog
+  gameType: 1
+  populationSize: 4
+  totalRounds: 200
+  aggressiveness: 0
+  agentFile1: twoOptionTest2
+  agentFile2: '-'
+  gpAgentsFile: testGpAgents
+  fitnessLogFile: testFitnessLog
   character: {fileID: 3251405274546204430, guid: ad044e1dba544804eb234b6114d7baa8,
     type: 3}
 --- !u!4 &365579298

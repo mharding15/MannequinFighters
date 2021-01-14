@@ -1,0 +1,28 @@
+population size: 5 round: 0 saved: 2021-01-03 17:49:11.7911
+Avg Fitness: 90
+130 130 130 120 -60 
+=======================
+population size: 5 round: 1 saved: 2021-01-03 17:50:26.8209
+Avg Fitness: 48
+60 60 60 60 0 
+=======================
+population size: 5 round: 2 saved: 2021-01-03 17:51:41.8952
+Avg Fitness: 0
+0 0 0 0 0 
+=======================
+population size: 5 round: 3 saved: 2021-01-03 17:52:56.9235
+Avg Fitness: 0
+0 0 0 0 0 
+=======================
+population size: 5 round: 0 saved: 2021-01-04 21:44:06.9130
+Avg Fitness: 96
+120 120 120 120 0 
+=======================
+population size: 10 round: 0 saved: 2021-01-04 21:59:12.1991
+Avg Fitness: 6
+20 20 20 0 0 
+=======================
+population size: 10 round: 1 saved: 2021-01-04 22:01:42.2088
+Avg Fitness: 0
+0 0 0 0 0 
+=======================

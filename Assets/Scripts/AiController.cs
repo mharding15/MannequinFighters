@@ -7,8 +7,10 @@ public class AiController : MonoBehaviour
 	public DecisionTree dt;
 
 	private PlayerController pc;
-	private float idleTime, idleTimer;
+	private float idleTime, idleTimer, actionTime, actionTimer;
 	private bool makeDecision;
+    private int currentAction;
+    private string currentActionString;
 
     // Start is called before the first frame update
     void Start(){
@@ -20,6 +22,10 @@ public class AiController : MonoBehaviour
 		idleTimer = 0f;
 		idleTime = .15f;
 		makeDecision = true;
+        currentAction = -1;
+        currentActionString = "none";
+        actionTime = 1f;
+        actionTimer = 0f;
 	}
 
     // Update is called once per frame
@@ -29,15 +35,37 @@ public class AiController : MonoBehaviour
             //print("In AiController and in the if....");
         	// don't need to make a decision every frame (might adjust this value though)
         	if (idleTimer > idleTime){
+                // TESTING
+                print("About to decide on an action and idletimer is: " + idleTimer);
     			// gather info to make decision based on
 	        	float[] decisionData = getDecisionData();
 	        	// get decision
-	        	int action = dt.Decide(decisionData);
+                string actionString = dt.Decide(decisionData);
+                // get the currentAction
+	        	SetActionNum(actionString);
 	        	// do the action
-	        	DoAction(action);
+	        	DoAction();
+                idleTimer = 0f;
         	} 
         }
         idleTimer += Time.deltaTime;
+    }
+
+    void SetActionNum(string actionString){
+        // if the new action string is not equal to the old one, or the action time is up, need to reset the action
+        if (actionString != currentActionString || actionTimer > actionTime){
+            float randNum = UnityEngine.Random.Range(0f, 1f);
+            string[] vals = actionString.Split(':');
+            float action1Prob = float.Parse(vals[1]);
+            if (action1Prob < randNum){
+                currentAction = System.Int32.Parse(vals[0]);
+            } else {
+                currentAction = System.Int32.Parse(vals[2]);
+            }
+            currentActionString = actionString;
+            actionTimer = 0f;
+        }
+        actionTimer += idleTime;
     }
 
     // 0 - x dist
@@ -88,8 +116,8 @@ public class AiController : MonoBehaviour
 	// 			stand_block = 13,
 	// 			crouch_block = 14,
 	// 			idle = 15;
-    void DoAction(int action){
-    	switch(action){
+    void DoAction(){
+    	switch(currentAction){
     		case 0:
     			pc.WalkForward();
     			break;
