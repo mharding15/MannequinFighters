@@ -282,11 +282,18 @@ public class SetupManager : MonoBehaviour
         // create an array that will temporarily store the trees for the next generation
         DecisionTree[] temp = new DecisionTree[populationSize];
 
+        // testing
+        print("In RoundOver() and the fitnesses from the round are:");
+        for (int i = 0; i < populationSize; i++){
+            print(i + ". " + population[i].fitness);
+        }
+
         int absoluteFittestIndex = findFittest();
+        print("Back in RoundOver(), the fittes index found is: " + absoluteFittestIndex);
 
         // do tournament selection to fill in the next population
         for (int count = 1; count < populationSize - freshTreeCount; count++){
-            print("--In tournament, count is: " + count);
+            print("-- In tournament, count is: " + count);
             List<int> indices = new List<int>();
             // get the random indices to compare
             while(indices.Count < tournamentSize){
@@ -295,27 +302,26 @@ public class SetupManager : MonoBehaviour
                 while (indices.Contains(r)){
                     r = UnityEngine.Random.Range(0, populationSize);
                 }
-                print("----Adding " + r + " to the list of indices.");
                 indices.Add(r);
             }
 
             // of those indices grab the one with the highest fitness
             float maxFitness = population[indices[0]].fitness;
-            DecisionTree fittest = population[indices[0]];
             int fittestIndex = indices[0];
-            print("--Finding the fittest...");
+            print("---- Finding the fittest...");
             for (int i = 1; i < tournamentSize; i++){
-                print("----i = " + i + " and fittest index is: " + fittestIndex + " with fitness: " + maxFitness);
+                print("------ i = " + i + " and fittest index is: " + fittestIndex + " with fitness: " + maxFitness);
                 float fitness = population[indices[i]].fitness;
-                print("------Current fitness is: " + fitness);
+                print("------ Current index is: " + indices[i] + ", and current fitness is: " + fitness);
                 if (fitness > maxFitness){
-                    print("--------And it was larger than the max.");
+                    print("-------- And it was larger than the max.");
                     maxFitness = fitness;
-                    fittest = population[indices[i]];
                     fittestIndex = indices[i];
                 }
             }
-            temp[count] = fittest.Copy();
+            // TESTING
+            print("==== Fittest index found is: " + fittestIndex + ", and it's fitness is: " + maxFitness);
+            temp[count] = population[fittestIndex].Copy();
         }
 
         // using elitism so the best tree will move on without being mutated or crossed over
@@ -401,7 +407,7 @@ public class SetupManager : MonoBehaviour
         string[] serializedTrees = new string[populationSize + 1];
 
         // save some data at the top of the file (maybe I should save the date is was saved)
-        serializedTrees[0] = "population size: " + populationSize + " round: " + round + " saved: " + GetTimestamp(DateTime.Now);
+        serializedTrees[0] = "population size: " + populationSize + " round: " + round + " saved: " + GetTimestamp(DateTime.Now) + " memory used (bytes): " + System.GC.GetTotalMemory(false) + " avg tree size: " + GetAvgTreeSize();
         // for each tree, save it in the file (unsorted)
         for (int i = 1; i < populationSize + 1; i++){
             serializedTrees[i] = population[i - 1].SerializeTree();
@@ -527,10 +533,15 @@ public class SetupManager : MonoBehaviour
     }
 
     int findFittest(){
+        // TESTING
+        print("++ Finding the fittest tree...");
         int maxIndex = 0;
         float maxFitness = population[0].fitness;
         for (int i = 1; i < populationSize; i++){
             float fitness = population[i].fitness;
+            // TESTING
+            print("++++ Current fittest index: " + maxIndex + ", with fitness of: " + maxFitness);
+            print("==== Current index is: " + i + ", and current fitness is: " + fitness);
             if (fitness > maxFitness){
                 maxFitness = fitness;
                 maxIndex = i;
@@ -566,6 +577,14 @@ public class SetupManager : MonoBehaviour
 
     string CreateLogMsg(string msg){
         return GetTimestamp(DateTime.Now) + " - Round: " + round + " :: " + msg;
+    }
+
+    float GetAvgTreeSize(){
+        int totalSize = 0;
+        for (int i = 0; i < populationSize; i++){
+            totalSize += population[i].NodeCount();
+        }
+        return totalSize / populationSize;
     }
 
 }

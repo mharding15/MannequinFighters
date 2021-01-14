@@ -419,7 +419,6 @@ public class PlayerController : MonoBehaviour
     	if (!isInAir && !grappled && !kicking && !punching && !projectiling && !down && PlayerDistance() >= 1.1f){
     		if (leftSide){
     			transform.Translate(new Vector2(speed * Time.deltaTime, 0f));
-                print("I'm on the LEFT SIDE...");
     		} else {
     			transform.Translate(new Vector2(-1f * speed * Time.deltaTime, 0f));
     		}
@@ -494,7 +493,7 @@ public class PlayerController : MonoBehaviour
     public void Punch(){
         if (!punching && !down){
             if (isInAir){
-            SetAnimBools(JUMP_PUNCH);
+                SetAnimBools(JUMP_PUNCH);
             } else {
                 SetAnimBools(STAND_PUNCH);
             }

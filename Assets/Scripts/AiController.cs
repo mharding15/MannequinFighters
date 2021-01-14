@@ -35,8 +35,6 @@ public class AiController : MonoBehaviour
             //print("In AiController and in the if....");
         	// don't need to make a decision every frame (might adjust this value though)
         	if (idleTimer > idleTime){
-                // TESTING
-                print("About to decide on an action and idletimer is: " + idleTimer);
     			// gather info to make decision based on
 	        	float[] decisionData = getDecisionData();
 	        	// get decision
@@ -46,7 +44,9 @@ public class AiController : MonoBehaviour
 	        	// do the action
 	        	DoAction();
                 idleTimer = 0f;
-        	} 
+        	} else if (currentAction == 0 || currentAction == 1){
+                DoAction();
+            }
         }
         idleTimer += Time.deltaTime;
     }

@@ -462,7 +462,7 @@ public class DecisionTree
 
          // 1/11/21, trying this out to see if it helps. I would like aggressive ones to be rewarded more than ones that do nothing
          float damageDone = 100f - opponentHealth, damageTaken = 100f - myhealth;
-         float totalFitness = damageDone + (damageTaken * .5f);
+         float totalFitness = damageDone - (damageTaken * .5f);
 
          fitness += totalFitness;
       }
