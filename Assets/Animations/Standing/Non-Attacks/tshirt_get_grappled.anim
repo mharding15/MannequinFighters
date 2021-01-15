@@ -97,6 +97,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 27
     messageOptions: 0
+  - time: 1.95
+    functionName: GetGrappledEnd
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.0166667
     functionName: SetStateToIdle
     data: 

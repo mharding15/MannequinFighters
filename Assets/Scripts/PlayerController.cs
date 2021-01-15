@@ -198,12 +198,13 @@ public class PlayerController : MonoBehaviour
     		} else if (!down) {
                 // print("!!@@ Setting down to false");
     			down = false;
-    			Idle();
+                Idle();
     		}
     	} 
     }
 
     void OnCollisionExit2D(Collision2D col){
+        print("---- In OnCollisionExit2D and grappled is: " + grappled);
     	if (col.collider.tag == "Ground" && !crouching){
     		isInAir = true;
     	}
@@ -294,16 +295,36 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Grapple(){
-		print("### The other dude should be getting grappled");
+		//print("### The other dude should be getting grappled");
 		enemy.gameObject.GetComponent<PlayerController>().GetGrappled();
     }
 
     public void GetGrappled(){
-    	health -= GRAPPLE_DAMAGE;
+        // also need to make sure the player is in the right position for the animation and stuff
+        if (leftSide){
+            transform.position = new Vector2(enemy.transform.position.x - 1.5f, enemy.transform.position.y);
+        } else {
+            transform.position = new Vector2(enemy.transform.position.x + 1.5f, enemy.transform.position.y);
+        }
+        rb2d.velocity = new Vector2(0f, 0f);
     	SetAnimBools(GET_GRAPPLED);
     }
 
+    public void GetGrappledEnd(){
+        health -= GRAPPLE_DAMAGE;
+        SetHealthText();
+        if (leftSide && transform.position.x > -11f){
+            transform.position = new Vector2(transform.position.x - 1f, transform.position.y);
+        } else if (transform.position.x <= 11f) {
+            transform.position = new Vector2(transform.position.x + 1f, transform.position.y);
+        }
+    }
+
     // *** Getters for player bools *** //
+
+    public bool GetIsHit(){ return hit; }
+
+    public bool GetIsGrappled(){ return grappled; }
 
     public bool GetIsInAir(){ return isInAir; }
 
@@ -330,6 +351,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void SetState(int state){ 
+
     	int action = state % 10;
     	int stature = (state / 10) % 10;
 
@@ -388,8 +410,6 @@ public class PlayerController : MonoBehaviour
     	grappled = false;
     }
 
-    //public bool GetIsBlocking(){ return isBlocking; }
-
 
     /////////////////////////
     // *** UI Elements *** //
@@ -405,7 +425,7 @@ public class PlayerController : MonoBehaviour
     /////////////////////
 
     public void Idle(){
-    	if (!kicking && !punching){
+    	if (!kicking && !punching && !grappled){
     		if (!isInAir){
     			SetAnimBools(IDLE);
 	    	} else {
@@ -438,6 +458,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Jump(){
+        print("=+=+=+ In Jump...and grappled is: " + grappled);
         // print("In JUMP and down is: " + down);
     	if (!isInAir && !grappled && !down){
     		rb2d.velocity = new Vector2(0f, jumpForce);
@@ -537,7 +558,7 @@ public class PlayerController : MonoBehaviour
     	if (!isInAir && !down){
             // 1/4/21, changing this to 2 vertical distance. I think it needs to be boosted a little. I'm pretty sure I did this for a reason, like maybe it looked weird 
             //  or something, but right now grabbing is just that great of a move.
-    		if (PlayerDistance() < 2f && PlayerYDistance() < 2f){
+    		if (PlayerDistance() < 2f && PlayerYDistance() < 1f){
     		    SetAnimBools(GRAPPLE);
 	    	} else {
 	    		SetAnimBools(GRAPPLE_WHIFF);

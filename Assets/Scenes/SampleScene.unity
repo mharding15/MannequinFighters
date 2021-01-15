@@ -425,12 +425,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab6d78a434b07cd48b58d4f9c98aa293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameType: 3
+  gameType: 2
   populationSize: 10
   totalRounds: 200
   aggressiveness: 0
-  agentFile1: twoOptionTest2
-  agentFile2: '-'
+  agentFile1: testAgent1
+  agentFile2: testAgent2
   gpAgentsFile: testGpAgents
   fitnessLogFile: testFitnessLog
   character: {fileID: 3251405274546204430, guid: ad044e1dba544804eb234b6114d7baa8,

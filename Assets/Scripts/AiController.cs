@@ -117,6 +117,12 @@ public class AiController : MonoBehaviour
 	// 			crouch_block = 14,
 	// 			idle = 15;
     void DoAction(){
+
+        // don't want the player to be able to do anything if they have just been hit or are currntly grappled
+        if (pc.GetIsHit() || pc.GetIsGrappled()){
+            return;
+        } 
+
     	switch(currentAction){
     		case 0:
     			pc.WalkForward();
