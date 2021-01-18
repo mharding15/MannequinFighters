@@ -11,6 +11,7 @@ public class SetupManager : MonoBehaviour
     public int populationSize; // should match the number of agents in the "gpAgentsFile" if there is stuff in that file
     public int totalRounds; // # of rounds of GP to do
     public int aggressiveness; // neutral (0), aggro (1), def (2)
+    public int fitnessType; // 0 -> even, 1 -> aggressive
     public string agentFile1, agentFile2, gpAgentsFile, fitnessLogFile;
     public GameObject character;
 
@@ -42,7 +43,7 @@ public class SetupManager : MonoBehaviour
                 freshTreeCount      = 0,
                 matchTime           = 20,
                 displayTime         = 0;
-    private float mutateProb        = 0.25f, 
+    private float mutateProb        = 0.2f, 
                 crossoverProb       = 0.1f,
                 freshTreePercentage = 0.1f,
                 countTimer          = 0f;
@@ -261,8 +262,8 @@ public class SetupManager : MonoBehaviour
         float moveFitnessP2 = player2.GetComponent<PlayerController>().moveFitness;
 
         // TO DO: calculate the fitness for these two decision trees (maybe there should be a variable that stores the fitness in the DT, and maybe it could calculate it's own fitness too)
-        population[currentMatch].CalculateFitness(healthP1, healthP2, distance, moveFitnessP1);
-        population[(currentMatch + 1) % populationSize].CalculateFitness(healthP2, healthP1, distance, moveFitnessP2);
+        population[currentMatch].CalculateFitness(healthP1, healthP2, distance, moveFitnessP1, fitnessType);
+        population[(currentMatch + 1) % populationSize].CalculateFitness(healthP2, healthP1, distance, moveFitnessP2, fitnessType);
 
         // print the results of the match
         print("Match #: " + currentMatch + "  over. P1 health: " + healthP1 + ", P2 health: " + healthP2 + ", distance: " + distance);
@@ -330,7 +331,7 @@ public class SetupManager : MonoBehaviour
                     logFile.WriteLine(CreateLogMsg("Mutating tree: " + i));
                 }
                 print("Mutating tree: " + i);
-                temp[i].Mutate();
+                temp[i].Mutate(aggressiveness);
             }
             // with some probability do crossover
             if (i%2 == 0){
