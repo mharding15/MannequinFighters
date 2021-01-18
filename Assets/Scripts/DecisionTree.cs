@@ -9,7 +9,7 @@ public class DecisionTree
       public Node head {set; get;}
 
    	private bool debug = false;
-   	private int numFeatures = 3, numActions = 3;
+   	private int numFeatures = 5, numActions = 16;
   	   private float thresholdDelta = 1.5f; // this is the value that the threshold will either increase or decrease during mutation
       private float _probAction2Action     = .025f, // these probs are cumulative meaning that the difference between them is the actual prob.
                     _probAction2Feature    = .05f,
@@ -55,22 +55,16 @@ public class DecisionTree
       }
 
       // Create a random decision tree. Type says if the tree should be neutral (0), aggro (1), or defensive (2)
-   	public void RandomTree(int numFeatures, int numActions, int type)
-   	{
-   		List<int> remainingFeatures = new List<int>();
-   		for (int i = 0; i < numFeatures; i++){
-   			remainingFeatures.Add(i);
-   		}
-
+   	public void RandomTree(int type){
          // the aggro action numbers
          int[] aggroActions = {0, 3, 6, 7, 8, 9, 10, 11, 12};
          int[] defActions = {1, 4, 13, 14};
 
-   		head = CreateRandomTree(numFeatures, numActions, 0f, type, aggroActions, defActions);
+   		head = CreateRandomTree(0f, type, aggroActions, defActions);
    	}
 
    	// this method does NOT care if there are multiple nodes with the same feature in a path to the root
-   	Node CreateRandomTree(int numFeatures, int numActions, float actionProb, int type, int[] aggroActions, int[] defActions)
+   	Node CreateRandomTree(float actionProb, int type, int[] aggroActions, int[] defActions)
    	{
    		string methodName = "*** Create Random Tree ***";
    		DebugMsg(methodName, "");
@@ -90,8 +84,8 @@ public class DecisionTree
    			if (actionProb < .8f){
    				newActionProb += .1f;
    			}
-   			newNode.left = CreateRandomTree(numFeatures, numActions, newActionProb, type, aggroActions, defActions);
-   			newNode.right = CreateRandomTree(numFeatures, numActions, newActionProb, type, aggroActions, defActions);
+   			newNode.left = CreateRandomTree(newActionProb, type, aggroActions, defActions);
+   			newNode.right = CreateRandomTree(newActionProb, type, aggroActions, defActions);
 
          // create an action
    		} else {

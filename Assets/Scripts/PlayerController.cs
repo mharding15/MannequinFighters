@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 				KICK_DAMAGE = 20,
 				PUNCH_DAMAGE = 15,
 				ANTIAIR_DAMAGE = 25,
-				ANTIAIR_CHIP = 10,
+				ANTIAIR_CHIP = 5,
 				GRAPPLE_DAMAGE = 30;
 
 	private Text playerHealthText;
@@ -192,11 +192,9 @@ public class PlayerController : MonoBehaviour
     		isInAir = false;
     		if (falling){
     			falling = false;
-                // print("!!@@ Setting down to true");
     			down = true;
     			SetAnimBools(DOWN);
     		} else if (!down) {
-                // print("!!@@ Setting down to false");
     			down = false;
                 Idle();
     		}
@@ -204,7 +202,6 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionExit2D(Collision2D col){
-        print("---- In OnCollisionExit2D and grappled is: " + grappled);
     	if (col.collider.tag == "Ground" && !crouching){
     		isInAir = true;
     	}
@@ -214,7 +211,8 @@ public class PlayerController : MonoBehaviour
     	// print("!@#$ Should be recognizing that there was a trigger at least...");
     	// set the appropriate animation
     	if (isInAir){
-    		if (col.tag != "Player"){
+            // adding '&&' 1/15
+    		if (col.tag != "Player" && !blocking){
     			// print("### I'm in the air =====");
 				float xvel = -5f;
 				if (transform.position.x > enemy.position.x){
@@ -327,6 +325,8 @@ public class PlayerController : MonoBehaviour
     public bool GetIsGrappled(){ return grappled; }
 
     public bool GetIsInAir(){ return isInAir; }
+
+    public bool GetIsDown() { return down; }
 
     public bool GetCrouching(){ return crouching; }
 
@@ -458,7 +458,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Jump(){
-        print("=+=+=+ In Jump...and grappled is: " + grappled);
         // print("In JUMP and down is: " + down);
     	if (!isInAir && !grappled && !down){
     		rb2d.velocity = new Vector2(0f, jumpForce);

@@ -119,7 +119,7 @@ public class AiController : MonoBehaviour
     void DoAction(){
 
         // don't want the player to be able to do anything if they have just been hit or are currntly grappled
-        if (pc.GetIsHit() || pc.GetIsGrappled()){
+        if (pc.GetIsHit() || pc.GetIsGrappled() || pc.GetIsDown()){
             return;
         } 
 

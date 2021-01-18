@@ -40,9 +40,9 @@ public class SetupManager : MonoBehaviour
     // setting some variables for the training
     private int tournamentSize      = 3,
                 freshTreeCount      = 0,
-                matchTime           = 15,
+                matchTime           = 20,
                 displayTime         = 0;
-    private float mutateProb        = 0.2f, 
+    private float mutateProb        = 0.25f, 
                 crossoverProb       = 0.1f,
                 freshTreePercentage = 0.1f,
                 countTimer          = 0f;
@@ -106,7 +106,7 @@ public class SetupManager : MonoBehaviour
                 print("The file is empty, need to create random agents.");
                 for (int i = 0; i < populationSize; i++){
                     DecisionTree dt = new DecisionTree();
-                    dt.RandomTree(5, 16, aggressiveness);
+                    dt.RandomTree(aggressiveness);
                     population[i] = dt;
                 }
                 file.Close();
@@ -126,13 +126,14 @@ public class SetupManager : MonoBehaviour
                     population[count++] = dt;
                     line = file.ReadLine();
                 }
+
                 // after loading the trees from a file need to shuffle them so that when merging two sets of trees they will not still be next to each other
                 ShuffleTrees();
                 file.Close();
             }
 
             // 2) Create the first match
-            GpRoundText.text = (round + 1).ToString() + " of " + totalRounds.ToString();
+            GpRoundText.text = round.ToString() + " of " + (totalRounds - 1).ToString();
             currentMatch = 0;
             CreateGPMatch();
         }
@@ -282,12 +283,6 @@ public class SetupManager : MonoBehaviour
         // create an array that will temporarily store the trees for the next generation
         DecisionTree[] temp = new DecisionTree[populationSize];
 
-        // testing
-        print("In RoundOver() and the fitnesses from the round are:");
-        for (int i = 0; i < populationSize; i++){
-            print(i + ". " + population[i].fitness);
-        }
-
         int absoluteFittestIndex = findFittest();
         print("Back in RoundOver(), the fittes index found is: " + absoluteFittestIndex);
 
@@ -331,6 +326,9 @@ public class SetupManager : MonoBehaviour
         for (int i = 1; i < populationSize - freshTreeCount; i++){
             // with some probability mutate
             if (UnityEngine.Random.Range(0f, 1f) < mutateProb){
+                using (System.IO.StreamWriter logFile = new System.IO.StreamWriter(@"Assets/Output/GeneticAgents/" + gpAgentsFile + "/log.txt", true)){
+                    logFile.WriteLine(CreateLogMsg("Mutating tree: " + i));
+                }
                 print("Mutating tree: " + i);
                 temp[i].Mutate();
             }
@@ -342,17 +340,13 @@ public class SetupManager : MonoBehaviour
                     try {
                         temp[i].Crossover(temp[i - 1]);
                         // the 'using' statement automatically flushes and closes the file, so no need to do it explicitly
-                        using (System.IO.StreamWriter logFile =
-                            new System.IO.StreamWriter(@"Assets/Output/GeneticAgents/" + gpAgentsFile + "/log.txt", true))
-                        {
+                        using (System.IO.StreamWriter logFile = new System.IO.StreamWriter(@"Assets/Output/GeneticAgents/" + gpAgentsFile + "/log.txt", true)){
                             logFile.WriteLine(CreateLogMsg("Successfully crossed over tree " + (i - 1) + " and tree " + i));
                         }
                     } catch (NullReferenceException e){
                         print("### Caught a NullReferenceException while attempting crossover");
                         // the 'using' statement automatically flushes and closes the file, so no need to do it explicitly
-                        using (System.IO.StreamWriter errorFile =
-                            new System.IO.StreamWriter(@"Assets/Output/GeneticAgents/" + gpAgentsFile + "/errors.txt", true))
-                        {
+                        using (System.IO.StreamWriter errorFile = new System.IO.StreamWriter(@"Assets/Output/GeneticAgents/" + gpAgentsFile + "/errors.txt", true)){
                             errorFile.WriteLine(CreateLogMsg("Error crossing over trees " + (i - 1) + " and tree " + i));
                         }
                     }
@@ -363,27 +357,28 @@ public class SetupManager : MonoBehaviour
         // adding some fresh trees into the population to keep it from getting stale. Don't forget that before starting the next round, need to shuffle the population now.
         for (int i = populationSize - freshTreeCount; i < populationSize; i++){
             DecisionTree dt = new DecisionTree();
-            dt.RandomTree(5, 16, aggressiveness);
+            dt.RandomTree(aggressiveness);
             temp[i] = dt;
         }
 
         population = temp;
 
-        // need to reset the fitnesses now that the round is over
-        for (int i = 0; i < populationSize; i++){
-            population[i].fitness = 0f;
-        }
-
         round++;
-        GpRoundText.text = round.ToString() + " of " + totalRounds.ToString();
+        GpRoundText.text = round.ToString() + " of " + (totalRounds - 1).ToString();
         if (round >= totalRounds){
             Finish();
         } else {
-            // save the trees every 10 rounds (might be a little much, but I can always adjust it later)
-            if (round % 2 == 0){
-                SaveDecisionTrees();
+            // this will store the trees from the round, every round
+            SaveDecisionTrees();
+            // save sorted trees every 2 rounds (or if it is divisible by 5, so I can use 25 for analysis if I want)
+            if (round % 2 == 0 || round % 5 == 0){
+                SaveSortedDecisionTrees();
             }
             currentMatch = 0; 
+            // need to reset the fitnesses now that the round is over
+            for (int i = 0; i < populationSize; i++){
+                population[i].fitness = 0f;
+            }
             ShuffleTrees();
             CreateGPMatch();
         }
@@ -402,12 +397,11 @@ public class SetupManager : MonoBehaviour
     //////////////////////////////////
 
     void SaveDecisionTrees(){
-
         // this will hold the trees and the top line which will have some info
         string[] serializedTrees = new string[populationSize + 1];
 
         // save some data at the top of the file (maybe I should save the date is was saved)
-        serializedTrees[0] = "population size: " + populationSize + " round: " + round + " saved: " + GetTimestamp(DateTime.Now) + " memory used (bytes): " + System.GC.GetTotalMemory(false) + " avg tree size: " + GetAvgTreeSize();
+        serializedTrees[0] = "population size: " + populationSize + " round: " + round + " saved: " + GetTimestamp(DateTime.Now) + " memory used (bytes): " + System.GC.GetTotalMemory(false) + " avg tree size: " + GetAvgTreeSize() + " avg fitness: " + GetAvgFitness();
         // for each tree, save it in the file (unsorted)
         for (int i = 1; i < populationSize + 1; i++){
             serializedTrees[i] = population[i - 1].SerializeTree();
@@ -421,6 +415,14 @@ public class SetupManager : MonoBehaviour
 
         // and then recreate the file (this will also close the file, so no need to close it explicitly). Not sure if this '@' is necessary...
         System.IO.File.WriteAllLines(@"Assets/Output/GeneticAgents/" + gpAgentsFile + "/" + gpAgentsFile + ".txt", serializedTrees);
+    }
+
+    void SaveSortedDecisionTrees(){
+        // this will hold the trees and the top line which will have some info
+        string[] serializedTrees = new string[populationSize + 1];
+
+        // save some data at the top of the file (maybe I should save the date is was saved)
+        serializedTrees[0] = "population size: " + populationSize + " round: " + round + " saved: " + GetTimestamp(DateTime.Now) + " memory used (bytes): " + System.GC.GetTotalMemory(false) + " avg tree size: " + GetAvgTreeSize() + " avg fitness: " + GetAvgFitness();
 
         // now save a version where the trees are sorted by fitness
         DecisionTree[] sortedTrees = SortTreesByFitness();
@@ -585,6 +587,14 @@ public class SetupManager : MonoBehaviour
             totalSize += population[i].NodeCount();
         }
         return totalSize / populationSize;
+    }
+
+    float GetAvgFitness(){
+        float totalFitness = 0f;
+        for (int i = 0; i < populationSize; i++){
+            totalFitness += population[i].fitness;
+        }
+        return totalFitness / populationSize;
     }
 
 }
