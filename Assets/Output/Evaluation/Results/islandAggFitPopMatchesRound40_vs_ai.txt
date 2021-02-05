@@ -1,0 +1,131 @@
+Starting Round: 0
+60 45
+0 20
+90 35
+0 110
+110 69
+45 96
+45 16
+45 54
+45 40
+15 46
+Round over. Player1 Avg Damage: 45.5, Player2 Avg Damage: 53.1
+
+Starting Round: 1
+45 80
+135 30
+165 23
+75 28
+75 66
+15 54
+15 76
+60 81
+45 44
+60 86
+Round over. Player1 Avg Damage: 114.5, Player2 Avg Damage: 109.9
+
+Starting Round: 2
+75 95
+75 55
+15 60
+30 30
+15 116
+15 46
+45 121
+15 66
+30 50
+30 96
+Round over. Player1 Avg Damage: 149, Player2 Avg Damage: 183.4
+
+Starting Round: 3
+75 20
+60 80
+0 10
+0 68
+15 24
+75 56
+60 36
+45 81
+15 124
+15 46
+Round over. Player1 Avg Damage: 185, Player2 Avg Damage: 237.9
+
+Starting Round: 4
+0 20
+30 78
+75 30
+30 60
+75 56
+15 76
+75 36
+30 66
+0 106
+45 46
+Round over. Player1 Avg Damage: 222.5, Player2 Avg Damage: 295.3
+
+Starting Round: 5
+40 100
+90 105
+75 18
+30 80
+30 66
+45 46
+0 106
+45 41
+60 36
+18 24
+Round over. Player1 Avg Damage: 265.8, Player2 Avg Damage: 357.5
+
+Starting Round: 6
+15 60
+0 20
+75 36
+30 60
+60 36
+45 29
+60 31
+60 76
+45 46
+15 76
+Round over. Player1 Avg Damage: 306.3, Player2 Avg Damage: 404.5
+
+Starting Round: 7
+90 65
+105 65
+0 40
+30 20
+30 46
+30 54
+45 101
+60 21
+45 89
+30 101
+Round over. Player1 Avg Damage: 352.8, Player2 Avg Damage: 464.7
+
+Starting Round: 8
+15 70
+75 20
+30 60
+30 30
+15 46
+0 62
+15 76
+30 87
+0 46
+0 84
+Round over. Player1 Avg Damage: 373.8, Player2 Avg Damage: 522.8
+
+Starting Round: 9
+15 80
+120 60
+105 38
+45 160
+15 54
+0 62
+75 39
+60 31
+30 16
+45 81
+Round over. Player1 Avg Damage: 424.8, Player2 Avg Damage: 584.9
+
+Evaluation over. Player1 Overall Avg Damage Done: 42.48, Player2 Avg Damage Done: 58.49

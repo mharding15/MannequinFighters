@@ -1,0 +1,7 @@
+Size: 6
+evalControlAggFitPopMatches-round-100 evalControlEvenFitPopMatches-round-100
+evalControlAggFitPopMatches-round-100 evalIslandAggFitPopMatches-round-100
+evalControlAggFitPopMatches-round-100 evalIslandEvenFitPopMatches-round-100
+evalControlEvenFitPopMatches-round-100 evalIslandAggFitPopMatches-round-100
+evalControlEvenFitPopMatches-round-100 evalIslandEvenFitPopMatches-round-100
+evalIslandAggFitPopMatches-round-100 evalIslandEvenFitPopMatches-round-100

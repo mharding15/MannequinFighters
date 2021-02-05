@@ -1,2 +1,11 @@
-2021-01-16 13:46:05.2164 - Round: 0 :: Mutating tree: 1
-2021-01-16 13:52:59.5661 - Round: 1 :: Mutating tree: 4
+2021-01-19 21:59:06.8608 - Round: 0 :: Successfully crossed over tree 3 and tree 4
+2021-01-19 21:59:06.8738 - Round: 0 :: Mutating tree: 5
+2021-01-19 21:59:06.8808 - Round: 0 :: Mutating tree: 7
+2021-01-19 22:02:26.9105 - Round: 1 :: Mutating tree: 2
+2021-01-19 22:02:26.9175 - Round: 1 :: Mutating tree: 5
+2021-01-19 22:02:26.9255 - Round: 1 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 22:09:58.3248 - Round: 3 :: Mutating tree: 6
+2021-01-19 22:09:58.3595 - Round: 3 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 22:13:18.4885 - Round: 4 :: Mutating tree: 6
+2021-01-19 22:13:18.4974 - Round: 4 :: Successfully crossed over tree 5 and tree 6
+2021-01-19 22:16:38.6549 - Round: 5 :: Mutating tree: 8

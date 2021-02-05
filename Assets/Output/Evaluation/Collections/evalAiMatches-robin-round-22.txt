@@ -1,0 +1,7 @@
+Size: 6
+evalControlAggFitAiMatches-round-22 evalControlEvenFitAiMatches-round-22
+evalControlAggFitAiMatches-round-22 evalIslandAggFitAiMatches-round-22
+evalControlAggFitAiMatches-round-22 evalIslandEvenFitAiMatches-round-22
+evalControlEvenFitAiMatches-round-22 evalIslandAggFitAiMatches-round-22
+evalControlEvenFitAiMatches-round-22 evalIslandEvenFitAiMatches-round-22
+evalIslandAggFitAiMatches-round-22 evalIslandEvenFitAiMatches-round-22

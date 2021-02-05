@@ -12,15 +12,6 @@ public class DecisionTree
       private int numFeatures = 5, numActions = 16;
       private int[] aggroActions = {0, 3, 6, 7, 8, 9, 10, 11, 12};
       private int[] defActions = {1, 4, 13, 14};
-      private float thresholdDelta = 1.5f; // this is the value that the threshold will either increase or decrease during mutation
-      private float _probAction2Action     = .025f, // these probs are cumulative meaning that the difference between them is the actual prob.
-                    _probAction2Feature    = .05f,
-                    _probFeature2Action    = .025f,
-                    _probFeature2Feature   = .05f,
-                    _probDecreaseThreshold = .1f,
-                    _probIncreaseThreshold = .1f;
-
-
 
       public DecisionTree(){
          fitness = 0f;
@@ -374,6 +365,7 @@ public class DecisionTree
          float damageDone = 100f - opponentHealth, damageTaken = 100f - myhealth;
 
          float totalFitness = 0f;
+         // fitness type 0 is the even fitness type, 1 is aggro
          if (type == 0){
              totalFitness = damageDone - damageTaken;
          } else if (type == 1){

@@ -1,0 +1,1418 @@
+2021-01-18 14:06:42.9435 - Round: 0 :: Successfully crossed over tree 1 and tree 2
+2021-01-18 14:06:42.9495 - Round: 0 :: Mutating tree: 3
+2021-01-18 14:06:42.9555 - Round: 0 :: Mutating tree: 7
+2021-01-18 14:06:42.9604 - Round: 0 :: Mutating tree: 9
+2021-01-18 14:06:42.9674 - Round: 0 :: Successfully crossed over tree 11 and tree 12
+2021-01-18 14:06:42.9724 - Round: 0 :: Mutating tree: 13
+2021-01-18 14:06:42.9784 - Round: 0 :: Mutating tree: 17
+2021-01-18 14:06:42.9834 - Round: 0 :: Mutating tree: 18
+2021-01-18 14:06:42.9894 - Round: 0 :: Successfully crossed over tree 19 and tree 20
+2021-01-18 14:06:42.9943 - Round: 0 :: Mutating tree: 22
+2021-01-18 14:06:43.0008 - Round: 0 :: Mutating tree: 26
+2021-01-18 14:06:43.0058 - Round: 0 :: Mutating tree: 29
+2021-01-18 14:06:43.0168 - Round: 0 :: Mutating tree: 31
+2021-01-18 14:06:43.0227 - Round: 0 :: Mutating tree: 35
+2021-01-18 14:06:43.0288 - Round: 0 :: Mutating tree: 44
+2021-01-18 14:26:43.4333 - Round: 1 :: Mutating tree: 1
+2021-01-18 14:26:43.4402 - Round: 1 :: Mutating tree: 2
+2021-01-18 14:26:43.4453 - Round: 1 :: Mutating tree: 4
+2021-01-18 14:26:43.4513 - Round: 1 :: Mutating tree: 7
+2021-01-18 14:26:43.4562 - Round: 1 :: Mutating tree: 11
+2021-01-18 14:26:43.4622 - Round: 1 :: Mutating tree: 16
+2021-01-18 14:26:43.4913 - Round: 1 :: Successfully crossed over tree 17 and tree 18
+2021-01-18 14:26:43.4972 - Round: 1 :: Mutating tree: 20
+2021-01-18 14:26:43.5021 - Round: 1 :: Mutating tree: 22
+2021-01-18 14:26:43.5082 - Round: 1 :: Mutating tree: 24
+2021-01-18 14:26:43.5131 - Round: 1 :: Mutating tree: 26
+2021-01-18 14:26:43.5202 - Round: 1 :: Successfully crossed over tree 25 and tree 26
+2021-01-18 14:26:43.5251 - Round: 1 :: Mutating tree: 27
+2021-01-18 14:26:43.5311 - Round: 1 :: Successfully crossed over tree 29 and tree 30
+2021-01-18 14:26:43.5370 - Round: 1 :: Mutating tree: 31
+2021-01-18 14:26:43.5420 - Round: 1 :: Mutating tree: 34
+2021-01-18 14:26:43.5540 - Round: 1 :: Mutating tree: 45
+2021-01-18 14:26:43.5590 - Round: 1 :: Mutating tree: 52
+2021-01-18 14:26:43.5650 - Round: 1 :: Mutating tree: 53
+2021-01-18 14:46:44.0463 - Round: 2 :: Successfully crossed over tree 5 and tree 6
+2021-01-18 14:46:44.0533 - Round: 2 :: Mutating tree: 15
+2021-01-18 14:46:44.0603 - Round: 2 :: Mutating tree: 18
+2021-01-18 14:46:44.0662 - Round: 2 :: Mutating tree: 30
+2021-01-18 14:46:44.0802 - Round: 2 :: Successfully crossed over tree 41 and tree 42
+2021-01-18 14:46:44.0873 - Round: 2 :: Successfully crossed over tree 45 and tree 46
+2021-01-18 14:46:44.0932 - Round: 2 :: Mutating tree: 47
+2021-01-18 14:46:44.0992 - Round: 2 :: Mutating tree: 51
+2021-01-18 15:06:44.5697 - Round: 3 :: Mutating tree: 3
+2021-01-18 15:06:44.5787 - Round: 3 :: Mutating tree: 10
+2021-01-18 15:06:44.5866 - Round: 3 :: Successfully crossed over tree 9 and tree 10
+2021-01-18 15:06:44.5916 - Round: 3 :: Mutating tree: 11
+2021-01-18 15:06:44.5986 - Round: 3 :: Successfully crossed over tree 11 and tree 12
+2021-01-18 15:06:44.6045 - Round: 3 :: Mutating tree: 14
+2021-01-18 15:06:44.6104 - Round: 3 :: Mutating tree: 16
+2021-01-18 15:06:44.6164 - Round: 3 :: Mutating tree: 23
+2021-01-18 15:06:44.6224 - Round: 3 :: Mutating tree: 26
+2021-01-18 15:06:44.6518 - Round: 3 :: Mutating tree: 27
+2021-01-18 15:06:44.6598 - Round: 3 :: Successfully crossed over tree 27 and tree 28
+2021-01-18 15:06:44.6658 - Round: 3 :: Mutating tree: 31
+2021-01-18 15:06:44.6728 - Round: 3 :: Mutating tree: 44
+2021-01-18 15:06:44.6797 - Round: 3 :: Mutating tree: 47
+2021-01-18 15:06:44.6867 - Round: 3 :: Successfully crossed over tree 47 and tree 48
+2021-01-18 15:06:44.6927 - Round: 3 :: Mutating tree: 49
+2021-01-18 15:26:45.2355 - Round: 4 :: Mutating tree: 2
+2021-01-18 15:26:45.2435 - Round: 4 :: Successfully crossed over tree 1 and tree 2
+2021-01-18 15:26:45.2495 - Round: 4 :: Mutating tree: 9
+2021-01-18 15:26:45.2555 - Round: 4 :: Mutating tree: 11
+2021-01-18 15:26:45.2635 - Round: 4 :: Mutating tree: 30
+2021-01-18 15:26:45.2684 - Round: 4 :: Mutating tree: 32
+2021-01-18 15:26:45.2764 - Round: 4 :: Successfully crossed over tree 35 and tree 36
+2021-01-18 15:26:45.2814 - Round: 4 :: Mutating tree: 38
+2021-01-18 15:26:45.2884 - Round: 4 :: Successfully crossed over tree 39 and tree 40
+2021-01-18 15:26:45.2944 - Round: 4 :: Mutating tree: 43
+2021-01-18 15:26:45.3013 - Round: 4 :: Successfully crossed over tree 45 and tree 46
+2021-01-18 15:46:46.0080 - Round: 5 :: Mutating tree: 2
+2021-01-18 15:46:46.0191 - Round: 5 :: Mutating tree: 14
+2021-01-18 15:46:46.0280 - Round: 5 :: Mutating tree: 21
+2021-01-18 15:46:46.0419 - Round: 5 :: Successfully crossed over tree 23 and tree 24
+2021-01-18 15:46:46.0509 - Round: 5 :: Mutating tree: 28
+2021-01-18 15:46:46.0629 - Round: 5 :: Successfully crossed over tree 29 and tree 30
+2021-01-18 15:46:46.0718 - Round: 5 :: Mutating tree: 36
+2021-01-18 15:46:46.0808 - Round: 5 :: Mutating tree: 37
+2021-01-18 15:46:46.0918 - Round: 5 :: Mutating tree: 40
+2021-01-18 15:46:46.1027 - Round: 5 :: Mutating tree: 45
+2021-01-18 16:06:46.6645 - Round: 6 :: Mutating tree: 3
+2021-01-18 16:06:46.6726 - Round: 6 :: Mutating tree: 12
+2021-01-18 16:06:46.6786 - Round: 6 :: Mutating tree: 14
+2021-01-18 16:06:46.6845 - Round: 6 :: Mutating tree: 15
+2021-01-18 16:06:46.6915 - Round: 6 :: Mutating tree: 17
+2021-01-18 16:06:46.6974 - Round: 6 :: Mutating tree: 19
+2021-01-18 16:06:46.7055 - Round: 6 :: Successfully crossed over tree 23 and tree 24
+2021-01-18 16:06:46.7164 - Round: 6 :: Mutating tree: 25
+2021-01-18 16:06:46.7224 - Round: 6 :: Mutating tree: 28
+2021-01-18 16:06:46.7294 - Round: 6 :: Mutating tree: 32
+2021-01-18 16:06:46.7354 - Round: 6 :: Mutating tree: 33
+2021-01-18 16:06:46.7415 - Round: 6 :: Mutating tree: 34
+2021-01-18 16:06:46.7485 - Round: 6 :: Successfully crossed over tree 33 and tree 34
+2021-01-18 16:06:46.7555 - Round: 6 :: Mutating tree: 45
+2021-01-18 16:06:46.7614 - Round: 6 :: Mutating tree: 47
+2021-01-18 16:26:46.9772 - Round: 7 :: Mutating tree: 6
+2021-01-18 16:26:46.9863 - Round: 7 :: Successfully crossed over tree 13 and tree 14
+2021-01-18 16:26:46.9921 - Round: 7 :: Mutating tree: 18
+2021-01-18 16:26:46.9991 - Round: 7 :: Mutating tree: 20
+2021-01-18 16:26:47.0065 - Round: 7 :: Successfully crossed over tree 21 and tree 22
+2021-01-18 16:26:47.0124 - Round: 7 :: Mutating tree: 25
+2021-01-18 16:26:47.0185 - Round: 7 :: Mutating tree: 29
+2021-01-18 16:26:47.0264 - Round: 7 :: Successfully crossed over tree 29 and tree 30
+2021-01-18 16:26:47.0324 - Round: 7 :: Mutating tree: 43
+2021-01-18 16:26:47.0394 - Round: 7 :: Mutating tree: 52
+2021-01-18 16:46:47.4800 - Round: 8 :: Mutating tree: 1
+2021-01-18 16:46:47.4880 - Round: 8 :: Successfully crossed over tree 1 and tree 2
+2021-01-18 16:46:47.4940 - Round: 8 :: Mutating tree: 6
+2021-01-18 16:46:47.5010 - Round: 8 :: Mutating tree: 18
+2021-01-18 16:46:47.5069 - Round: 8 :: Mutating tree: 22
+2021-01-18 16:46:47.5129 - Round: 8 :: Mutating tree: 27
+2021-01-18 16:46:47.5189 - Round: 8 :: Mutating tree: 34
+2021-01-18 16:46:47.5249 - Round: 8 :: Mutating tree: 35
+2021-01-18 16:46:47.5319 - Round: 8 :: Mutating tree: 40
+2021-01-18 16:46:47.5388 - Round: 8 :: Successfully crossed over tree 39 and tree 40
+2021-01-18 16:46:47.5448 - Round: 8 :: Mutating tree: 42
+2021-01-18 16:46:47.5508 - Round: 8 :: Mutating tree: 44
+2021-01-18 16:46:47.5618 - Round: 8 :: Mutating tree: 46
+2021-01-18 16:46:47.5677 - Round: 8 :: Mutating tree: 47
+2021-01-18 16:46:47.5737 - Round: 8 :: Mutating tree: 50
+2021-01-18 17:06:47.8128 - Round: 9 :: Mutating tree: 5
+2021-01-18 17:06:47.8217 - Round: 9 :: Successfully crossed over tree 7 and tree 8
+2021-01-18 17:06:47.8277 - Round: 9 :: Mutating tree: 9
+2021-01-18 17:06:47.8347 - Round: 9 :: Mutating tree: 11
+2021-01-18 17:06:47.8437 - Round: 9 :: Mutating tree: 21
+2021-01-18 17:06:47.8497 - Round: 9 :: Mutating tree: 22
+2021-01-18 17:06:47.8586 - Round: 9 :: Mutating tree: 31
+2021-01-18 17:06:47.8666 - Round: 9 :: Mutating tree: 33
+2021-01-18 17:06:47.8736 - Round: 9 :: Mutating tree: 36
+2021-01-18 17:06:47.8836 - Round: 9 :: Successfully crossed over tree 35 and tree 36
+2021-01-18 17:06:47.8895 - Round: 9 :: Mutating tree: 38
+2021-01-18 17:06:47.8975 - Round: 9 :: Successfully crossed over tree 41 and tree 42
+2021-01-18 17:06:47.9055 - Round: 9 :: Mutating tree: 44
+2021-01-18 17:26:48.4474 - Round: 10 :: Mutating tree: 2
+2021-01-18 17:26:48.4584 - Round: 10 :: Mutating tree: 4
+2021-01-18 17:26:48.4678 - Round: 10 :: Mutating tree: 5
+2021-01-18 17:26:48.4778 - Round: 10 :: Mutating tree: 7
+2021-01-18 17:26:48.4868 - Round: 10 :: Mutating tree: 8
+2021-01-18 17:26:48.4997 - Round: 10 :: Successfully crossed over tree 7 and tree 8
+2021-01-18 17:26:48.5077 - Round: 10 :: Mutating tree: 9
+2021-01-18 17:26:48.5177 - Round: 10 :: Mutating tree: 14
+2021-01-18 17:26:48.5286 - Round: 10 :: Mutating tree: 19
+2021-01-18 17:26:48.5426 - Round: 10 :: Successfully crossed over tree 19 and tree 20
+2021-01-18 17:26:48.5525 - Round: 10 :: Mutating tree: 23
+2021-01-18 17:26:48.5650 - Round: 10 :: Mutating tree: 34
+2021-01-18 17:26:48.5750 - Round: 10 :: Mutating tree: 36
+2021-01-18 17:26:48.5860 - Round: 10 :: Mutating tree: 46
+2021-01-18 17:46:49.1320 - Round: 11 :: Mutating tree: 1
+2021-01-18 17:46:49.1419 - Round: 11 :: Mutating tree: 3
+2021-01-18 17:46:49.1519 - Round: 11 :: Mutating tree: 6
+2021-01-18 17:46:49.1649 - Round: 11 :: Successfully crossed over tree 11 and tree 12
+2021-01-18 17:46:49.1748 - Round: 11 :: Mutating tree: 16
+2021-01-18 17:46:49.1868 - Round: 11 :: Mutating tree: 25
+2021-01-18 17:46:49.1968 - Round: 11 :: Mutating tree: 35
+2021-01-18 17:46:49.2057 - Round: 11 :: Mutating tree: 36
+2021-01-18 17:46:49.2157 - Round: 11 :: Mutating tree: 39
+2021-01-18 17:46:49.2247 - Round: 11 :: Mutating tree: 42
+2021-01-18 17:46:49.2366 - Round: 11 :: Successfully crossed over tree 41 and tree 42
+2021-01-18 17:46:49.2456 - Round: 11 :: Mutating tree: 44
+2021-01-18 17:46:49.2546 - Round: 11 :: Mutating tree: 48
+2021-01-18 17:46:49.2635 - Round: 11 :: Mutating tree: 52
+2021-01-18 18:06:49.9219 - Round: 12 :: Successfully crossed over tree 1 and tree 2
+2021-01-18 18:06:49.9328 - Round: 12 :: Mutating tree: 7
+2021-01-18 18:06:49.9448 - Round: 12 :: Mutating tree: 10
+2021-01-18 18:06:49.9563 - Round: 12 :: Mutating tree: 11
+2021-01-18 18:06:49.9662 - Round: 12 :: Mutating tree: 18
+2021-01-18 18:06:49.9762 - Round: 12 :: Mutating tree: 20
+2021-01-18 18:06:49.9871 - Round: 12 :: Mutating tree: 23
+2021-01-18 18:06:50.0001 - Round: 12 :: Mutating tree: 36
+2021-01-18 18:06:50.0101 - Round: 12 :: Mutating tree: 37
+2021-01-18 18:06:50.0210 - Round: 12 :: Mutating tree: 38
+2021-01-18 18:06:50.0320 - Round: 12 :: Mutating tree: 41
+2021-01-18 18:06:50.0430 - Round: 12 :: Mutating tree: 44
+2021-01-18 18:06:50.0564 - Round: 12 :: Successfully crossed over tree 45 and tree 46
+2021-01-18 18:06:50.0664 - Round: 12 :: Mutating tree: 50
+2021-01-18 18:26:50.6158 - Round: 13 :: Mutating tree: 11
+2021-01-18 18:26:50.6268 - Round: 13 :: Mutating tree: 12
+2021-01-18 18:26:50.6377 - Round: 13 :: Mutating tree: 14
+2021-01-18 18:26:50.6477 - Round: 13 :: Mutating tree: 16
+2021-01-18 18:26:50.6606 - Round: 13 :: Successfully crossed over tree 17 and tree 18
+2021-01-18 18:26:50.6736 - Round: 13 :: Successfully crossed over tree 19 and tree 20
+2021-01-18 18:26:50.6826 - Round: 13 :: Mutating tree: 21
+2021-01-18 18:26:50.6925 - Round: 13 :: Mutating tree: 23
+2021-01-18 18:26:50.7025 - Round: 13 :: Mutating tree: 29
+2021-01-18 18:26:50.7145 - Round: 13 :: Mutating tree: 33
+2021-01-18 18:26:50.7244 - Round: 13 :: Mutating tree: 38
+2021-01-18 18:26:50.7364 - Round: 13 :: Mutating tree: 52
+2021-01-18 18:46:51.4096 - Round: 14 :: Mutating tree: 3
+2021-01-18 18:46:51.4195 - Round: 14 :: Mutating tree: 7
+2021-01-18 18:46:51.4305 - Round: 14 :: Mutating tree: 15
+2021-01-18 18:46:51.4415 - Round: 14 :: Mutating tree: 19
+2021-01-18 18:46:51.4514 - Round: 14 :: Mutating tree: 24
+2021-01-18 18:46:51.4634 - Round: 14 :: Mutating tree: 33
+2021-01-18 18:46:51.4733 - Round: 14 :: Mutating tree: 35
+2021-01-18 19:06:52.1806 - Round: 15 :: Mutating tree: 2
+2021-01-18 19:06:52.1935 - Round: 15 :: Mutating tree: 7
+2021-01-18 19:06:52.2065 - Round: 15 :: Mutating tree: 34
+2021-01-18 19:06:52.2194 - Round: 15 :: Successfully crossed over tree 33 and tree 34
+2021-01-18 19:06:52.2284 - Round: 15 :: Mutating tree: 36
+2021-01-18 19:06:52.2384 - Round: 15 :: Mutating tree: 37
+2021-01-18 19:06:52.2523 - Round: 15 :: Successfully crossed over tree 37 and tree 38
+2021-01-18 19:06:52.2613 - Round: 15 :: Mutating tree: 42
+2021-01-18 19:06:52.2722 - Round: 15 :: Mutating tree: 43
+2021-01-18 19:06:52.2822 - Round: 15 :: Mutating tree: 44
+2021-01-18 19:06:52.2932 - Round: 15 :: Successfully crossed over tree 43 and tree 44
+2021-01-18 19:06:52.3051 - Round: 15 :: Mutating tree: 47
+2021-01-18 19:06:52.3161 - Round: 15 :: Mutating tree: 51
+2021-01-18 19:26:53.0246 - Round: 16 :: Mutating tree: 5
+2021-01-18 19:26:53.0356 - Round: 16 :: Mutating tree: 11
+2021-01-18 19:26:53.0475 - Round: 16 :: Successfully crossed over tree 19 and tree 20
+2021-01-18 19:26:53.0575 - Round: 16 :: Mutating tree: 27
+2021-01-18 19:26:53.0675 - Round: 16 :: Mutating tree: 29
+2021-01-18 19:26:53.0774 - Round: 16 :: Mutating tree: 30
+2021-01-18 19:26:53.0914 - Round: 16 :: Mutating tree: 31
+2021-01-18 19:26:53.1023 - Round: 16 :: Mutating tree: 35
+2021-01-18 19:26:53.1113 - Round: 16 :: Mutating tree: 36
+2021-01-18 19:26:53.1223 - Round: 16 :: Mutating tree: 39
+2021-01-18 19:26:53.1322 - Round: 16 :: Mutating tree: 41
+2021-01-18 19:26:53.1432 - Round: 16 :: Mutating tree: 45
+2021-01-18 19:26:53.1561 - Round: 16 :: Successfully crossed over tree 45 and tree 46
+2021-01-18 19:26:53.1651 - Round: 16 :: Mutating tree: 48
+2021-01-18 19:26:53.1770 - Round: 16 :: Mutating tree: 50
+2021-01-18 19:26:53.1880 - Round: 16 :: Mutating tree: 52
+2021-01-18 19:26:53.1980 - Round: 16 :: Mutating tree: 53
+2021-01-18 19:46:53.6563 - Round: 17 :: Mutating tree: 3
+2021-01-18 19:46:53.6671 - Round: 17 :: Mutating tree: 4
+2021-01-18 19:46:53.6781 - Round: 17 :: Mutating tree: 8
+2021-01-18 19:46:53.6881 - Round: 17 :: Mutating tree: 9
+2021-01-18 19:46:53.6990 - Round: 17 :: Mutating tree: 11
+2021-01-18 19:46:53.7106 - Round: 17 :: Mutating tree: 15
+2021-01-18 19:46:53.7195 - Round: 17 :: Mutating tree: 16
+2021-01-18 19:46:53.7325 - Round: 17 :: Mutating tree: 17
+2021-01-18 19:46:53.7444 - Round: 17 :: Mutating tree: 27
+2021-01-18 19:46:53.7544 - Round: 17 :: Mutating tree: 31
+2021-01-18 19:46:53.7644 - Round: 17 :: Mutating tree: 32
+2021-01-18 19:46:53.7793 - Round: 17 :: Successfully crossed over tree 37 and tree 38
+2021-01-18 19:46:53.7903 - Round: 17 :: Mutating tree: 45
+2021-01-18 20:06:54.4246 - Round: 18 :: Successfully crossed over tree 1 and tree 2
+2021-01-18 20:06:54.4355 - Round: 18 :: Mutating tree: 4
+2021-01-18 20:06:54.4485 - Round: 18 :: Mutating tree: 6
+2021-01-18 20:06:54.4605 - Round: 18 :: Mutating tree: 9
+2021-01-18 20:06:54.4714 - Round: 18 :: Mutating tree: 11
+2021-01-18 20:06:54.4834 - Round: 18 :: Mutating tree: 14
+2021-01-18 20:06:54.4973 - Round: 18 :: Successfully crossed over tree 21 and tree 22
+2021-01-18 20:06:54.5103 - Round: 18 :: Mutating tree: 24
+2021-01-18 20:06:54.5212 - Round: 18 :: Mutating tree: 25
+2021-01-18 20:06:54.5342 - Round: 18 :: Successfully crossed over tree 27 and tree 28
+2021-01-18 20:06:54.5442 - Round: 18 :: Mutating tree: 29
+2021-01-18 20:06:54.5561 - Round: 18 :: Mutating tree: 31
+2021-01-18 20:06:54.5671 - Round: 18 :: Mutating tree: 36
+2021-01-18 20:06:54.5781 - Round: 18 :: Mutating tree: 37
+2021-01-18 20:06:54.5880 - Round: 18 :: Mutating tree: 40
+2021-01-18 20:06:54.6010 - Round: 18 :: Successfully crossed over tree 39 and tree 40
+2021-01-18 20:06:54.6109 - Round: 18 :: Mutating tree: 41
+2021-01-18 20:06:54.6219 - Round: 18 :: Mutating tree: 47
+2021-01-18 20:06:54.6339 - Round: 18 :: Mutating tree: 49
+2021-01-18 20:06:54.6478 - Round: 18 :: Successfully crossed over tree 51 and tree 52
+2021-01-18 20:26:55.1724 - Round: 19 :: Mutating tree: 3
+2021-01-18 20:26:55.1863 - Round: 19 :: Mutating tree: 6
+2021-01-18 20:26:55.1993 - Round: 19 :: Mutating tree: 13
+2021-01-18 20:26:55.2103 - Round: 19 :: Mutating tree: 17
+2021-01-18 20:26:55.2222 - Round: 19 :: Mutating tree: 21
+2021-01-18 20:26:55.2332 - Round: 19 :: Mutating tree: 24
+2021-01-18 20:26:55.2441 - Round: 19 :: Mutating tree: 28
+2021-01-18 20:26:55.2591 - Round: 19 :: Successfully crossed over tree 31 and tree 32
+2021-01-18 20:26:55.2701 - Round: 19 :: Mutating tree: 33
+2021-01-18 20:26:55.2800 - Round: 19 :: Mutating tree: 34
+2021-01-18 20:26:55.2920 - Round: 19 :: Mutating tree: 38
+2021-01-18 20:26:55.3079 - Round: 19 :: Successfully crossed over tree 43 and tree 44
+2021-01-18 20:26:55.3179 - Round: 19 :: Mutating tree: 46
+2021-01-18 20:26:55.3289 - Round: 19 :: Mutating tree: 47
+2021-01-18 20:26:55.3408 - Round: 19 :: Mutating tree: 52
+2021-01-18 20:46:56.0498 - Round: 20 :: Mutating tree: 2
+2021-01-18 20:46:56.0631 - Round: 20 :: Successfully crossed over tree 1 and tree 2
+2021-01-18 20:46:56.0731 - Round: 20 :: Mutating tree: 3
+2021-01-18 20:46:56.0861 - Round: 20 :: Successfully crossed over tree 9 and tree 10
+2021-01-18 20:46:56.0980 - Round: 20 :: Successfully crossed over tree 11 and tree 12
+2021-01-18 20:46:56.1120 - Round: 20 :: Successfully crossed over tree 21 and tree 22
+2021-01-18 20:46:56.1210 - Round: 20 :: Mutating tree: 24
+2021-01-18 20:46:56.1320 - Round: 20 :: Mutating tree: 27
+2021-01-18 20:46:56.1439 - Round: 20 :: Mutating tree: 31
+2021-01-18 20:46:56.1548 - Round: 20 :: Mutating tree: 32
+2021-01-18 20:46:56.1685 - Round: 20 :: Mutating tree: 40
+2021-01-18 20:46:56.1845 - Round: 20 :: Successfully crossed over tree 41 and tree 42
+2021-01-18 20:46:56.1955 - Round: 20 :: Mutating tree: 47
+2021-01-18 20:46:56.2064 - Round: 20 :: Mutating tree: 50
+2021-01-18 21:06:56.7599 - Round: 21 :: Mutating tree: 2
+2021-01-18 21:06:56.7719 - Round: 21 :: Mutating tree: 3
+2021-01-18 21:06:56.7869 - Round: 21 :: Successfully crossed over tree 3 and tree 4
+2021-01-18 21:06:56.8008 - Round: 21 :: Mutating tree: 14
+2021-01-18 21:06:56.8128 - Round: 21 :: Mutating tree: 17
+2021-01-18 21:06:56.8267 - Round: 21 :: Successfully crossed over tree 19 and tree 20
+2021-01-18 21:06:56.8397 - Round: 21 :: Successfully crossed over tree 21 and tree 22
+2021-01-18 21:06:56.8526 - Round: 21 :: Mutating tree: 31
+2021-01-18 21:06:56.8676 - Round: 21 :: Mutating tree: 46
+2021-01-18 21:26:58.5746 - Round: 22 :: Mutating tree: 4
+2021-01-18 21:26:58.5896 - Round: 22 :: Mutating tree: 27
+2021-01-18 21:26:58.6035 - Round: 22 :: Successfully crossed over tree 27 and tree 28
+2021-01-18 21:26:58.6135 - Round: 22 :: Mutating tree: 30
+2021-01-18 21:26:58.6284 - Round: 22 :: Successfully crossed over tree 31 and tree 32
+2021-01-18 21:26:58.6394 - Round: 22 :: Mutating tree: 34
+2021-01-18 21:26:58.6543 - Round: 22 :: Successfully crossed over tree 33 and tree 34
+2021-01-18 21:26:58.6647 - Round: 22 :: Mutating tree: 37
+2021-01-18 21:26:58.6766 - Round: 22 :: Mutating tree: 48
+2021-01-18 21:26:58.6876 - Round: 22 :: Mutating tree: 51
+2021-01-18 21:26:58.7006 - Round: 22 :: Successfully crossed over tree 51 and tree 52
+2021-01-18 21:26:58.7135 - Round: 22 :: Mutating tree: 53
+2021-01-18 21:46:59.1898 - Round: 23 :: Successfully crossed over tree 1 and tree 2
+2021-01-18 21:46:59.2028 - Round: 23 :: Mutating tree: 6
+2021-01-18 21:46:59.2178 - Round: 23 :: Mutating tree: 8
+2021-01-18 21:46:59.2317 - Round: 23 :: Mutating tree: 12
+2021-01-18 21:46:59.2457 - Round: 23 :: Successfully crossed over tree 11 and tree 12
+2021-01-18 21:46:59.2596 - Round: 23 :: Mutating tree: 13
+2021-01-18 21:46:59.2706 - Round: 23 :: Mutating tree: 15
+2021-01-18 21:46:59.2815 - Round: 23 :: Mutating tree: 16
+2021-01-18 21:46:59.2955 - Round: 23 :: Mutating tree: 22
+2021-01-18 21:46:59.3075 - Round: 23 :: Mutating tree: 25
+2021-01-18 21:46:59.3214 - Round: 23 :: Mutating tree: 37
+2021-01-18 21:46:59.3383 - Round: 23 :: Successfully crossed over tree 37 and tree 38
+2021-01-18 21:46:59.3503 - Round: 23 :: Mutating tree: 40
+2021-01-18 21:46:59.3623 - Round: 23 :: Mutating tree: 43
+2021-01-18 21:46:59.3782 - Round: 23 :: Successfully crossed over tree 47 and tree 48
+2021-01-18 21:46:59.3917 - Round: 23 :: Mutating tree: 52
+2021-01-18 21:46:59.4086 - Round: 23 :: Successfully crossed over tree 51 and tree 52
+2021-01-18 22:07:00.1903 - Round: 24 :: Mutating tree: 12
+2021-01-18 22:07:00.2052 - Round: 24 :: Successfully crossed over tree 11 and tree 12
+2021-01-18 22:07:00.2191 - Round: 24 :: Successfully crossed over tree 17 and tree 18
+2021-01-18 22:07:00.2406 - Round: 24 :: Mutating tree: 24
+2021-01-18 22:07:00.2526 - Round: 24 :: Mutating tree: 27
+2021-01-18 22:07:00.2656 - Round: 24 :: Mutating tree: 31
+2021-01-18 22:07:00.2795 - Round: 24 :: Mutating tree: 40
+2021-01-18 22:07:00.2904 - Round: 24 :: Mutating tree: 41
+2021-01-18 22:07:00.3024 - Round: 24 :: Mutating tree: 46
+2021-01-18 22:07:00.3143 - Round: 24 :: Mutating tree: 48
+2021-01-18 22:07:00.3273 - Round: 24 :: Successfully crossed over tree 47 and tree 48
+2021-01-18 22:07:00.3383 - Round: 24 :: Mutating tree: 50
+2021-01-18 22:27:01.0129 - Round: 25 :: Successfully crossed over tree 3 and tree 4
+2021-01-18 22:27:01.0259 - Round: 25 :: Mutating tree: 13
+2021-01-18 22:27:01.0379 - Round: 25 :: Mutating tree: 14
+2021-01-18 22:27:01.0527 - Round: 25 :: Successfully crossed over tree 13 and tree 14
+2021-01-18 22:27:01.0627 - Round: 25 :: Mutating tree: 16
+2021-01-18 22:27:01.0756 - Round: 25 :: Mutating tree: 23
+2021-01-18 22:27:01.0921 - Round: 25 :: Mutating tree: 35
+2021-01-18 22:27:01.1041 - Round: 25 :: Mutating tree: 37
+2021-01-18 22:27:01.1150 - Round: 25 :: Mutating tree: 39
+2021-01-18 22:27:01.1270 - Round: 25 :: Successfully crossed over tree 39 and tree 40
+2021-01-18 22:27:01.1419 - Round: 25 :: Successfully crossed over tree 47 and tree 48
+2021-01-18 22:27:01.1519 - Round: 25 :: Mutating tree: 50
+2021-01-18 22:27:01.1659 - Round: 25 :: Successfully crossed over tree 49 and tree 50
+2021-01-18 22:47:01.8531 - Round: 26 :: Mutating tree: 10
+2021-01-18 22:47:01.8670 - Round: 26 :: Successfully crossed over tree 9 and tree 10
+2021-01-18 22:47:01.8800 - Round: 26 :: Mutating tree: 25
+2021-01-18 22:47:01.8959 - Round: 26 :: Mutating tree: 45
+2021-01-18 22:47:01.9079 - Round: 26 :: Mutating tree: 47
+2021-01-18 23:07:02.4141 - Round: 27 :: Mutating tree: 7
+2021-01-18 23:07:02.4261 - Round: 27 :: Mutating tree: 12
+2021-01-18 23:07:02.4380 - Round: 27 :: Mutating tree: 13
+2021-01-18 23:07:02.4490 - Round: 27 :: Mutating tree: 16
+2021-01-18 23:07:02.4649 - Round: 27 :: Successfully crossed over tree 19 and tree 20
+2021-01-18 23:07:02.4769 - Round: 27 :: Mutating tree: 24
+2021-01-18 23:07:02.4879 - Round: 27 :: Mutating tree: 28
+2021-01-18 23:07:02.4998 - Round: 27 :: Mutating tree: 32
+2021-01-18 23:07:02.5098 - Round: 27 :: Mutating tree: 35
+2021-01-18 23:07:02.5257 - Round: 27 :: Successfully crossed over tree 45 and tree 46
+2021-01-18 23:07:02.5367 - Round: 27 :: Mutating tree: 53
+2021-01-18 23:27:03.3311 - Round: 28 :: Mutating tree: 7
+2021-01-18 23:27:03.3461 - Round: 28 :: Successfully crossed over tree 7 and tree 8
+2021-01-18 23:27:03.3580 - Round: 28 :: Mutating tree: 14
+2021-01-18 23:27:03.3690 - Round: 28 :: Mutating tree: 16
+2021-01-18 23:27:03.3939 - Round: 28 :: Mutating tree: 19
+2021-01-18 23:27:03.4039 - Round: 28 :: Mutating tree: 21
+2021-01-18 23:27:03.4159 - Round: 28 :: Mutating tree: 27
+2021-01-18 23:27:03.4258 - Round: 28 :: Mutating tree: 30
+2021-01-18 23:27:03.4378 - Round: 28 :: Mutating tree: 39
+2021-01-18 23:27:03.4477 - Round: 28 :: Mutating tree: 40
+2021-01-18 23:27:03.4598 - Round: 28 :: Mutating tree: 45
+2021-01-18 23:27:03.4708 - Round: 28 :: Mutating tree: 46
+2021-01-18 23:27:03.4856 - Round: 28 :: Successfully crossed over tree 47 and tree 48
+2021-01-18 23:27:03.4956 - Round: 28 :: Mutating tree: 51
+2021-01-18 23:27:03.5066 - Round: 28 :: Mutating tree: 53
+2021-01-18 23:47:04.0383 - Round: 29 :: Mutating tree: 3
+2021-01-18 23:47:04.0503 - Round: 29 :: Mutating tree: 4
+2021-01-18 23:47:04.0663 - Round: 29 :: Successfully crossed over tree 9 and tree 10
+2021-01-18 23:47:04.0793 - Round: 29 :: Mutating tree: 23
+2021-01-18 23:47:04.0912 - Round: 29 :: Mutating tree: 24
+2021-01-18 23:47:04.1042 - Round: 29 :: Mutating tree: 25
+2021-01-18 23:47:04.1161 - Round: 29 :: Mutating tree: 28
+2021-01-18 23:47:04.1286 - Round: 29 :: Mutating tree: 31
+2021-01-18 23:47:04.1446 - Round: 29 :: Successfully crossed over tree 43 and tree 44
+2021-01-18 23:47:04.1565 - Round: 29 :: Mutating tree: 45
+2021-01-18 23:47:04.1734 - Round: 29 :: Successfully crossed over tree 47 and tree 48
+2021-01-19 00:07:04.9131 - Round: 30 :: Mutating tree: 1
+2021-01-19 00:07:04.9211 - Round: 30 :: Successfully crossed over tree 1 and tree 2
+2021-01-19 00:07:04.9280 - Round: 30 :: Mutating tree: 7
+2021-01-19 00:07:04.9350 - Round: 30 :: Mutating tree: 11
+2021-01-19 00:07:04.9420 - Round: 30 :: Mutating tree: 12
+2021-01-19 00:07:04.9499 - Round: 30 :: Mutating tree: 16
+2021-01-19 00:07:04.9582 - Round: 30 :: Mutating tree: 36
+2021-01-19 00:07:04.9642 - Round: 30 :: Mutating tree: 38
+2021-01-19 00:07:04.9732 - Round: 30 :: Successfully crossed over tree 39 and tree 40
+2021-01-19 00:07:04.9819 - Round: 30 :: Successfully crossed over tree 43 and tree 44
+2021-01-19 00:07:04.9878 - Round: 30 :: Mutating tree: 45
+2021-01-19 00:07:04.9969 - Round: 30 :: Successfully crossed over tree 45 and tree 46
+2021-01-19 00:07:05.0038 - Round: 30 :: Mutating tree: 47
+2021-01-19 00:27:05.3248 - Round: 31 :: Mutating tree: 7
+2021-01-19 00:27:05.3338 - Round: 31 :: Mutating tree: 8
+2021-01-19 00:27:05.3408 - Round: 31 :: Mutating tree: 11
+2021-01-19 00:27:05.3487 - Round: 31 :: Mutating tree: 12
+2021-01-19 00:27:05.3567 - Round: 31 :: Successfully crossed over tree 13 and tree 14
+2021-01-19 00:27:05.3637 - Round: 31 :: Mutating tree: 16
+2021-01-19 00:27:05.3708 - Round: 31 :: Mutating tree: 20
+2021-01-19 00:27:05.3796 - Round: 31 :: Successfully crossed over tree 19 and tree 20
+2021-01-19 00:27:05.3866 - Round: 31 :: Mutating tree: 22
+2021-01-19 00:27:05.3937 - Round: 31 :: Mutating tree: 23
+2021-01-19 00:27:05.4016 - Round: 31 :: Mutating tree: 27
+2021-01-19 00:27:05.4085 - Round: 31 :: Mutating tree: 32
+2021-01-19 00:27:05.4175 - Round: 31 :: Successfully crossed over tree 31 and tree 32
+2021-01-19 00:27:05.4236 - Round: 31 :: Mutating tree: 33
+2021-01-19 00:27:05.4306 - Round: 31 :: Mutating tree: 34
+2021-01-19 00:27:05.4385 - Round: 31 :: Mutating tree: 35
+2021-01-19 00:27:05.4464 - Round: 31 :: Successfully crossed over tree 35 and tree 36
+2021-01-19 00:27:05.4574 - Round: 31 :: Mutating tree: 41
+2021-01-19 00:27:05.4654 - Round: 31 :: Mutating tree: 43
+2021-01-19 00:27:05.4724 - Round: 31 :: Mutating tree: 52
+2021-01-19 00:47:05.9277 - Round: 32 :: Successfully crossed over tree 5 and tree 6
+2021-01-19 00:47:05.9346 - Round: 32 :: Mutating tree: 8
+2021-01-19 00:47:05.9426 - Round: 32 :: Mutating tree: 12
+2021-01-19 00:47:05.9496 - Round: 32 :: Mutating tree: 19
+2021-01-19 00:47:05.9586 - Round: 32 :: Successfully crossed over tree 19 and tree 20
+2021-01-19 00:47:05.9655 - Round: 32 :: Mutating tree: 25
+2021-01-19 00:47:05.9745 - Round: 32 :: Successfully crossed over tree 31 and tree 32
+2021-01-19 00:47:05.9815 - Round: 32 :: Mutating tree: 38
+2021-01-19 01:07:06.2938 - Round: 33 :: Mutating tree: 1
+2021-01-19 01:07:06.3007 - Round: 33 :: Mutating tree: 2
+2021-01-19 01:07:06.3097 - Round: 33 :: Successfully crossed over tree 3 and tree 4
+2021-01-19 01:07:06.3168 - Round: 33 :: Mutating tree: 8
+2021-01-19 01:07:06.3237 - Round: 33 :: Mutating tree: 10
+2021-01-19 01:07:06.3317 - Round: 33 :: Successfully crossed over tree 9 and tree 10
+2021-01-19 01:07:06.3386 - Round: 33 :: Mutating tree: 12
+2021-01-19 01:07:06.3466 - Round: 33 :: Successfully crossed over tree 11 and tree 12
+2021-01-19 01:07:06.3545 - Round: 33 :: Mutating tree: 21
+2021-01-19 01:07:06.3615 - Round: 33 :: Mutating tree: 24
+2021-01-19 01:07:06.3705 - Round: 33 :: Successfully crossed over tree 25 and tree 26
+2021-01-19 01:07:06.3794 - Round: 33 :: Successfully crossed over tree 27 and tree 28
+2021-01-19 01:07:06.3854 - Round: 33 :: Mutating tree: 30
+2021-01-19 01:07:06.3934 - Round: 33 :: Mutating tree: 35
+2021-01-19 01:07:06.3996 - Round: 33 :: Mutating tree: 38
+2021-01-19 01:07:06.4075 - Round: 33 :: Mutating tree: 43
+2021-01-19 01:07:06.4156 - Round: 33 :: Successfully crossed over tree 43 and tree 44
+2021-01-19 01:07:06.4216 - Round: 33 :: Mutating tree: 45
+2021-01-19 01:07:06.4285 - Round: 33 :: Mutating tree: 47
+2021-01-19 01:07:06.4355 - Round: 33 :: Mutating tree: 52
+2021-01-19 01:07:06.4425 - Round: 33 :: Mutating tree: 53
+2021-01-19 01:27:06.9365 - Round: 34 :: Mutating tree: 24
+2021-01-19 01:27:06.9454 - Round: 34 :: Mutating tree: 25
+2021-01-19 01:27:06.9534 - Round: 34 :: Successfully crossed over tree 29 and tree 30
+2021-01-19 01:27:06.9595 - Round: 34 :: Mutating tree: 31
+2021-01-19 01:27:06.9674 - Round: 34 :: Successfully crossed over tree 31 and tree 32
+2021-01-19 01:27:06.9733 - Round: 34 :: Mutating tree: 34
+2021-01-19 01:27:06.9803 - Round: 34 :: Mutating tree: 42
+2021-01-19 01:27:06.9873 - Round: 34 :: Mutating tree: 45
+2021-01-19 01:27:06.9943 - Round: 34 :: Mutating tree: 47
+2021-01-19 01:27:07.0013 - Round: 34 :: Mutating tree: 49
+2021-01-19 01:27:07.0093 - Round: 34 :: Successfully crossed over tree 49 and tree 50
+2021-01-19 01:47:07.5460 - Round: 35 :: Successfully crossed over tree 1 and tree 2
+2021-01-19 01:47:07.5540 - Round: 35 :: Mutating tree: 9
+2021-01-19 01:47:07.5609 - Round: 35 :: Mutating tree: 13
+2021-01-19 01:47:07.5689 - Round: 35 :: Mutating tree: 29
+2021-01-19 01:47:07.5759 - Round: 35 :: Mutating tree: 33
+2021-01-19 01:47:07.5829 - Round: 35 :: Mutating tree: 42
+2021-01-19 01:47:07.5908 - Round: 35 :: Mutating tree: 44
+2021-01-19 01:47:07.5978 - Round: 35 :: Mutating tree: 50
+2021-01-19 02:07:08.0810 - Round: 36 :: Mutating tree: 19
+2021-01-19 02:07:08.0901 - Round: 36 :: Mutating tree: 24
+2021-01-19 02:07:08.1059 - Round: 36 :: Mutating tree: 26
+2021-01-19 02:07:08.1139 - Round: 36 :: Successfully crossed over tree 25 and tree 26
+2021-01-19 02:07:08.1209 - Round: 36 :: Mutating tree: 28
+2021-01-19 02:07:08.1299 - Round: 36 :: Successfully crossed over tree 31 and tree 32
+2021-01-19 02:07:08.1389 - Round: 36 :: Successfully crossed over tree 37 and tree 38
+2021-01-19 02:07:08.1468 - Round: 36 :: Mutating tree: 49
+2021-01-19 02:07:08.1538 - Round: 36 :: Mutating tree: 50
+2021-01-19 02:27:08.5022 - Round: 37 :: Mutating tree: 1
+2021-01-19 02:27:08.5103 - Round: 37 :: Mutating tree: 5
+2021-01-19 02:27:08.5183 - Round: 37 :: Mutating tree: 12
+2021-01-19 02:27:08.5262 - Round: 37 :: Mutating tree: 19
+2021-01-19 02:27:08.5352 - Round: 37 :: Successfully crossed over tree 21 and tree 22
+2021-01-19 02:27:08.5422 - Round: 37 :: Mutating tree: 27
+2021-01-19 02:27:08.5512 - Round: 37 :: Successfully crossed over tree 27 and tree 28
+2021-01-19 02:27:08.5581 - Round: 37 :: Mutating tree: 30
+2021-01-19 02:27:08.5652 - Round: 37 :: Mutating tree: 40
+2021-01-19 02:27:08.5731 - Round: 37 :: Mutating tree: 44
+2021-01-19 02:27:08.5821 - Round: 37 :: Successfully crossed over tree 43 and tree 44
+2021-01-19 02:27:08.5881 - Round: 37 :: Mutating tree: 46
+2021-01-19 02:47:09.1465 - Round: 38 :: Successfully crossed over tree 1 and tree 2
+2021-01-19 02:47:09.1544 - Round: 38 :: Mutating tree: 5
+2021-01-19 02:47:09.1644 - Round: 38 :: Successfully crossed over tree 5 and tree 6
+2021-01-19 02:47:09.1714 - Round: 38 :: Mutating tree: 12
+2021-01-19 02:47:09.1793 - Round: 38 :: Mutating tree: 13
+2021-01-19 02:47:09.1853 - Round: 38 :: Mutating tree: 14
+2021-01-19 02:47:09.1943 - Round: 38 :: Successfully crossed over tree 13 and tree 14
+2021-01-19 02:47:09.2013 - Round: 38 :: Mutating tree: 17
+2021-01-19 02:47:09.2092 - Round: 38 :: Mutating tree: 20
+2021-01-19 02:47:09.2172 - Round: 38 :: Mutating tree: 23
+2021-01-19 02:47:09.2242 - Round: 38 :: Mutating tree: 25
+2021-01-19 02:47:09.2332 - Round: 38 :: Successfully crossed over tree 25 and tree 26
+2021-01-19 02:47:09.2402 - Round: 38 :: Mutating tree: 31
+2021-01-19 02:47:09.2472 - Round: 38 :: Mutating tree: 32
+2021-01-19 02:47:09.2532 - Round: 38 :: Mutating tree: 34
+2021-01-19 02:47:09.2613 - Round: 38 :: Mutating tree: 43
+2021-01-19 02:47:09.2682 - Round: 38 :: Mutating tree: 46
+2021-01-19 02:47:09.2751 - Round: 38 :: Mutating tree: 47
+2021-01-19 02:47:09.2821 - Round: 38 :: Mutating tree: 48
+2021-01-19 03:07:09.6449 - Round: 39 :: Mutating tree: 3
+2021-01-19 03:07:09.6539 - Round: 39 :: Mutating tree: 20
+2021-01-19 03:07:09.6618 - Round: 39 :: Mutating tree: 24
+2021-01-19 03:07:09.6688 - Round: 39 :: Mutating tree: 26
+2021-01-19 03:07:09.6758 - Round: 39 :: Mutating tree: 30
+2021-01-19 03:07:09.6828 - Round: 39 :: Mutating tree: 35
+2021-01-19 03:07:09.6897 - Round: 39 :: Mutating tree: 36
+2021-01-19 03:07:09.6964 - Round: 39 :: Mutating tree: 38
+2021-01-19 03:07:09.7044 - Round: 39 :: Mutating tree: 51
+2021-01-19 03:27:10.2267 - Round: 40 :: Mutating tree: 8
+2021-01-19 03:27:10.2347 - Round: 40 :: Mutating tree: 9
+2021-01-19 03:27:10.2427 - Round: 40 :: Mutating tree: 14
+2021-01-19 03:27:10.2507 - Round: 40 :: Mutating tree: 19
+2021-01-19 03:27:10.2597 - Round: 40 :: Successfully crossed over tree 25 and tree 26
+2021-01-19 03:27:10.2677 - Round: 40 :: Mutating tree: 29
+2021-01-19 03:27:10.2747 - Round: 40 :: Mutating tree: 30
+2021-01-19 03:27:10.2816 - Round: 40 :: Mutating tree: 32
+2021-01-19 03:27:10.2906 - Round: 40 :: Successfully crossed over tree 31 and tree 32
+2021-01-19 03:27:10.2986 - Round: 40 :: Successfully crossed over tree 35 and tree 36
+2021-01-19 03:27:10.3055 - Round: 40 :: Mutating tree: 37
+2021-01-19 03:27:10.3135 - Round: 40 :: Successfully crossed over tree 37 and tree 38
+2021-01-19 03:27:10.3204 - Round: 40 :: Mutating tree: 41
+2021-01-19 03:27:10.3274 - Round: 40 :: Mutating tree: 43
+2021-01-19 03:27:10.3355 - Round: 40 :: Mutating tree: 48
+2021-01-19 03:27:10.3424 - Round: 40 :: Mutating tree: 50
+2021-01-19 03:47:10.6972 - Round: 41 :: Mutating tree: 6
+2021-01-19 03:47:10.7051 - Round: 41 :: Mutating tree: 8
+2021-01-19 03:47:10.7121 - Round: 41 :: Mutating tree: 10
+2021-01-19 03:47:10.7201 - Round: 41 :: Mutating tree: 13
+2021-01-19 03:47:10.7270 - Round: 41 :: Mutating tree: 16
+2021-01-19 03:47:10.7340 - Round: 41 :: Mutating tree: 18
+2021-01-19 03:47:10.7410 - Round: 41 :: Mutating tree: 20
+2021-01-19 03:47:10.7480 - Round: 41 :: Mutating tree: 22
+2021-01-19 03:47:10.7599 - Round: 41 :: Mutating tree: 24
+2021-01-19 03:47:10.7689 - Round: 41 :: Successfully crossed over tree 25 and tree 26
+2021-01-19 03:47:10.7759 - Round: 41 :: Mutating tree: 29
+2021-01-19 03:47:10.7839 - Round: 41 :: Mutating tree: 33
+2021-01-19 03:47:10.7909 - Round: 41 :: Mutating tree: 36
+2021-01-19 03:47:10.7978 - Round: 41 :: Mutating tree: 37
+2021-01-19 03:47:10.8048 - Round: 41 :: Mutating tree: 39
+2021-01-19 03:47:10.8138 - Round: 41 :: Successfully crossed over tree 43 and tree 44
+2021-01-19 03:47:10.8208 - Round: 41 :: Mutating tree: 50
+2021-01-19 03:47:10.8288 - Round: 41 :: Successfully crossed over tree 49 and tree 50
+2021-01-19 04:07:11.3059 - Round: 42 :: Mutating tree: 1
+2021-01-19 04:07:11.3150 - Round: 42 :: Mutating tree: 15
+2021-01-19 04:07:11.3230 - Round: 42 :: Mutating tree: 21
+2021-01-19 04:07:11.3319 - Round: 42 :: Mutating tree: 31
+2021-01-19 04:07:11.3398 - Round: 42 :: Mutating tree: 35
+2021-01-19 04:07:11.3479 - Round: 42 :: Successfully crossed over tree 39 and tree 40
+2021-01-19 04:07:11.3567 - Round: 42 :: Successfully crossed over tree 41 and tree 42
+2021-01-19 04:07:11.3637 - Round: 42 :: Mutating tree: 43
+2021-01-19 04:07:11.3717 - Round: 42 :: Successfully crossed over tree 43 and tree 44
+2021-01-19 04:07:11.3797 - Round: 42 :: Mutating tree: 49
+2021-01-19 04:07:11.3882 - Round: 42 :: Successfully crossed over tree 49 and tree 50
+2021-01-19 04:07:11.3952 - Round: 42 :: Mutating tree: 53
+2021-01-19 04:27:11.7473 - Round: 43 :: Mutating tree: 18
+2021-01-19 04:27:11.7572 - Round: 43 :: Successfully crossed over tree 17 and tree 18
+2021-01-19 04:27:11.7652 - Round: 43 :: Successfully crossed over tree 19 and tree 20
+2021-01-19 04:27:11.7722 - Round: 43 :: Mutating tree: 21
+2021-01-19 04:27:11.7802 - Round: 43 :: Mutating tree: 22
+2021-01-19 04:27:11.7881 - Round: 43 :: Mutating tree: 23
+2021-01-19 04:27:11.7951 - Round: 43 :: Mutating tree: 24
+2021-01-19 04:27:11.8041 - Round: 43 :: Successfully crossed over tree 23 and tree 24
+2021-01-19 04:27:11.8111 - Round: 43 :: Mutating tree: 32
+2021-01-19 04:27:11.8181 - Round: 43 :: Mutating tree: 34
+2021-01-19 04:27:11.8270 - Round: 43 :: Mutating tree: 48
+2021-01-19 04:27:11.8341 - Round: 43 :: Mutating tree: 50
+2021-01-19 04:27:11.8622 - Round: 43 :: Mutating tree: 52
+2021-01-19 04:27:11.8702 - Round: 43 :: Mutating tree: 53
+2021-01-19 04:47:12.4318 - Round: 44 :: Mutating tree: 1
+2021-01-19 04:47:12.4397 - Round: 44 :: Mutating tree: 8
+2021-01-19 04:47:12.4488 - Round: 44 :: Successfully crossed over tree 9 and tree 10
+2021-01-19 04:47:12.4548 - Round: 44 :: Mutating tree: 12
+2021-01-19 04:47:12.4647 - Round: 44 :: Successfully crossed over tree 25 and tree 26
+2021-01-19 04:47:12.4717 - Round: 44 :: Mutating tree: 33
+2021-01-19 04:47:12.4782 - Round: 44 :: Mutating tree: 36
+2021-01-19 04:47:12.4863 - Round: 44 :: Mutating tree: 43
+2021-01-19 04:47:12.4939 - Round: 44 :: Mutating tree: 45
+2021-01-19 04:47:12.5008 - Round: 44 :: Mutating tree: 46
+2021-01-19 04:47:12.5078 - Round: 44 :: Mutating tree: 48
+2021-01-19 04:47:12.5148 - Round: 44 :: Mutating tree: 49
+2021-01-19 04:47:12.5218 - Round: 44 :: Mutating tree: 52
+2021-01-19 04:47:12.5288 - Round: 44 :: Mutating tree: 53
+2021-01-19 05:07:13.0790 - Round: 45 :: Mutating tree: 1
+2021-01-19 05:07:13.0870 - Round: 45 :: Mutating tree: 6
+2021-01-19 05:07:13.0949 - Round: 45 :: Successfully crossed over tree 5 and tree 6
+2021-01-19 05:07:13.1018 - Round: 45 :: Mutating tree: 8
+2021-01-19 05:07:13.1088 - Round: 45 :: Mutating tree: 11
+2021-01-19 05:07:13.1158 - Round: 45 :: Mutating tree: 12
+2021-01-19 05:07:13.1238 - Round: 45 :: Mutating tree: 20
+2021-01-19 05:07:13.1317 - Round: 45 :: Mutating tree: 23
+2021-01-19 05:07:13.1387 - Round: 45 :: Mutating tree: 26
+2021-01-19 05:07:13.1457 - Round: 45 :: Mutating tree: 27
+2021-01-19 05:07:13.1537 - Round: 45 :: Successfully crossed over tree 29 and tree 30
+2021-01-19 05:07:13.1606 - Round: 45 :: Mutating tree: 32
+2021-01-19 05:07:13.1676 - Round: 45 :: Mutating tree: 34
+2021-01-19 05:07:13.1745 - Round: 45 :: Mutating tree: 35
+2021-01-19 05:07:13.1826 - Round: 45 :: Mutating tree: 39
+2021-01-19 05:07:13.1896 - Round: 45 :: Mutating tree: 42
+2021-01-19 05:07:13.1976 - Round: 45 :: Successfully crossed over tree 41 and tree 42
+2021-01-19 05:07:13.2045 - Round: 45 :: Mutating tree: 47
+2021-01-19 05:07:13.2125 - Round: 45 :: Mutating tree: 49
+2021-01-19 05:27:13.7717 - Round: 46 :: Successfully crossed over tree 11 and tree 12
+2021-01-19 05:27:13.7796 - Round: 46 :: Mutating tree: 14
+2021-01-19 05:27:13.7875 - Round: 46 :: Mutating tree: 18
+2021-01-19 05:27:13.7945 - Round: 46 :: Mutating tree: 19
+2021-01-19 05:27:13.8015 - Round: 46 :: Mutating tree: 20
+2021-01-19 05:27:13.8105 - Round: 46 :: Mutating tree: 37
+2021-01-19 05:27:13.8185 - Round: 46 :: Successfully crossed over tree 37 and tree 38
+2021-01-19 05:27:13.8254 - Round: 46 :: Mutating tree: 41
+2021-01-19 05:27:13.8334 - Round: 46 :: Mutating tree: 50
+2021-01-19 05:27:13.8615 - Round: 46 :: Mutating tree: 52
+2021-01-19 05:47:14.2356 - Round: 47 :: Mutating tree: 4
+2021-01-19 05:47:14.2436 - Round: 47 :: Mutating tree: 6
+2021-01-19 05:47:14.2508 - Round: 47 :: Mutating tree: 9
+2021-01-19 05:47:14.2598 - Round: 47 :: Mutating tree: 35
+2021-01-19 05:47:14.2677 - Round: 47 :: Mutating tree: 44
+2021-01-19 05:47:14.2767 - Round: 47 :: Successfully crossed over tree 43 and tree 44
+2021-01-19 05:47:14.2877 - Round: 47 :: Mutating tree: 49
+2021-01-19 05:47:14.2946 - Round: 47 :: Mutating tree: 52
+2021-01-19 06:07:14.9348 - Round: 48 :: Successfully crossed over tree 1 and tree 2
+2021-01-19 06:07:14.9430 - Round: 48 :: Mutating tree: 7
+2021-01-19 06:07:14.9520 - Round: 48 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 06:07:14.9580 - Round: 48 :: Mutating tree: 10
+2021-01-19 06:07:14.9649 - Round: 48 :: Mutating tree: 11
+2021-01-19 06:07:14.9720 - Round: 48 :: Mutating tree: 12
+2021-01-19 06:07:14.9801 - Round: 48 :: Mutating tree: 20
+2021-01-19 06:07:14.9880 - Round: 48 :: Mutating tree: 24
+2021-01-19 06:07:14.9960 - Round: 48 :: Mutating tree: 33
+2021-01-19 06:07:15.0030 - Round: 48 :: Mutating tree: 35
+2021-01-19 06:07:15.0099 - Round: 48 :: Mutating tree: 38
+2021-01-19 06:07:15.0169 - Round: 48 :: Mutating tree: 42
+2021-01-19 06:07:15.0259 - Round: 48 :: Successfully crossed over tree 45 and tree 46
+2021-01-19 06:07:15.0329 - Round: 48 :: Mutating tree: 53
+2021-01-19 06:27:15.4753 - Round: 49 :: Mutating tree: 12
+2021-01-19 06:27:15.4842 - Round: 49 :: Mutating tree: 16
+2021-01-19 06:27:15.4912 - Round: 49 :: Mutating tree: 17
+2021-01-19 06:27:15.4981 - Round: 49 :: Mutating tree: 18
+2021-01-19 06:27:15.5061 - Round: 49 :: Mutating tree: 21
+2021-01-19 06:27:15.5141 - Round: 49 :: Mutating tree: 23
+2021-01-19 06:27:15.5224 - Round: 49 :: Mutating tree: 37
+2021-01-19 06:27:15.5295 - Round: 49 :: Mutating tree: 41
+2021-01-19 06:27:15.5364 - Round: 49 :: Mutating tree: 43
+2021-01-19 06:27:15.5433 - Round: 49 :: Mutating tree: 46
+2021-01-19 06:27:15.5524 - Round: 49 :: Successfully crossed over tree 49 and tree 50
+2021-01-19 06:27:15.5593 - Round: 49 :: Mutating tree: 53
+2021-01-19 06:47:16.1435 - Round: 50 :: Mutating tree: 3
+2021-01-19 06:47:16.1525 - Round: 50 :: Mutating tree: 8
+2021-01-19 06:47:16.1594 - Round: 50 :: Mutating tree: 9
+2021-01-19 06:47:16.1664 - Round: 50 :: Mutating tree: 10
+2021-01-19 06:47:16.1745 - Round: 50 :: Mutating tree: 15
+2021-01-19 06:47:16.1824 - Round: 50 :: Successfully crossed over tree 17 and tree 18
+2021-01-19 06:47:16.1893 - Round: 50 :: Mutating tree: 19
+2021-01-19 06:47:16.1964 - Round: 50 :: Mutating tree: 23
+2021-01-19 06:47:16.2033 - Round: 50 :: Mutating tree: 24
+2021-01-19 06:47:16.2113 - Round: 50 :: Successfully crossed over tree 23 and tree 24
+2021-01-19 06:47:16.2182 - Round: 50 :: Mutating tree: 27
+2021-01-19 06:47:16.2263 - Round: 50 :: Mutating tree: 39
+2021-01-19 06:47:16.2342 - Round: 50 :: Mutating tree: 47
+2021-01-19 06:47:16.2412 - Round: 50 :: Mutating tree: 51
+2021-01-19 07:07:16.6660 - Round: 51 :: Mutating tree: 6
+2021-01-19 07:07:16.6739 - Round: 51 :: Mutating tree: 8
+2021-01-19 07:07:16.6809 - Round: 51 :: Mutating tree: 9
+2021-01-19 07:07:16.6899 - Round: 51 :: Successfully crossed over tree 11 and tree 12
+2021-01-19 07:07:16.6968 - Round: 51 :: Mutating tree: 14
+2021-01-19 07:07:16.7049 - Round: 51 :: Successfully crossed over tree 13 and tree 14
+2021-01-19 07:07:16.7118 - Round: 51 :: Mutating tree: 15
+2021-01-19 07:07:16.7187 - Round: 51 :: Mutating tree: 16
+2021-01-19 07:07:16.7267 - Round: 51 :: Mutating tree: 24
+2021-01-19 07:07:16.7338 - Round: 51 :: Mutating tree: 26
+2021-01-19 07:07:16.7417 - Round: 51 :: Successfully crossed over tree 27 and tree 28
+2021-01-19 07:07:16.7497 - Round: 51 :: Mutating tree: 35
+2021-01-19 07:07:16.7567 - Round: 51 :: Mutating tree: 36
+2021-01-19 07:07:16.7636 - Round: 51 :: Mutating tree: 43
+2021-01-19 07:27:17.4508 - Round: 52 :: Successfully crossed over tree 5 and tree 6
+2021-01-19 07:27:17.4578 - Round: 52 :: Mutating tree: 7
+2021-01-19 07:27:17.4668 - Round: 52 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 07:27:17.4737 - Round: 52 :: Mutating tree: 9
+2021-01-19 07:27:17.4809 - Round: 52 :: Mutating tree: 14
+2021-01-19 07:27:17.4889 - Round: 52 :: Mutating tree: 30
+2021-01-19 07:27:17.4979 - Round: 52 :: Successfully crossed over tree 29 and tree 30
+2021-01-19 07:27:17.5049 - Round: 52 :: Mutating tree: 31
+2021-01-19 07:27:17.5118 - Round: 52 :: Mutating tree: 33
+2021-01-19 07:27:17.5188 - Round: 52 :: Mutating tree: 35
+2021-01-19 07:27:17.5258 - Round: 52 :: Mutating tree: 38
+2021-01-19 07:27:17.5329 - Round: 52 :: Mutating tree: 43
+2021-01-19 07:27:17.5398 - Round: 52 :: Mutating tree: 45
+2021-01-19 07:27:17.5468 - Round: 52 :: Mutating tree: 46
+2021-01-19 07:27:17.5547 - Round: 52 :: Mutating tree: 47
+2021-01-19 07:27:17.5628 - Round: 52 :: Successfully crossed over tree 47 and tree 48
+2021-01-19 07:47:17.9551 - Round: 53 :: Mutating tree: 4
+2021-01-19 07:47:17.9639 - Round: 53 :: Successfully crossed over tree 5 and tree 6
+2021-01-19 07:47:17.9710 - Round: 53 :: Mutating tree: 8
+2021-01-19 07:47:17.9779 - Round: 53 :: Mutating tree: 12
+2021-01-19 07:47:17.9850 - Round: 53 :: Mutating tree: 14
+2021-01-19 07:47:17.9919 - Round: 53 :: Mutating tree: 18
+2021-01-19 07:47:17.9990 - Round: 53 :: Mutating tree: 24
+2021-01-19 07:47:18.0079 - Round: 53 :: Successfully crossed over tree 23 and tree 24
+2021-01-19 07:47:18.0159 - Round: 53 :: Successfully crossed over tree 29 and tree 30
+2021-01-19 07:47:18.0229 - Round: 53 :: Mutating tree: 38
+2021-01-19 07:47:18.0308 - Round: 53 :: Mutating tree: 41
+2021-01-19 07:47:18.0378 - Round: 53 :: Mutating tree: 43
+2021-01-19 07:47:18.0458 - Round: 53 :: Successfully crossed over tree 47 and tree 48
+2021-01-19 07:47:18.0527 - Round: 53 :: Mutating tree: 49
+2021-01-19 07:47:18.0597 - Round: 53 :: Mutating tree: 51
+2021-01-19 08:07:18.6447 - Round: 54 :: Mutating tree: 1
+2021-01-19 08:07:18.6516 - Round: 54 :: Mutating tree: 2
+2021-01-19 08:07:18.6598 - Round: 54 :: Mutating tree: 4
+2021-01-19 08:07:18.6668 - Round: 54 :: Mutating tree: 5
+2021-01-19 08:07:18.6737 - Round: 54 :: Mutating tree: 9
+2021-01-19 08:07:18.6817 - Round: 54 :: Mutating tree: 10
+2021-01-19 08:07:18.6927 - Round: 54 :: Mutating tree: 16
+2021-01-19 08:07:18.6997 - Round: 54 :: Mutating tree: 17
+2021-01-19 08:07:18.7067 - Round: 54 :: Mutating tree: 23
+2021-01-19 08:07:18.7147 - Round: 54 :: Mutating tree: 24
+2021-01-19 08:07:18.7227 - Round: 54 :: Successfully crossed over tree 25 and tree 26
+2021-01-19 08:07:18.7293 - Round: 54 :: Mutating tree: 27
+2021-01-19 08:07:18.7362 - Round: 54 :: Mutating tree: 30
+2021-01-19 08:07:18.7443 - Round: 54 :: Mutating tree: 31
+2021-01-19 08:07:18.7603 - Round: 54 :: Mutating tree: 34
+2021-01-19 08:07:18.7682 - Round: 54 :: Successfully crossed over tree 33 and tree 34
+2021-01-19 08:07:18.7762 - Round: 54 :: Mutating tree: 44
+2021-01-19 08:07:18.7832 - Round: 54 :: Mutating tree: 46
+2021-01-19 08:27:19.3722 - Round: 55 :: Mutating tree: 4
+2021-01-19 08:27:19.3811 - Round: 55 :: Mutating tree: 7
+2021-01-19 08:27:19.3912 - Round: 55 :: Successfully crossed over tree 13 and tree 14
+2021-01-19 08:27:19.3981 - Round: 55 :: Mutating tree: 15
+2021-01-19 08:27:19.4082 - Round: 55 :: Successfully crossed over tree 21 and tree 22
+2021-01-19 08:27:19.4151 - Round: 55 :: Mutating tree: 23
+2021-01-19 08:27:19.4221 - Round: 55 :: Mutating tree: 30
+2021-01-19 08:27:19.4301 - Round: 55 :: Mutating tree: 37
+2021-01-19 08:27:19.4384 - Round: 55 :: Mutating tree: 40
+2021-01-19 08:27:19.4453 - Round: 55 :: Mutating tree: 42
+2021-01-19 08:27:19.4533 - Round: 55 :: Mutating tree: 43
+2021-01-19 08:47:20.0066 - Round: 56 :: Mutating tree: 4
+2021-01-19 08:47:20.0146 - Round: 56 :: Mutating tree: 7
+2021-01-19 08:47:20.0236 - Round: 56 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 08:47:20.0305 - Round: 56 :: Mutating tree: 9
+2021-01-19 08:47:20.0385 - Round: 56 :: Mutating tree: 13
+2021-01-19 08:47:20.0475 - Round: 56 :: Successfully crossed over tree 17 and tree 18
+2021-01-19 08:47:20.0544 - Round: 56 :: Mutating tree: 19
+2021-01-19 08:47:20.0635 - Round: 56 :: Successfully crossed over tree 23 and tree 24
+2021-01-19 08:47:20.0714 - Round: 56 :: Mutating tree: 31
+2021-01-19 08:47:20.0803 - Round: 56 :: Successfully crossed over tree 35 and tree 36
+2021-01-19 08:47:20.0873 - Round: 56 :: Mutating tree: 37
+2021-01-19 08:47:20.0943 - Round: 56 :: Mutating tree: 38
+2021-01-19 08:47:20.1013 - Round: 56 :: Mutating tree: 41
+2021-01-19 08:47:20.1092 - Round: 56 :: Mutating tree: 42
+2021-01-19 08:47:20.1172 - Round: 56 :: Successfully crossed over tree 41 and tree 42
+2021-01-19 08:47:20.1252 - Round: 56 :: Mutating tree: 51
+2021-01-19 09:07:20.4926 - Round: 57 :: Mutating tree: 3
+2021-01-19 09:07:20.5006 - Round: 57 :: Mutating tree: 4
+2021-01-19 09:07:20.5097 - Round: 57 :: Mutating tree: 9
+2021-01-19 09:07:20.5166 - Round: 57 :: Mutating tree: 15
+2021-01-19 09:07:20.5236 - Round: 57 :: Mutating tree: 18
+2021-01-19 09:07:20.5306 - Round: 57 :: Mutating tree: 19
+2021-01-19 09:07:20.5376 - Round: 57 :: Mutating tree: 20
+2021-01-19 09:07:20.5455 - Round: 57 :: Mutating tree: 25
+2021-01-19 09:07:20.5545 - Round: 57 :: Mutating tree: 29
+2021-01-19 09:07:20.5625 - Round: 57 :: Mutating tree: 34
+2021-01-19 09:07:20.5695 - Round: 57 :: Mutating tree: 35
+2021-01-19 09:07:20.5765 - Round: 57 :: Mutating tree: 38
+2021-01-19 09:07:20.5834 - Round: 57 :: Mutating tree: 39
+2021-01-19 09:07:20.5904 - Round: 57 :: Mutating tree: 40
+2021-01-19 09:07:20.5973 - Round: 57 :: Mutating tree: 45
+2021-01-19 09:07:20.6043 - Round: 57 :: Mutating tree: 49
+2021-01-19 09:27:21.1888 - Round: 58 :: Mutating tree: 2
+2021-01-19 09:27:21.2028 - Round: 58 :: Mutating tree: 3
+2021-01-19 09:27:21.2098 - Round: 58 :: Mutating tree: 4
+2021-01-19 09:27:21.2177 - Round: 58 :: Mutating tree: 17
+2021-01-19 09:27:21.2247 - Round: 58 :: Mutating tree: 20
+2021-01-19 09:27:21.2316 - Round: 58 :: Mutating tree: 21
+2021-01-19 09:27:21.2396 - Round: 58 :: Mutating tree: 25
+2021-01-19 09:27:21.2467 - Round: 58 :: Mutating tree: 33
+2021-01-19 09:27:21.2536 - Round: 58 :: Mutating tree: 36
+2021-01-19 09:27:21.2615 - Round: 58 :: Mutating tree: 42
+2021-01-19 09:27:21.2705 - Round: 58 :: Successfully crossed over tree 49 and tree 50
+2021-01-19 09:47:21.6509 - Round: 59 :: Mutating tree: 1
+2021-01-19 09:47:21.6579 - Round: 59 :: Mutating tree: 2
+2021-01-19 09:47:21.6660 - Round: 59 :: Successfully crossed over tree 1 and tree 2
+2021-01-19 09:47:21.6729 - Round: 59 :: Mutating tree: 6
+2021-01-19 09:47:21.6842 - Round: 59 :: Mutating tree: 12
+2021-01-19 09:47:21.6912 - Round: 59 :: Mutating tree: 13
+2021-01-19 09:47:21.7001 - Round: 59 :: Mutating tree: 33
+2021-01-19 09:47:21.7071 - Round: 59 :: Mutating tree: 38
+2021-01-19 09:47:21.7141 - Round: 59 :: Mutating tree: 39
+2021-01-19 09:47:21.7211 - Round: 59 :: Mutating tree: 40
+2021-01-19 09:47:21.7271 - Round: 59 :: Mutating tree: 44
+2021-01-19 09:47:21.7351 - Round: 59 :: Mutating tree: 45
+2021-01-19 09:47:21.7420 - Round: 59 :: Mutating tree: 46
+2021-01-19 10:07:22.3141 - Round: 60 :: Mutating tree: 14
+2021-01-19 10:07:22.3220 - Round: 60 :: Mutating tree: 16
+2021-01-19 10:07:22.3292 - Round: 60 :: Successfully crossed over tree 19 and tree 20
+2021-01-19 10:07:22.3371 - Round: 60 :: Successfully crossed over tree 27 and tree 28
+2021-01-19 10:07:22.3440 - Round: 60 :: Mutating tree: 37
+2021-01-19 10:07:22.3500 - Round: 60 :: Mutating tree: 39
+2021-01-19 10:07:22.3581 - Round: 60 :: Mutating tree: 42
+2021-01-19 10:07:22.3650 - Round: 60 :: Mutating tree: 46
+2021-01-19 10:07:22.3720 - Round: 60 :: Mutating tree: 51
+2021-01-19 10:27:22.6443 - Round: 61 :: Mutating tree: 7
+2021-01-19 10:27:22.6523 - Round: 61 :: Mutating tree: 15
+2021-01-19 10:27:22.6603 - Round: 61 :: Successfully crossed over tree 19 and tree 20
+2021-01-19 10:27:22.6673 - Round: 61 :: Mutating tree: 29
+2021-01-19 10:27:22.6732 - Round: 61 :: Mutating tree: 31
+2021-01-19 10:27:22.6802 - Round: 61 :: Mutating tree: 37
+2021-01-19 10:27:22.6872 - Round: 61 :: Mutating tree: 46
+2021-01-19 10:27:22.6952 - Round: 61 :: Successfully crossed over tree 49 and tree 50
+2021-01-19 10:47:23.0334 - Round: 62 :: Mutating tree: 3
+2021-01-19 10:47:23.0403 - Round: 62 :: Mutating tree: 5
+2021-01-19 10:47:23.0493 - Round: 62 :: Successfully crossed over tree 5 and tree 6
+2021-01-19 10:47:23.0563 - Round: 62 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 10:47:23.0633 - Round: 62 :: Mutating tree: 12
+2021-01-19 10:47:23.0703 - Round: 62 :: Mutating tree: 28
+2021-01-19 10:47:23.0782 - Round: 62 :: Successfully crossed over tree 35 and tree 36
+2021-01-19 10:47:23.0872 - Round: 62 :: Successfully crossed over tree 47 and tree 48
+2021-01-19 11:07:23.3184 - Round: 63 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 11:07:23.3253 - Round: 63 :: Mutating tree: 9
+2021-01-19 11:07:23.3324 - Round: 63 :: Mutating tree: 11
+2021-01-19 11:07:23.3403 - Round: 63 :: Successfully crossed over tree 15 and tree 16
+2021-01-19 11:07:23.3473 - Round: 63 :: Mutating tree: 20
+2021-01-19 11:07:23.3543 - Round: 63 :: Mutating tree: 28
+2021-01-19 11:07:23.3613 - Round: 63 :: Mutating tree: 31
+2021-01-19 11:07:23.3682 - Round: 63 :: Mutating tree: 33
+2021-01-19 11:07:23.3762 - Round: 63 :: Mutating tree: 41
+2021-01-19 11:07:23.3831 - Round: 63 :: Mutating tree: 48
+2021-01-19 11:07:23.3912 - Round: 63 :: Successfully crossed over tree 47 and tree 48
+2021-01-19 11:07:23.3971 - Round: 63 :: Mutating tree: 49
+2021-01-19 11:07:23.4041 - Round: 63 :: Mutating tree: 52
+2021-01-19 11:07:23.4111 - Round: 63 :: Successfully crossed over tree 51 and tree 52
+2021-01-19 11:27:23.7819 - Round: 64 :: Mutating tree: 6
+2021-01-19 11:27:23.7908 - Round: 64 :: Mutating tree: 9
+2021-01-19 11:27:23.7988 - Round: 64 :: Successfully crossed over tree 9 and tree 10
+2021-01-19 11:27:23.8068 - Round: 64 :: Successfully crossed over tree 11 and tree 12
+2021-01-19 11:27:23.8127 - Round: 64 :: Mutating tree: 14
+2021-01-19 11:27:23.8187 - Round: 64 :: Mutating tree: 16
+2021-01-19 11:27:23.8268 - Round: 64 :: Successfully crossed over tree 15 and tree 16
+2021-01-19 11:27:23.8328 - Round: 64 :: Mutating tree: 17
+2021-01-19 11:27:23.8388 - Round: 64 :: Mutating tree: 20
+2021-01-19 11:27:23.8468 - Round: 64 :: Mutating tree: 36
+2021-01-19 11:27:23.8528 - Round: 64 :: Mutating tree: 40
+2021-01-19 11:27:23.8598 - Round: 64 :: Mutating tree: 41
+2021-01-19 11:27:23.8678 - Round: 64 :: Mutating tree: 50
+2021-01-19 11:27:23.8837 - Round: 64 :: Successfully crossed over tree 51 and tree 52
+2021-01-19 11:47:24.2636 - Round: 65 :: Mutating tree: 4
+2021-01-19 11:47:24.2716 - Round: 65 :: Successfully crossed over tree 3 and tree 4
+2021-01-19 11:47:24.2805 - Round: 65 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 11:47:24.2875 - Round: 65 :: Mutating tree: 15
+2021-01-19 11:47:24.2972 - Round: 65 :: Successfully crossed over tree 25 and tree 26
+2021-01-19 11:47:24.3031 - Round: 65 :: Mutating tree: 27
+2021-01-19 11:47:24.3111 - Round: 65 :: Mutating tree: 43
+2021-01-19 11:47:24.3181 - Round: 65 :: Mutating tree: 45
+2021-01-19 11:47:24.3281 - Round: 65 :: Successfully crossed over tree 49 and tree 50
+2021-01-19 11:47:24.3340 - Round: 65 :: Mutating tree: 51
+2021-01-19 12:07:24.7706 - Round: 66 :: Mutating tree: 4
+2021-01-19 12:07:24.7786 - Round: 66 :: Mutating tree: 7
+2021-01-19 12:07:24.7875 - Round: 66 :: Mutating tree: 12
+2021-01-19 12:07:24.7955 - Round: 66 :: Mutating tree: 15
+2021-01-19 12:07:24.8035 - Round: 66 :: Mutating tree: 31
+2021-01-19 12:07:24.8106 - Round: 66 :: Mutating tree: 39
+2021-01-19 12:07:24.8186 - Round: 66 :: Mutating tree: 43
+2021-01-19 12:07:24.8255 - Round: 66 :: Mutating tree: 50
+2021-01-19 12:27:25.0975 - Round: 67 :: Mutating tree: 4
+2021-01-19 12:27:25.1058 - Round: 67 :: Mutating tree: 19
+2021-01-19 12:27:25.1138 - Round: 67 :: Mutating tree: 20
+2021-01-19 12:27:25.1203 - Round: 67 :: Mutating tree: 21
+2021-01-19 12:27:25.1273 - Round: 67 :: Mutating tree: 22
+2021-01-19 12:27:25.1343 - Round: 67 :: Mutating tree: 32
+2021-01-19 12:27:25.1413 - Round: 67 :: Mutating tree: 35
+2021-01-19 12:27:25.1488 - Round: 67 :: Mutating tree: 37
+2021-01-19 12:27:25.1559 - Round: 67 :: Mutating tree: 45
+2021-01-19 12:27:25.1638 - Round: 67 :: Mutating tree: 49
+2021-01-19 12:27:25.1708 - Round: 67 :: Mutating tree: 52
+2021-01-19 12:47:25.5407 - Round: 68 :: Mutating tree: 2
+2021-01-19 12:47:25.5486 - Round: 68 :: Mutating tree: 3
+2021-01-19 12:47:25.5556 - Round: 68 :: Mutating tree: 6
+2021-01-19 12:47:25.5626 - Round: 68 :: Successfully crossed over tree 5 and tree 6
+2021-01-19 12:47:25.5695 - Round: 68 :: Mutating tree: 10
+2021-01-19 12:47:25.5786 - Round: 68 :: Mutating tree: 51
+2021-01-19 13:07:25.7944 - Round: 69 :: Mutating tree: 2
+2021-01-19 13:07:25.8023 - Round: 69 :: Mutating tree: 3
+2021-01-19 13:07:25.8113 - Round: 69 :: Successfully crossed over tree 9 and tree 10
+2021-01-19 13:07:25.8174 - Round: 69 :: Mutating tree: 11
+2021-01-19 13:07:25.8243 - Round: 69 :: Mutating tree: 13
+2021-01-19 13:07:25.8333 - Round: 69 :: Successfully crossed over tree 19 and tree 20
+2021-01-19 13:07:25.8413 - Round: 69 :: Mutating tree: 29
+2021-01-19 13:07:25.8482 - Round: 69 :: Mutating tree: 30
+2021-01-19 13:07:25.8562 - Round: 69 :: Mutating tree: 32
+2021-01-19 13:07:25.8642 - Round: 69 :: Successfully crossed over tree 31 and tree 32
+2021-01-19 13:07:25.8722 - Round: 69 :: Mutating tree: 33
+2021-01-19 13:07:25.8792 - Round: 69 :: Mutating tree: 39
+2021-01-19 13:07:25.8871 - Round: 69 :: Mutating tree: 46
+2021-01-19 13:07:25.8961 - Round: 69 :: Successfully crossed over tree 47 and tree 48
+2021-01-19 13:07:25.9021 - Round: 69 :: Mutating tree: 50
+2021-01-19 13:07:25.9110 - Round: 69 :: Successfully crossed over tree 51 and tree 52
+2021-01-19 13:27:26.2125 - Round: 70 :: Mutating tree: 8
+2021-01-19 13:27:26.2215 - Round: 70 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 13:27:26.2287 - Round: 70 :: Mutating tree: 12
+2021-01-19 13:27:26.2358 - Round: 70 :: Mutating tree: 13
+2021-01-19 13:27:26.2427 - Round: 70 :: Mutating tree: 19
+2021-01-19 13:27:26.2496 - Round: 70 :: Mutating tree: 21
+2021-01-19 13:27:26.2569 - Round: 70 :: Mutating tree: 24
+2021-01-19 13:27:26.2641 - Round: 70 :: Mutating tree: 27
+2021-01-19 13:27:26.2721 - Round: 70 :: Successfully crossed over tree 27 and tree 28
+2021-01-19 13:27:26.2781 - Round: 70 :: Mutating tree: 30
+2021-01-19 13:27:26.2851 - Round: 70 :: Mutating tree: 39
+2021-01-19 13:27:26.2920 - Round: 70 :: Mutating tree: 45
+2021-01-19 13:27:26.2990 - Round: 70 :: Mutating tree: 46
+2021-01-19 13:47:26.5535 - Round: 71 :: Successfully crossed over tree 11 and tree 12
+2021-01-19 13:47:26.5604 - Round: 71 :: Mutating tree: 16
+2021-01-19 13:47:26.5674 - Round: 71 :: Mutating tree: 18
+2021-01-19 13:47:26.5744 - Round: 71 :: Mutating tree: 22
+2021-01-19 13:47:26.5805 - Round: 71 :: Mutating tree: 25
+2021-01-19 13:47:26.5894 - Round: 71 :: Successfully crossed over tree 25 and tree 26
+2021-01-19 13:47:26.5954 - Round: 71 :: Mutating tree: 29
+2021-01-19 13:47:26.6024 - Round: 71 :: Mutating tree: 32
+2021-01-19 13:47:26.6094 - Round: 71 :: Mutating tree: 33
+2021-01-19 13:47:26.6164 - Round: 71 :: Mutating tree: 34
+2021-01-19 13:47:26.6244 - Round: 71 :: Successfully crossed over tree 35 and tree 36
+2021-01-19 13:47:26.6323 - Round: 71 :: Successfully crossed over tree 45 and tree 46
+2021-01-19 13:47:26.6383 - Round: 71 :: Mutating tree: 47
+2021-01-19 13:47:26.6451 - Round: 71 :: Mutating tree: 51
+2021-01-19 14:07:26.9488 - Round: 72 :: Mutating tree: 3
+2021-01-19 14:07:26.9557 - Round: 72 :: Mutating tree: 4
+2021-01-19 14:07:26.9637 - Round: 72 :: Mutating tree: 7
+2021-01-19 14:07:26.9736 - Round: 72 :: Mutating tree: 9
+2021-01-19 14:07:26.9826 - Round: 72 :: Mutating tree: 21
+2021-01-19 14:07:26.9886 - Round: 72 :: Mutating tree: 23
+2021-01-19 14:07:26.9966 - Round: 72 :: Mutating tree: 27
+2021-01-19 14:07:27.0036 - Round: 72 :: Mutating tree: 29
+2021-01-19 14:07:27.0235 - Round: 72 :: Successfully crossed over tree 33 and tree 34
+2021-01-19 14:07:27.0304 - Round: 72 :: Mutating tree: 36
+2021-01-19 14:07:27.0404 - Round: 72 :: Mutating tree: 41
+2021-01-19 14:07:27.0484 - Round: 72 :: Mutating tree: 43
+2021-01-19 14:07:27.0574 - Round: 72 :: Successfully crossed over tree 49 and tree 50
+2021-01-19 14:27:27.3567 - Round: 73 :: Mutating tree: 11
+2021-01-19 14:27:27.3647 - Round: 73 :: Mutating tree: 14
+2021-01-19 14:27:27.3727 - Round: 73 :: Successfully crossed over tree 15 and tree 16
+2021-01-19 14:27:27.3796 - Round: 73 :: Mutating tree: 24
+2021-01-19 14:27:27.3856 - Round: 73 :: Mutating tree: 25
+2021-01-19 14:27:27.3945 - Round: 73 :: Mutating tree: 39
+2021-01-19 14:27:27.4035 - Round: 73 :: Mutating tree: 46
+2021-01-19 14:27:27.4105 - Round: 73 :: Mutating tree: 49
+2021-01-19 14:47:27.7509 - Round: 74 :: Mutating tree: 13
+2021-01-19 14:47:27.7579 - Round: 74 :: Mutating tree: 18
+2021-01-19 14:47:27.7650 - Round: 74 :: Mutating tree: 24
+2021-01-19 14:47:27.7719 - Round: 74 :: Mutating tree: 25
+2021-01-19 14:47:27.7778 - Round: 74 :: Mutating tree: 28
+2021-01-19 14:47:27.7848 - Round: 74 :: Mutating tree: 29
+2021-01-19 14:47:27.7918 - Round: 74 :: Mutating tree: 33
+2021-01-19 14:47:27.7978 - Round: 74 :: Mutating tree: 34
+2021-01-19 14:47:27.8057 - Round: 74 :: Successfully crossed over tree 37 and tree 38
+2021-01-19 14:47:27.8127 - Round: 74 :: Mutating tree: 44
+2021-01-19 14:47:27.8187 - Round: 74 :: Mutating tree: 45
+2021-01-19 14:47:27.8252 - Round: 74 :: Mutating tree: 53
+2021-01-19 15:07:28.0936 - Round: 75 :: Mutating tree: 1
+2021-01-19 15:07:28.1015 - Round: 75 :: Mutating tree: 5
+2021-01-19 15:07:28.1095 - Round: 75 :: Mutating tree: 12
+2021-01-19 15:07:28.1171 - Round: 75 :: Mutating tree: 13
+2021-01-19 15:07:28.1261 - Round: 75 :: Successfully crossed over tree 15 and tree 16
+2021-01-19 15:07:28.1330 - Round: 75 :: Mutating tree: 19
+2021-01-19 15:07:28.1400 - Round: 75 :: Mutating tree: 22
+2021-01-19 15:07:28.1470 - Round: 75 :: Mutating tree: 25
+2021-01-19 15:07:28.1539 - Round: 75 :: Mutating tree: 26
+2021-01-19 15:07:28.1619 - Round: 75 :: Mutating tree: 27
+2021-01-19 15:07:28.1719 - Round: 75 :: Successfully crossed over tree 27 and tree 28
+2021-01-19 15:07:28.1788 - Round: 75 :: Mutating tree: 30
+2021-01-19 15:07:28.1858 - Round: 75 :: Mutating tree: 34
+2021-01-19 15:07:28.1938 - Round: 75 :: Mutating tree: 35
+2021-01-19 15:07:28.2008 - Round: 75 :: Mutating tree: 36
+2021-01-19 15:07:28.2087 - Round: 75 :: Successfully crossed over tree 41 and tree 42
+2021-01-19 15:07:28.2158 - Round: 75 :: Mutating tree: 45
+2021-01-19 15:07:28.2228 - Round: 75 :: Mutating tree: 46
+2021-01-19 15:07:28.2298 - Round: 75 :: Mutating tree: 47
+2021-01-19 15:07:28.2368 - Round: 75 :: Mutating tree: 48
+2021-01-19 15:07:28.2447 - Round: 75 :: Successfully crossed over tree 47 and tree 48
+2021-01-19 15:27:28.5455 - Round: 76 :: Mutating tree: 1
+2021-01-19 15:27:28.5544 - Round: 76 :: Mutating tree: 2
+2021-01-19 15:27:28.5624 - Round: 76 :: Mutating tree: 8
+2021-01-19 15:27:28.5704 - Round: 76 :: Mutating tree: 9
+2021-01-19 15:27:28.5774 - Round: 76 :: Mutating tree: 12
+2021-01-19 15:27:28.5854 - Round: 76 :: Mutating tree: 15
+2021-01-19 15:27:28.5955 - Round: 76 :: Successfully crossed over tree 15 and tree 16
+2021-01-19 15:27:28.6024 - Round: 76 :: Mutating tree: 26
+2021-01-19 15:27:28.6113 - Round: 76 :: Mutating tree: 28
+2021-01-19 15:27:28.6183 - Round: 76 :: Mutating tree: 31
+2021-01-19 15:27:28.6293 - Round: 76 :: Successfully crossed over tree 37 and tree 38
+2021-01-19 15:27:28.6383 - Round: 76 :: Mutating tree: 41
+2021-01-19 15:27:28.6464 - Round: 76 :: Mutating tree: 43
+2021-01-19 15:27:28.6543 - Round: 76 :: Successfully crossed over tree 43 and tree 44
+2021-01-19 15:27:28.6612 - Round: 76 :: Mutating tree: 45
+2021-01-19 15:27:28.6692 - Round: 76 :: Mutating tree: 47
+2021-01-19 15:47:28.9106 - Round: 77 :: Mutating tree: 4
+2021-01-19 15:47:28.9185 - Round: 77 :: Mutating tree: 10
+2021-01-19 15:47:28.9265 - Round: 77 :: Mutating tree: 11
+2021-01-19 15:47:28.9334 - Round: 77 :: Mutating tree: 14
+2021-01-19 15:47:28.9399 - Round: 77 :: Mutating tree: 16
+2021-01-19 15:47:28.9478 - Round: 77 :: Successfully crossed over tree 15 and tree 16
+2021-01-19 15:47:28.9548 - Round: 77 :: Mutating tree: 18
+2021-01-19 15:47:28.9619 - Round: 77 :: Mutating tree: 21
+2021-01-19 15:47:28.9688 - Round: 77 :: Mutating tree: 22
+2021-01-19 15:47:28.9767 - Round: 77 :: Successfully crossed over tree 21 and tree 22
+2021-01-19 15:47:28.9828 - Round: 77 :: Mutating tree: 23
+2021-01-19 15:47:28.9897 - Round: 77 :: Mutating tree: 28
+2021-01-19 15:47:28.9977 - Round: 77 :: Mutating tree: 33
+2021-01-19 15:47:29.0036 - Round: 77 :: Mutating tree: 35
+2021-01-19 15:47:29.0108 - Round: 77 :: Mutating tree: 39
+2021-01-19 15:47:29.0178 - Round: 77 :: Mutating tree: 40
+2021-01-19 15:47:29.0258 - Round: 77 :: Mutating tree: 41
+2021-01-19 15:47:29.0337 - Round: 77 :: Mutating tree: 46
+2021-01-19 15:47:29.0407 - Round: 77 :: Mutating tree: 50
+2021-01-19 15:47:29.0477 - Round: 77 :: Mutating tree: 52
+2021-01-19 15:47:29.0557 - Round: 77 :: Mutating tree: 53
+2021-01-19 16:07:29.3448 - Round: 78 :: Mutating tree: 2
+2021-01-19 16:07:29.3568 - Round: 78 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 16:07:29.3647 - Round: 78 :: Mutating tree: 11
+2021-01-19 16:07:29.3737 - Round: 78 :: Mutating tree: 21
+2021-01-19 16:07:29.3827 - Round: 78 :: Mutating tree: 27
+2021-01-19 16:07:29.3907 - Round: 78 :: Mutating tree: 30
+2021-01-19 16:07:29.3987 - Round: 78 :: Mutating tree: 34
+2021-01-19 16:07:29.4067 - Round: 78 :: Mutating tree: 37
+2021-01-19 16:07:29.4166 - Round: 78 :: Successfully crossed over tree 37 and tree 38
+2021-01-19 16:07:29.4256 - Round: 78 :: Mutating tree: 45
+2021-01-19 16:07:29.4365 - Round: 78 :: Mutating tree: 49
+2021-01-19 16:27:29.7124 - Round: 79 :: Mutating tree: 1
+2021-01-19 16:27:29.7254 - Round: 79 :: Mutating tree: 6
+2021-01-19 16:27:29.7374 - Round: 79 :: Mutating tree: 9
+2021-01-19 16:27:29.7493 - Round: 79 :: Successfully crossed over tree 11 and tree 12
+2021-01-19 16:27:29.7613 - Round: 79 :: Successfully crossed over tree 13 and tree 14
+2021-01-19 16:27:29.7742 - Round: 79 :: Successfully crossed over tree 21 and tree 22
+2021-01-19 16:27:29.7842 - Round: 79 :: Mutating tree: 25
+2021-01-19 16:27:29.7952 - Round: 79 :: Mutating tree: 40
+2021-01-19 16:27:29.8072 - Round: 79 :: Successfully crossed over tree 43 and tree 44
+2021-01-19 16:47:33.6583 - Round: 80 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 16:47:33.6662 - Round: 80 :: Mutating tree: 10
+2021-01-19 16:47:33.6742 - Round: 80 :: Mutating tree: 16
+2021-01-19 16:47:33.6822 - Round: 80 :: Mutating tree: 20
+2021-01-19 16:47:33.6892 - Round: 80 :: Mutating tree: 26
+2021-01-19 16:47:33.6971 - Round: 80 :: Mutating tree: 30
+2021-01-19 16:47:33.7041 - Round: 80 :: Mutating tree: 34
+2021-01-19 16:47:33.7121 - Round: 80 :: Mutating tree: 35
+2021-01-19 16:47:33.7201 - Round: 80 :: Successfully crossed over tree 39 and tree 40
+2021-01-19 16:47:33.7281 - Round: 80 :: Mutating tree: 45
+2021-01-19 16:47:33.7350 - Round: 80 :: Mutating tree: 49
+2021-01-19 17:07:34.0182 - Round: 81 :: Mutating tree: 2
+2021-01-19 17:07:34.0282 - Round: 81 :: Mutating tree: 3
+2021-01-19 17:07:34.0372 - Round: 81 :: Mutating tree: 5
+2021-01-19 17:07:34.0461 - Round: 81 :: Mutating tree: 14
+2021-01-19 17:07:34.0561 - Round: 81 :: Successfully crossed over tree 23 and tree 24
+2021-01-19 17:07:34.0651 - Round: 81 :: Mutating tree: 37
+2021-01-19 17:07:34.0740 - Round: 81 :: Mutating tree: 40
+2021-01-19 17:07:34.0840 - Round: 81 :: Mutating tree: 43
+2021-01-19 17:07:34.0940 - Round: 81 :: Successfully crossed over tree 45 and tree 46
+2021-01-19 17:07:34.1030 - Round: 81 :: Successfully crossed over tree 47 and tree 48
+2021-01-19 17:27:34.4266 - Round: 82 :: Mutating tree: 4
+2021-01-19 17:27:34.4425 - Round: 82 :: Successfully crossed over tree 7 and tree 8
+2021-01-19 17:27:34.4505 - Round: 82 :: Mutating tree: 9
+2021-01-19 17:27:34.4584 - Round: 82 :: Mutating tree: 14
+2021-01-19 17:27:34.4674 - Round: 82 :: Successfully crossed over tree 15 and tree 16
+2021-01-19 17:27:34.4805 - Round: 82 :: Successfully crossed over tree 21 and tree 22
+2021-01-19 17:27:34.4933 - Round: 82 :: Successfully crossed over tree 39 and tree 40
+2021-01-19 17:27:34.5013 - Round: 82 :: Mutating tree: 42
+2021-01-19 17:27:34.5114 - Round: 82 :: Mutating tree: 43
+2021-01-19 17:27:34.5193 - Round: 82 :: Mutating tree: 48
+2021-01-19 17:47:34.7981 - Round: 83 :: Mutating tree: 1
+2021-01-19 17:47:34.8081 - Round: 83 :: Mutating tree: 3
+2021-01-19 17:47:34.8200 - Round: 83 :: Mutating tree: 14
+2021-01-19 17:47:34.8300 - Round: 83 :: Successfully crossed over tree 13 and tree 14
+2021-01-19 17:47:34.8399 - Round: 83 :: Mutating tree: 17
+2021-01-19 17:47:34.8499 - Round: 83 :: Mutating tree: 22
+2021-01-19 17:47:34.8589 - Round: 83 :: Successfully crossed over tree 21 and tree 22
+2021-01-19 17:47:34.8678 - Round: 83 :: Mutating tree: 23
+2021-01-19 17:47:34.8768 - Round: 83 :: Mutating tree: 25
+2021-01-19 17:47:34.8878 - Round: 83 :: Mutating tree: 33
+2021-01-19 17:47:34.8958 - Round: 83 :: Mutating tree: 35
+2021-01-19 18:07:35.3509 - Round: 84 :: Successfully crossed over tree 9 and tree 10
+2021-01-19 18:07:35.3598 - Round: 84 :: Mutating tree: 11
+2021-01-19 18:07:35.3687 - Round: 84 :: Mutating tree: 13
+2021-01-19 18:07:35.3768 - Round: 84 :: Mutating tree: 15
+2021-01-19 18:07:35.3857 - Round: 84 :: Successfully crossed over tree 15 and tree 16
+2021-01-19 18:07:35.3928 - Round: 84 :: Mutating tree: 17
+2021-01-19 18:07:35.4006 - Round: 84 :: Mutating tree: 20
+2021-01-19 18:07:35.4096 - Round: 84 :: Successfully crossed over tree 19 and tree 20
+2021-01-19 18:07:35.4176 - Round: 84 :: Mutating tree: 23
+2021-01-19 18:07:35.4255 - Round: 84 :: Mutating tree: 28
+2021-01-19 18:07:35.4335 - Round: 84 :: Mutating tree: 30
+2021-01-19 18:07:35.4415 - Round: 84 :: Mutating tree: 32
+2021-01-19 18:07:35.4525 - Round: 84 :: Successfully crossed over tree 31 and tree 32
+2021-01-19 18:07:35.4606 - Round: 84 :: Mutating tree: 41
+2021-01-19 18:07:35.4686 - Round: 84 :: Mutating tree: 48
+2021-01-19 18:07:35.4766 - Round: 84 :: Mutating tree: 49
+2021-01-19 18:07:35.4846 - Round: 84 :: Mutating tree: 50
+2021-01-19 18:27:36.0011 - Round: 85 :: Mutating tree: 5
+2021-01-19 18:27:36.0102 - Round: 85 :: Mutating tree: 11
+2021-01-19 18:27:36.0181 - Round: 85 :: Mutating tree: 12
+2021-01-19 18:27:36.0260 - Round: 85 :: Mutating tree: 13
+2021-01-19 18:27:36.0350 - Round: 85 :: Successfully crossed over tree 15 and tree 16
+2021-01-19 18:27:36.0420 - Round: 85 :: Mutating tree: 20
+2021-01-19 18:27:36.0499 - Round: 85 :: Mutating tree: 28
+2021-01-19 18:27:36.0579 - Round: 85 :: Mutating tree: 30
+2021-01-19 18:27:36.0659 - Round: 85 :: Mutating tree: 36
+2021-01-19 18:27:36.0739 - Round: 85 :: Mutating tree: 40
+2021-01-19 18:27:36.0808 - Round: 85 :: Mutating tree: 43
+2021-01-19 18:27:36.0888 - Round: 85 :: Mutating tree: 48
+2021-01-25 01:07:35.0660 - Round: 86 :: Mutating tree: 1
+2021-01-25 01:07:35.0950 - Round: 86 :: Mutating tree: 2
+2021-01-25 01:07:35.1089 - Round: 86 :: Mutating tree: 3
+2021-01-25 01:07:35.1239 - Round: 86 :: Mutating tree: 13
+2021-01-25 01:07:35.1388 - Round: 86 :: Mutating tree: 21
+2021-01-25 01:07:35.1538 - Round: 86 :: Successfully crossed over tree 23 and tree 24
+2021-01-25 01:07:35.1717 - Round: 86 :: Successfully crossed over tree 27 and tree 28
+2021-01-25 01:07:35.1866 - Round: 86 :: Mutating tree: 35
+2021-01-25 01:07:35.2006 - Round: 86 :: Mutating tree: 40
+2021-01-25 01:07:35.2165 - Round: 86 :: Mutating tree: 43
+2021-01-25 01:07:35.2325 - Round: 86 :: Successfully crossed over tree 45 and tree 46
+2021-01-25 01:07:35.2445 - Round: 86 :: Mutating tree: 50
+2021-01-25 01:27:35.6736 - Round: 87 :: Mutating tree: 3
+2021-01-25 01:27:35.6875 - Round: 87 :: Mutating tree: 8
+2021-01-25 01:27:35.7015 - Round: 87 :: Mutating tree: 10
+2021-01-25 01:27:35.7155 - Round: 87 :: Mutating tree: 12
+2021-01-25 01:27:35.7293 - Round: 87 :: Mutating tree: 17
+2021-01-25 01:27:35.7426 - Round: 87 :: Mutating tree: 20
+2021-01-25 01:27:35.7586 - Round: 87 :: Mutating tree: 25
+2021-01-25 01:27:35.7715 - Round: 87 :: Mutating tree: 28
+2021-01-25 01:27:35.7864 - Round: 87 :: Successfully crossed over tree 33 and tree 34
+2021-01-25 01:27:35.7983 - Round: 87 :: Mutating tree: 37
+2021-01-25 01:27:35.8103 - Round: 87 :: Mutating tree: 39
+2021-01-25 01:27:35.8233 - Round: 87 :: Mutating tree: 47
+2021-01-25 01:27:35.8363 - Round: 87 :: Mutating tree: 48
+2021-01-25 01:27:35.8492 - Round: 87 :: Mutating tree: 52
+2021-01-25 01:47:36.3645 - Round: 88 :: Mutating tree: 3
+2021-01-25 01:47:36.3804 - Round: 88 :: Mutating tree: 14
+2021-01-25 01:47:36.3954 - Round: 88 :: Successfully crossed over tree 13 and tree 14
+2021-01-25 01:47:36.4083 - Round: 88 :: Mutating tree: 16
+2021-01-25 01:47:36.4223 - Round: 88 :: Mutating tree: 21
+2021-01-25 01:47:36.4362 - Round: 88 :: Mutating tree: 25
+2021-01-25 01:47:36.4503 - Round: 88 :: Mutating tree: 27
+2021-01-25 01:47:36.4631 - Round: 88 :: Mutating tree: 31
+2021-01-25 01:47:36.4772 - Round: 88 :: Successfully crossed over tree 35 and tree 36
+2021-01-25 01:47:36.4901 - Round: 88 :: Mutating tree: 37
+2021-01-25 01:47:36.5030 - Round: 88 :: Mutating tree: 40
+2021-01-25 01:47:36.5150 - Round: 88 :: Mutating tree: 41
+2021-01-25 02:07:36.8857 - Round: 89 :: Mutating tree: 9
+2021-01-25 02:07:36.9056 - Round: 89 :: Mutating tree: 18
+2021-01-25 02:07:36.9198 - Round: 89 :: Mutating tree: 20
+2021-01-25 02:07:36.9331 - Round: 89 :: Mutating tree: 25
+2021-01-25 02:07:36.9470 - Round: 89 :: Mutating tree: 26
+2021-01-25 02:07:36.9600 - Round: 89 :: Mutating tree: 29
+2021-01-25 02:07:36.9730 - Round: 89 :: Mutating tree: 31
+2021-01-25 02:07:36.9849 - Round: 89 :: Mutating tree: 32
+2021-01-25 02:07:36.9989 - Round: 89 :: Mutating tree: 34
+2021-01-25 02:07:37.0118 - Round: 89 :: Mutating tree: 42
+2021-01-25 02:07:37.0259 - Round: 89 :: Mutating tree: 44
+2021-01-25 02:07:37.0408 - Round: 89 :: Mutating tree: 45
+2021-01-25 02:27:37.6397 - Round: 90 :: Mutating tree: 8
+2021-01-25 02:27:37.6557 - Round: 90 :: Mutating tree: 14
+2021-01-25 02:27:37.6726 - Round: 90 :: Successfully crossed over tree 23 and tree 24
+2021-01-25 02:27:37.6865 - Round: 90 :: Mutating tree: 29
+2021-01-25 02:27:37.7025 - Round: 90 :: Mutating tree: 32
+2021-01-25 02:27:37.7175 - Round: 90 :: Mutating tree: 36
+2021-01-25 02:27:37.7314 - Round: 90 :: Mutating tree: 38
+2021-01-25 02:27:37.7444 - Round: 90 :: Mutating tree: 40
+2021-01-25 02:27:37.7613 - Round: 90 :: Mutating tree: 49
+2021-01-25 02:47:38.2354 - Round: 91 :: Mutating tree: 1
+2021-01-25 02:47:38.2503 - Round: 91 :: Mutating tree: 9
+2021-01-25 02:47:38.2653 - Round: 91 :: Mutating tree: 24
+2021-01-25 02:47:38.2782 - Round: 91 :: Mutating tree: 26
+2021-01-25 02:47:38.2922 - Round: 91 :: Mutating tree: 28
+2021-01-25 02:47:38.3051 - Round: 91 :: Mutating tree: 29
+2021-01-25 02:47:38.3181 - Round: 91 :: Mutating tree: 30
+2021-01-25 02:47:38.3311 - Round: 91 :: Mutating tree: 33
+2021-01-25 02:47:38.3441 - Round: 91 :: Mutating tree: 34
+2021-01-25 02:47:38.3580 - Round: 91 :: Successfully crossed over tree 37 and tree 38
+2021-01-25 02:47:38.3709 - Round: 91 :: Mutating tree: 39
+2021-01-25 02:47:38.3859 - Round: 91 :: Mutating tree: 40
+2021-01-25 02:47:38.4038 - Round: 91 :: Successfully crossed over tree 47 and tree 48
+2021-01-25 02:47:38.4197 - Round: 91 :: Successfully crossed over tree 51 and tree 52
+2021-01-25 02:47:38.4337 - Round: 91 :: Mutating tree: 53
+2021-01-25 03:07:38.9638 - Round: 92 :: Successfully crossed over tree 3 and tree 4
+2021-01-25 03:07:38.9838 - Round: 92 :: Mutating tree: 5
+2021-01-25 03:07:39.0007 - Round: 92 :: Mutating tree: 12
+2021-01-25 03:07:39.0147 - Round: 92 :: Mutating tree: 20
+2021-01-25 03:07:39.0282 - Round: 92 :: Mutating tree: 21
+2021-01-25 03:07:39.0422 - Round: 92 :: Mutating tree: 33
+2021-01-25 03:07:39.0571 - Round: 92 :: Successfully crossed over tree 35 and tree 36
+2021-01-25 03:07:39.0761 - Round: 92 :: Mutating tree: 52
+2021-01-25 03:07:39.0889 - Round: 92 :: Mutating tree: 53
+2021-01-25 03:27:39.4690 - Round: 93 :: Mutating tree: 3
+2021-01-25 03:27:39.4830 - Round: 93 :: Mutating tree: 4
+2021-01-25 03:27:39.4959 - Round: 93 :: Mutating tree: 7
+2021-01-25 03:27:39.5109 - Round: 93 :: Successfully crossed over tree 9 and tree 10
+2021-01-25 03:27:39.5244 - Round: 93 :: Mutating tree: 17
+2021-01-25 03:27:39.5373 - Round: 93 :: Mutating tree: 20
+2021-01-25 03:27:39.5503 - Round: 93 :: Mutating tree: 28
+2021-01-25 03:27:39.5649 - Round: 93 :: Successfully crossed over tree 27 and tree 28
+2021-01-25 03:27:39.5798 - Round: 93 :: Mutating tree: 36
+2021-01-25 03:27:39.5957 - Round: 93 :: Mutating tree: 43
+2021-01-25 03:27:39.6097 - Round: 93 :: Successfully crossed over tree 43 and tree 44
+2021-01-25 03:27:39.6226 - Round: 93 :: Mutating tree: 46
+2021-01-25 03:27:39.6366 - Round: 93 :: Mutating tree: 51
+2021-01-25 03:47:40.1851 - Round: 94 :: Mutating tree: 2
+2021-01-25 03:47:40.1990 - Round: 94 :: Mutating tree: 11
+2021-01-25 03:47:40.2120 - Round: 94 :: Mutating tree: 12
+2021-01-25 03:47:40.2259 - Round: 94 :: Mutating tree: 29
+2021-01-25 03:47:40.2389 - Round: 94 :: Mutating tree: 31
+2021-01-25 03:47:40.2518 - Round: 94 :: Mutating tree: 34
+2021-01-25 03:47:40.2648 - Round: 94 :: Mutating tree: 37
+2021-01-25 03:47:40.2788 - Round: 94 :: Successfully crossed over tree 37 and tree 38
+2021-01-25 03:47:40.2907 - Round: 94 :: Mutating tree: 40
+2021-01-25 03:47:40.3037 - Round: 94 :: Mutating tree: 41
+2021-01-25 04:07:40.8363 - Round: 95 :: Mutating tree: 6
+2021-01-25 04:07:40.8584 - Round: 95 :: Mutating tree: 19
+2021-01-25 04:07:40.8724 - Round: 95 :: Mutating tree: 22
+2021-01-25 04:07:40.8873 - Round: 95 :: Successfully crossed over tree 21 and tree 22
+2021-01-25 04:07:40.9013 - Round: 95 :: Mutating tree: 27
+2021-01-25 04:07:40.9152 - Round: 95 :: Successfully crossed over tree 31 and tree 32
+2021-01-25 04:07:40.9272 - Round: 95 :: Mutating tree: 34
+2021-01-25 04:07:40.9421 - Round: 95 :: Successfully crossed over tree 35 and tree 36
+2021-01-25 04:07:40.9551 - Round: 95 :: Mutating tree: 38
+2021-01-25 04:07:40.9700 - Round: 95 :: Successfully crossed over tree 41 and tree 42
+2021-01-25 04:07:40.9850 - Round: 95 :: Mutating tree: 44
+2021-01-25 04:07:41.0009 - Round: 95 :: Mutating tree: 52
+2021-01-25 04:27:41.5081 - Round: 96 :: Mutating tree: 11
+2021-01-25 04:27:41.5250 - Round: 96 :: Mutating tree: 13
+2021-01-25 04:27:41.5410 - Round: 96 :: Mutating tree: 19
+2021-01-25 04:27:41.5560 - Round: 96 :: Mutating tree: 21
+2021-01-25 04:27:41.5689 - Round: 96 :: Mutating tree: 22
+2021-01-25 04:27:41.5818 - Round: 96 :: Mutating tree: 23
+2021-01-25 04:27:41.5958 - Round: 96 :: Mutating tree: 27
+2021-01-25 04:27:41.6107 - Round: 96 :: Successfully crossed over tree 37 and tree 38
+2021-01-25 04:27:41.6238 - Round: 96 :: Mutating tree: 39
+2021-01-25 04:27:41.6357 - Round: 96 :: Mutating tree: 40
+2021-01-25 04:27:41.6476 - Round: 96 :: Mutating tree: 42
+2021-01-25 04:27:41.6596 - Round: 96 :: Mutating tree: 43
+2021-01-25 04:27:41.6736 - Round: 96 :: Mutating tree: 50
+2021-01-25 04:27:41.6865 - Round: 96 :: Mutating tree: 51
+2021-01-25 04:47:42.0257 - Round: 97 :: Mutating tree: 4
+2021-01-25 04:47:42.0416 - Round: 97 :: Successfully crossed over tree 3 and tree 4
+2021-01-25 04:47:42.0536 - Round: 97 :: Mutating tree: 7
+2021-01-25 04:47:42.0666 - Round: 97 :: Mutating tree: 13
+2021-01-25 04:47:42.0796 - Round: 97 :: Mutating tree: 14
+2021-01-25 04:47:42.0934 - Round: 97 :: Successfully crossed over tree 17 and tree 18
+2021-01-25 04:47:42.1064 - Round: 97 :: Mutating tree: 22
+2021-01-25 04:47:42.1184 - Round: 97 :: Mutating tree: 24
+2021-01-25 04:47:42.1313 - Round: 97 :: Mutating tree: 34
+2021-01-25 04:47:42.1453 - Round: 97 :: Mutating tree: 44
+2021-01-25 04:47:42.1612 - Round: 97 :: Mutating tree: 47
+2021-01-25 04:47:42.1762 - Round: 97 :: Mutating tree: 52
+2021-01-25 04:47:42.1931 - Round: 97 :: Successfully crossed over tree 51 and tree 52
+2021-01-25 05:07:42.6802 - Round: 98 :: Mutating tree: 2
+2021-01-25 05:07:42.7011 - Round: 98 :: Mutating tree: 6
+2021-01-25 05:07:42.7180 - Round: 98 :: Mutating tree: 10
+2021-01-25 05:07:42.7310 - Round: 98 :: Mutating tree: 11
+2021-01-25 05:07:42.7440 - Round: 98 :: Mutating tree: 24
+2021-01-25 05:07:42.7580 - Round: 98 :: Mutating tree: 27
+2021-01-25 05:07:42.7705 - Round: 98 :: Mutating tree: 29
+2021-01-25 05:07:42.7845 - Round: 98 :: Successfully crossed over tree 29 and tree 30
+2021-01-25 05:07:42.7964 - Round: 98 :: Mutating tree: 31
+2021-01-25 05:07:42.8094 - Round: 98 :: Mutating tree: 32
+2021-01-25 05:07:42.8223 - Round: 98 :: Mutating tree: 33
+2021-01-25 05:07:42.8353 - Round: 98 :: Mutating tree: 36
+2021-01-25 05:07:42.8483 - Round: 98 :: Mutating tree: 53
+2021-01-25 05:27:43.2177 - Round: 99 :: Mutating tree: 4
+2021-01-25 05:27:43.2327 - Round: 99 :: Mutating tree: 13
+2021-01-25 05:27:43.2468 - Round: 99 :: Mutating tree: 14
+2021-01-25 05:27:43.2597 - Round: 99 :: Mutating tree: 15
+2021-01-25 05:27:43.2727 - Round: 99 :: Mutating tree: 18
+2021-01-25 05:27:43.2876 - Round: 99 :: Successfully crossed over tree 21 and tree 22
+2021-01-25 05:27:43.3017 - Round: 99 :: Successfully crossed over tree 23 and tree 24
+2021-01-25 05:27:43.3146 - Round: 99 :: Mutating tree: 30
+2021-01-25 05:27:43.3276 - Round: 99 :: Mutating tree: 35
+2021-01-25 05:27:43.3406 - Round: 99 :: Mutating tree: 36
+2021-01-25 05:27:43.3544 - Round: 99 :: Successfully crossed over tree 35 and tree 36
+2021-01-25 05:27:43.3675 - Round: 99 :: Mutating tree: 41
+2021-01-25 05:27:43.3793 - Round: 99 :: Mutating tree: 44
+2021-01-25 05:27:43.3924 - Round: 99 :: Mutating tree: 52
+2021-01-25 05:47:43.9095 - Round: 100 :: Mutating tree: 16
+2021-01-25 05:47:43.9234 - Round: 100 :: Mutating tree: 19
+2021-01-25 05:47:43.9364 - Round: 100 :: Mutating tree: 23
+2021-01-25 05:47:43.9503 - Round: 100 :: Mutating tree: 25
+2021-01-25 05:47:43.9642 - Round: 100 :: Successfully crossed over tree 29 and tree 30
+2021-01-25 05:47:43.9772 - Round: 100 :: Mutating tree: 39
+2021-01-25 05:47:43.9912 - Round: 100 :: Mutating tree: 44
+2021-01-25 05:47:44.0042 - Round: 100 :: Mutating tree: 45
+2021-01-25 05:47:44.0180 - Round: 100 :: Mutating tree: 53
+2021-01-25 06:07:44.4080 - Round: 101 :: Mutating tree: 9
+2021-01-25 06:07:44.4290 - Round: 101 :: Mutating tree: 21
+2021-01-25 06:07:44.4429 - Round: 101 :: Mutating tree: 23
+2021-01-25 06:07:44.4565 - Round: 101 :: Mutating tree: 27
+2021-01-25 06:07:44.4715 - Round: 101 :: Mutating tree: 49
+2021-01-25 06:07:44.4864 - Round: 101 :: Successfully crossed over tree 51 and tree 52
+2021-01-25 06:27:44.9993 - Round: 102 :: Mutating tree: 7
+2021-01-25 06:27:45.0142 - Round: 102 :: Mutating tree: 8
+2021-01-25 06:27:45.0271 - Round: 102 :: Mutating tree: 9
+2021-01-25 06:27:45.0411 - Round: 102 :: Mutating tree: 14
+2021-01-25 06:27:45.0540 - Round: 102 :: Mutating tree: 18
+2021-01-25 06:27:45.0680 - Round: 102 :: Mutating tree: 23
+2021-01-25 06:27:45.0809 - Round: 102 :: Mutating tree: 24
+2021-01-25 06:27:45.0959 - Round: 102 :: Mutating tree: 26
+2021-01-25 06:27:45.1168 - Round: 102 :: Successfully crossed over tree 25 and tree 26
+2021-01-25 06:27:45.1327 - Round: 102 :: Mutating tree: 27
+2021-01-25 06:27:45.1478 - Round: 102 :: Mutating tree: 33
+2021-01-25 06:27:45.1616 - Round: 102 :: Mutating tree: 34
+2021-01-25 06:27:45.1746 - Round: 102 :: Mutating tree: 36
+2021-01-25 06:27:45.1885 - Round: 102 :: Mutating tree: 43
+2021-01-25 06:27:45.2015 - Round: 102 :: Mutating tree: 48
+2021-01-25 06:47:45.5685 - Round: 103 :: Mutating tree: 2
+2021-01-25 06:47:45.5855 - Round: 103 :: Mutating tree: 23
+2021-01-25 06:47:45.6014 - Round: 103 :: Successfully crossed over tree 23 and tree 24
+2021-01-25 06:47:45.6154 - Round: 103 :: Mutating tree: 31
+2021-01-25 06:47:45.6304 - Round: 103 :: Successfully crossed over tree 33 and tree 34
+2021-01-25 06:47:45.6433 - Round: 103 :: Mutating tree: 35
+2021-01-25 06:47:45.6562 - Round: 103 :: Mutating tree: 41
+2021-01-25 06:47:45.6683 - Round: 103 :: Mutating tree: 44
+2021-01-25 06:47:45.6811 - Round: 103 :: Mutating tree: 46
+2021-01-25 07:07:46.1853 - Round: 104 :: Successfully crossed over tree 19 and tree 20
+2021-01-25 07:07:46.2047 - Round: 104 :: Mutating tree: 30
+2021-01-25 07:07:46.2196 - Round: 104 :: Mutating tree: 33
+2021-01-25 07:07:46.2326 - Round: 104 :: Mutating tree: 34
+2021-01-25 07:07:46.2456 - Round: 104 :: Mutating tree: 40
+2021-01-25 07:07:46.2604 - Round: 104 :: Successfully crossed over tree 39 and tree 40
+2021-01-25 07:07:46.2745 - Round: 104 :: Mutating tree: 53
+2021-01-25 07:27:46.7708 - Round: 105 :: Mutating tree: 4
+2021-01-25 07:27:46.7857 - Round: 105 :: Mutating tree: 11
+2021-01-25 07:27:46.7997 - Round: 105 :: Mutating tree: 13
+2021-01-25 07:27:46.8127 - Round: 105 :: Mutating tree: 17
+2021-01-25 07:27:46.8257 - Round: 105 :: Mutating tree: 22
+2021-01-25 07:27:46.8396 - Round: 105 :: Mutating tree: 28
+2021-01-25 07:27:46.8527 - Round: 105 :: Mutating tree: 31
+2021-01-25 07:27:46.8665 - Round: 105 :: Mutating tree: 39
+2021-01-25 07:27:46.8785 - Round: 105 :: Mutating tree: 43
+2021-01-25 07:27:46.8915 - Round: 105 :: Mutating tree: 45
+2021-01-25 07:47:47.3845 - Round: 106 :: Mutating tree: 3
+2021-01-25 07:47:47.4015 - Round: 106 :: Mutating tree: 6
+2021-01-25 07:47:47.4165 - Round: 106 :: Mutating tree: 8
+2021-01-25 07:47:47.4314 - Round: 106 :: Mutating tree: 9
+2021-01-25 07:47:47.4463 - Round: 106 :: Mutating tree: 17
+2021-01-25 07:47:47.4613 - Round: 106 :: Mutating tree: 23
+2021-01-25 07:47:47.4762 - Round: 106 :: Successfully crossed over tree 35 and tree 36
+2021-01-25 07:47:47.4892 - Round: 106 :: Mutating tree: 40
+2021-01-25 07:47:47.5021 - Round: 106 :: Mutating tree: 44
+2021-01-25 07:47:47.5161 - Round: 106 :: Successfully crossed over tree 45 and tree 46
+2021-01-25 07:47:47.5290 - Round: 106 :: Mutating tree: 47
+2021-01-25 07:47:47.5410 - Round: 106 :: Mutating tree: 49
+2021-01-25 07:47:47.5540 - Round: 106 :: Mutating tree: 50
+2021-01-25 07:47:47.5677 - Round: 106 :: Mutating tree: 53
+2021-01-25 08:07:47.9246 - Round: 107 :: Mutating tree: 3
+2021-01-25 08:07:47.9455 - Round: 107 :: Successfully crossed over tree 3 and tree 4
+2021-01-25 08:07:47.9594 - Round: 107 :: Mutating tree: 5
+2021-01-25 08:07:47.9713 - Round: 107 :: Mutating tree: 7
+2021-01-25 08:07:47.9852 - Round: 107 :: Mutating tree: 8
+2021-01-25 08:07:47.9992 - Round: 107 :: Mutating tree: 10
+2021-01-25 08:07:48.0132 - Round: 107 :: Mutating tree: 13
+2021-01-25 08:07:48.0262 - Round: 107 :: Mutating tree: 16
+2021-01-25 08:07:48.0411 - Round: 107 :: Mutating tree: 31
+2021-01-25 08:07:48.0530 - Round: 107 :: Mutating tree: 34
+2021-01-25 08:07:48.0680 - Round: 107 :: Successfully crossed over tree 35 and tree 36
+2021-01-25 08:07:48.0810 - Round: 107 :: Mutating tree: 50
+2021-01-25 08:27:48.5956 - Round: 108 :: Mutating tree: 6
+2021-01-25 08:27:48.6116 - Round: 108 :: Successfully crossed over tree 5 and tree 6
+2021-01-25 08:27:48.6246 - Round: 108 :: Mutating tree: 10
+2021-01-25 08:27:48.6375 - Round: 108 :: Mutating tree: 11
+2021-01-25 08:27:48.6505 - Round: 108 :: Mutating tree: 14
+2021-01-25 08:27:48.6633 - Round: 108 :: Mutating tree: 17
+2021-01-25 08:27:48.6761 - Round: 108 :: Mutating tree: 18
+2021-01-25 08:27:48.6901 - Round: 108 :: Mutating tree: 22
+2021-01-25 08:27:48.7020 - Round: 108 :: Mutating tree: 30
+2021-01-25 08:27:48.7150 - Round: 108 :: Mutating tree: 33
+2021-01-25 08:27:48.7279 - Round: 108 :: Mutating tree: 40
+2021-01-25 08:27:48.7409 - Round: 108 :: Mutating tree: 45
+2021-01-25 08:27:48.7539 - Round: 108 :: Mutating tree: 52
+2021-01-25 08:47:49.1477 - Round: 109 :: Mutating tree: 3
+2021-01-25 08:47:49.1626 - Round: 109 :: Mutating tree: 7
+2021-01-25 08:47:49.1766 - Round: 109 :: Successfully crossed over tree 7 and tree 8
+2021-01-25 08:47:49.1915 - Round: 109 :: Mutating tree: 10
+2021-01-25 08:47:49.2065 - Round: 109 :: Mutating tree: 14
+2021-01-25 08:47:49.2224 - Round: 109 :: Successfully crossed over tree 13 and tree 14
+2021-01-25 08:47:49.2364 - Round: 109 :: Mutating tree: 15
+2021-01-25 08:47:49.2503 - Round: 109 :: Mutating tree: 20
+2021-01-25 08:47:49.2644 - Round: 109 :: Successfully crossed over tree 19 and tree 20
+2021-01-25 08:47:49.2772 - Round: 109 :: Mutating tree: 21
+2021-01-25 08:47:49.2913 - Round: 109 :: Successfully crossed over tree 21 and tree 22
+2021-01-25 08:47:49.3031 - Round: 109 :: Mutating tree: 23
+2021-01-25 08:47:49.3161 - Round: 109 :: Mutating tree: 24
+2021-01-25 08:47:49.3291 - Round: 109 :: Mutating tree: 26
+2021-01-25 08:47:49.3411 - Round: 109 :: Mutating tree: 29
+2021-01-25 08:47:49.3530 - Round: 109 :: Mutating tree: 31
+2021-01-25 08:47:49.3672 - Round: 109 :: Mutating tree: 37
+2021-01-25 08:47:49.3790 - Round: 109 :: Mutating tree: 38
+2021-01-25 08:47:49.3931 - Round: 109 :: Mutating tree: 39
+2021-01-25 08:47:49.4039 - Round: 109 :: Mutating tree: 43
+2021-01-25 08:47:49.4180 - Round: 109 :: Mutating tree: 52
+2021-01-25 08:47:49.4299 - Round: 109 :: Mutating tree: 53
+2021-01-25 09:07:49.9144 - Round: 110 :: Mutating tree: 5
+2021-01-25 09:07:49.9363 - Round: 110 :: Successfully crossed over tree 9 and tree 10
+2021-01-25 09:07:49.9503 - Round: 110 :: Mutating tree: 11
+2021-01-25 09:07:49.9627 - Round: 110 :: Mutating tree: 13
+2021-01-25 09:07:49.9777 - Round: 110 :: Mutating tree: 19
+2021-01-25 09:07:49.9906 - Round: 110 :: Mutating tree: 20
+2021-01-25 09:07:50.0056 - Round: 110 :: Successfully crossed over tree 21 and tree 22
+2021-01-25 09:07:50.0196 - Round: 110 :: Mutating tree: 33
+2021-01-25 09:07:50.0336 - Round: 110 :: Successfully crossed over tree 33 and tree 34
+2021-01-25 09:07:50.0465 - Round: 110 :: Mutating tree: 39
+2021-01-25 09:07:50.0579 - Round: 110 :: Mutating tree: 40
+2021-01-25 09:07:50.0709 - Round: 110 :: Mutating tree: 41
+2021-01-25 09:07:50.0839 - Round: 110 :: Mutating tree: 45
+2021-01-25 09:07:50.0958 - Round: 110 :: Mutating tree: 46
+2021-01-25 09:07:50.1090 - Round: 110 :: Mutating tree: 48

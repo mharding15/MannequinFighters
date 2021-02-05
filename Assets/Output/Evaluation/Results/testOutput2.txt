@@ -1,0 +1,34 @@
+Starting Round: 0
+72 0
+255 0
+390 0
+Round over. Player1 Avg Damage: 239, Player2 Avg Damage: 0
+
+Starting Round: 1
+72 0
+255 0
+390 0
+Round over. Player1 Avg Damage: 478, Player2 Avg Damage: 0
+
+Starting Round: 2
+72 0
+255 0
+Starting Round: 0
+48 0
+30 0
+0 0
+Round over. Player1 Avg Damage: 26, Player2 Avg Damage: 0
+
+Starting Round: 1
+64 0
+0 0
+0 0
+Round over. Player1 Avg Damage: 47.33333, Player2 Avg Damage: 0
+
+Starting Round: 2
+56 0
+0 0
+0 0
+Round over. Player1 Avg Damage: 66, Player2 Avg Damage: 0
+
+Evaluation over. Player1 Overall Avg Damage Done: 22, Player2 Avg Damage Done: 0

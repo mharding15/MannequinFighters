@@ -1,0 +1,7 @@
+Size: 6
+evalControlAggFitAiMatches-round-40 evalControlEvenFitAiMatches-round-40
+evalControlAggFitAiMatches-round-40 evalIslandAggFitAiMatches-round-40
+evalControlAggFitAiMatches-round-40 evalIslandEvenFitAiMatches-round-40
+evalControlEvenFitAiMatches-round-40 evalIslandAggFitAiMatches-round-40
+evalControlEvenFitAiMatches-round-40 evalIslandEvenFitAiMatches-round-40
+evalIslandAggFitAiMatches-round-40 evalIslandEvenFitAiMatches-round-40

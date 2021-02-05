@@ -7,12 +7,13 @@ using UnityEngine.UI;
 
 public class SetupManager : MonoBehaviour
 {
-    public int gameType; // 0 -> training (dummy), 1 -> human vs. ai, 2 -> ai vs. ai, 3 -> GP traning
+    public int gameType; // 0 -> training (dummy), 1 -> human vs. ai, 2 -> ai vs. ai, 3 -> GP traning, 4 -> evalFile1 vs. evalFile2, 5 -> evalFile1 vs. Ai, 6 -> evalFile1 vs. random
     public int populationSize; // should match the number of agents in the "gpAgentsFile" if there is stuff in that file
     public int totalRounds; // # of rounds of GP to do
     public int aggressiveness; // neutral (0), aggro (1), def (2)
     public int fitnessType; // 0 -> even, 1 -> aggressive
-    public string agentFile1, agentFile2, gpAgentsFile, fitnessLogFile;
+    public bool useAiTrainer;
+    public string agentFile1, agentFile2, gpAgentsFile, fitnessLogFile, aiTrainerFile, inputFilesFile, evalAiFileName;
     public GameObject character;
 
     private int move_forward = 0,
@@ -33,6 +34,7 @@ public class SetupManager : MonoBehaviour
                 idle = 15;
 
     private DecisionTree[] population;
+    private DecisionTree aiTrainer;
     private float[] features;
     private GameObject player1, player2;
     private int round, currentMatch;
@@ -47,6 +49,17 @@ public class SetupManager : MonoBehaviour
                 crossoverProb       = 0.1f,
                 freshTreePercentage = 0.1f,
                 countTimer          = 0f;
+
+    // *** evaluation variables *** //
+
+    private DecisionTree[] eval1Trees, eval2Trees;
+    private int eval1Pos, eval2Pos, 
+                inputFiles1Idx, inputFiles2Idx;
+    // these are holding the amount of damage inflicted on the opponent, so higher is better
+    private float eval1DamageRoundTotal, eval2DamageRoundTotal,
+                    eval1DamageTotal, eval2DamageTotal;
+    private string[] inputFiles1, inputFiles2;
+    private string evalOutputFileName;
 
     /* features are:
         x-dist
@@ -112,6 +125,7 @@ public class SetupManager : MonoBehaviour
                 }
                 file.Close();
                 SaveDecisionTrees();
+                SaveSortedDecisionTrees();
             } else {
                 round = Int32.Parse(firstLine.Split(' ')[4]);
                 print("The file is not empty, need to load the agents from the file.");
@@ -137,6 +151,36 @@ public class SetupManager : MonoBehaviour
             GpRoundText.text = round.ToString() + " of " + (totalRounds - 1).ToString();
             currentMatch = 0;
             CreateGPMatch();
+
+        // doing evaluation
+        } else {
+
+            System.IO.StreamReader file = new System.IO.StreamReader("Assets/Output/Evaluation/Collections/" + inputFilesFile + ".txt");
+            string firstLine = file.ReadLine();
+
+            int numFiles = Int32.Parse(firstLine.Split(' ')[1]);
+            inputFiles1 = new string[numFiles];
+            if (gameType == 4){
+                inputFiles2 = new string[numFiles];
+            }
+
+            string line = file.ReadLine();
+            int count = 0;
+            while(line != null){
+                string[] vals = line.Split(' ');
+                inputFiles1[count] = vals[0];
+                if (vals.Length == 2){
+                    inputFiles2[count] = vals[1];
+                }
+                count++;
+                line = file.ReadLine();
+            }
+            file.Close();
+
+            inputFiles1Idx = 0;
+            inputFiles2Idx = 0;
+
+            SetUpEvaluation();
         }
     }
 
@@ -148,6 +192,15 @@ public class SetupManager : MonoBehaviour
 
     void SetVariables(){
         freshTreeCount = (int)Math.Floor(populationSize * freshTreePercentage);
+        // if this is using an aiTrainer, then need to load the ai trainer from the file
+        if (useAiTrainer){
+            System.IO.StreamReader file = new System.IO.StreamReader("Assets/Output/testAgents/" + aiTrainerFile + ".txt");
+            string line = file.ReadLine();
+            Queue<string> q = new Queue<string>(line.Split(' '));
+            aiTrainer = new DecisionTree();
+            aiTrainer.Load(q);
+            file.Close();
+        }
     }
 
     void resetTime(){
@@ -186,6 +239,7 @@ public class SetupManager : MonoBehaviour
         if (!isPlayer1){
             filename = agentFile2;
         } 
+        print("1122 the filename is: " + filename);
         // get decision tree 1 from the file and create it
         System.IO.StreamReader file = new System.IO.StreamReader("Assets/Output/TestAgents/" + filename + ".txt");
         string line = file.ReadLine();
@@ -241,7 +295,11 @@ public class SetupManager : MonoBehaviour
 
         // assign the newly created players a decision tree from the population of decision trees
         player1.GetComponent<AiController>().dt = population[currentMatch];
-        player2.GetComponent<AiController>().dt = population[(currentMatch + 1) % populationSize];
+        if (useAiTrainer){
+            player2.GetComponent<AiController>().dt = aiTrainer;
+        } else {
+            player2.GetComponent<AiController>().dt = population[(currentMatch + 1) % populationSize];
+        }
 
         // initialize the players so they can start fighting
         player1.GetComponent<PlayerController>().Initialize(2, true);
@@ -263,7 +321,9 @@ public class SetupManager : MonoBehaviour
 
         // TO DO: calculate the fitness for these two decision trees (maybe there should be a variable that stores the fitness in the DT, and maybe it could calculate it's own fitness too)
         population[currentMatch].CalculateFitness(healthP1, healthP2, distance, moveFitnessP1, fitnessType);
-        population[(currentMatch + 1) % populationSize].CalculateFitness(healthP2, healthP1, distance, moveFitnessP2, fitnessType);
+        if (!useAiTrainer){
+            population[(currentMatch + 1) % populationSize].CalculateFitness(healthP2, healthP1, distance, moveFitnessP2, fitnessType);
+        }
 
         // print the results of the match
         print("Match #: " + currentMatch + "  over. P1 health: " + healthP1 + ", P2 health: " + healthP2 + ", distance: " + distance);
@@ -469,6 +529,206 @@ public class SetupManager : MonoBehaviour
     void Finish(){
         print("### GP is Finished ###");
         SaveDecisionTrees();
+    }
+
+
+    //////////////////////////////
+    // *** Evaluating Trees *** //
+    //////////////////////////////
+
+    void SetUpEvaluation(){
+
+        eval1Trees = GetEvalDecisionTrees(inputFiles1[inputFiles1Idx]);
+
+        // evalFile1 vs. evalFile2
+        if (gameType == 4){
+            eval2Trees = GetEvalDecisionTrees(inputFiles2[inputFiles2Idx]);
+            evalOutputFileName = "versusResults/" + inputFiles1[inputFiles1Idx] + "_vs_" + inputFiles2[inputFiles2Idx];
+            using (System.IO.StreamWriter resultsFile = new System.IO.StreamWriter(@"Assets/Output/Evaluation/Results/" + evalOutputFileName + ".txt", true)){
+                resultsFile.WriteLine(inputFiles1[inputFiles1Idx] + " VS. " + inputFiles2[inputFiles2Idx] + "\n");
+            }
+        // evalFile1 vs. hardcoded Ai
+        } else if (gameType == 5){
+            eval2Trees = GetEvalAiTrees(evalAiFileName, eval1Trees.Length);
+            evalOutputFileName = "aiResults/" + inputFiles1[inputFiles1Idx] + "_vs_ai";
+            using (System.IO.StreamWriter resultsFile = new System.IO.StreamWriter(@"Assets/Output/Evaluation/Results/" + evalOutputFileName + ".txt", true)){
+                resultsFile.WriteLine(inputFiles1[inputFiles1Idx] + " VS. AI" + "\n");
+            }
+        // evalFile1 vs. random trees
+        } else if (gameType == 6) {
+            eval2Trees = new DecisionTree[eval1Trees.Length];
+            for (int i = 0; i < eval2Trees.Length; i++){
+                DecisionTree dt = new DecisionTree();
+                dt.RandomTree(0);
+                eval2Trees[i] = dt;
+            }
+            evalOutputFileName = "randomResults/" + inputFiles1[inputFiles1Idx] + "_vs_random";
+            using (System.IO.StreamWriter resultsFile = new System.IO.StreamWriter(@"Assets/Output/Evaluation/Results/" + evalOutputFileName + ".txt", true)){
+                resultsFile.WriteLine(inputFiles1[inputFiles1Idx] + " VS. Random" + "\n");
+            }
+        } else {
+            print("*** The input for game type was not 0 - 6, so not sure what you're trying to do ***");
+        }
+        eval1Pos = 0;
+        eval2Pos = 0;
+        eval1DamageRoundTotal = 0f;
+        eval2DamageRoundTotal = 0f;
+        eval1DamageTotal = 0f;
+        eval2DamageTotal = 0f;
+
+        CreateEvalMatch();
+    }
+
+    DecisionTree[] GetEvalDecisionTrees(string filename){
+        System.IO.StreamReader evalFile = new System.IO.StreamReader("Assets/Output/Evaluation/Agents/" + filename + ".txt");
+        string firstLine = evalFile.ReadLine();
+        int evalTreeSize = Int32.Parse(firstLine.Split(' ')[1]);
+        DecisionTree[] trees = new DecisionTree[evalTreeSize];
+
+        int count = 0;
+        string line = evalFile.ReadLine();
+        while(line != null){
+            if (count > evalTreeSize){
+                print("*** the evaluation file's size does not match it's labelled size ***");
+            }
+            Queue<string> q = new Queue<string>(line.Split(' '));
+            DecisionTree dt = new DecisionTree();
+            dt.Load(q);
+            trees[count++] = dt;
+            line = evalFile.ReadLine();
+        }
+        evalFile.Close();
+
+        return trees;
+    }
+
+    DecisionTree[] GetEvalAiTrees(string filename, int numTrees){
+        System.IO.StreamReader evalFile = new System.IO.StreamReader("Assets/Output/Evaluation/Agents/" + filename + ".txt");
+        string firstLine = evalFile.ReadLine();
+        DecisionTree[] trees = new DecisionTree[numTrees];
+        string line = evalFile.ReadLine();
+
+        Queue<string> q = new Queue<string>(line.Split(' '));
+        DecisionTree dt = new DecisionTree();
+        dt.Load(q);
+
+        for (int i = 0; i < numTrees; i++){
+            trees[i] = dt;
+        }
+        evalFile.Close();
+
+        return trees;
+    }
+
+    // creates the next match by just taking the next index and the one below it (counts by 2). Also the array is already randomized by the tournament selection.
+    void CreateEvalMatch(){
+
+        if (eval1Pos == 0){
+            using (System.IO.StreamWriter resultsFile = new System.IO.StreamWriter(@"Assets/Output/Evaluation/Results/" + evalOutputFileName + ".txt", true)){
+                resultsFile.WriteLine("Starting Round: " + eval2Pos);
+            }
+            GpRoundText.text = eval2Pos.ToString() + " of " + (eval2Trees.Length - 1).ToString();
+        }
+
+        // destroy the previous players so that new ones can be created
+        if (player1 != null){
+            Destroy(player1);
+        }
+        if (player2 != null){
+            Destroy(player2);
+        }
+
+        // destroy all fireballs from the previous match
+        GameObject[] fireballs = GameObject.FindGameObjectsWithTag("Fireball");
+        foreach (GameObject go in fireballs){
+            Destroy(go);
+        }
+
+        // update the current match in the UI
+        GpMatchText.text = eval1Pos.ToString() + " of " + (eval1Trees.Length - 1).ToString();
+
+        // instantiate the new players
+        player1 = InstantiatePlayer(true);
+        player2 = InstantiatePlayer(false);
+
+        // assign the newly created players a decision tree from the population of decision trees
+        player1.GetComponent<AiController>().dt = eval1Trees[eval1Pos];
+        player2.GetComponent<AiController>().dt = eval2Trees[eval2Pos];
+
+        // initialize the players so they can start fighting
+        player1.GetComponent<PlayerController>().Initialize(2, true);
+        player2.GetComponent<PlayerController>().Initialize(2, false);
+
+        resetTime();
+        StartCoroutine(EvalWait());
+    }
+
+    // the method is called when the match is over so that the fitness can be calculated for both agents and the next match can be started
+    void EvalMatchOver(){
+    
+        float damageP1 = 100f - player2.GetComponent<PlayerController>().GetMyHealth();
+        float damageP2 = 100f - player1.GetComponent<PlayerController>().GetMyHealth();
+
+        eval1DamageRoundTotal += damageP1;
+        eval2DamageRoundTotal += damageP2;
+        eval1DamageTotal += damageP1;
+        eval2DamageTotal += damageP2;
+
+        using (System.IO.StreamWriter resultsFile = new System.IO.StreamWriter(@"Assets/Output/Evaluation/Results/" + evalOutputFileName + ".txt", true)){
+            resultsFile.WriteLine(damageP1 + " " + damageP2);
+        }
+
+        eval1Pos++;
+        // the round is over
+        if (eval1Pos == eval1Trees.Length){
+            eval2Pos++;
+
+            float eval1RoundAvgDamage = eval1DamageRoundTotal / eval1Trees.Length;
+            float eval2RoundAvgDamage = eval2DamageRoundTotal / eval1Trees.Length;
+            using (System.IO.StreamWriter resultsFile = new System.IO.StreamWriter(@"Assets/Output/Evaluation/Results/" + evalOutputFileName + ".txt", true)){
+                resultsFile.WriteLine("Round over. Player1 Avg Damage: " + eval1RoundAvgDamage + ", Player2 Avg Damage: " + eval2RoundAvgDamage + "\n");
+            }
+
+            // check if it's all over
+            if (eval2Pos < eval2Trees.Length){
+                
+                eval1Pos = 0;
+                eval1DamageRoundTotal = 0f;
+                eval2DamageRoundTotal = 0f;
+
+                CreateEvalMatch();
+
+            // the current file(s) is done
+            } else {
+                print("*** Evaluation File " + inputFiles1Idx + " Finished ***");
+
+                float eval1AvgDamage = eval1DamageTotal / (eval1Trees.Length * eval2Trees.Length);
+                float eval2AvgDamage = eval2DamageTotal / (eval1Trees.Length * eval2Trees.Length);
+                using (System.IO.StreamWriter resultsFile = new System.IO.StreamWriter(@"Assets/Output/Evaluation/Results/" + evalOutputFileName + ".txt", true)){
+                    resultsFile.WriteLine("Evaluation over. Player1 Overall Avg Damage Done: " + eval1AvgDamage + ", Player2 Avg Damage Done: " + eval2AvgDamage);
+                }
+
+                inputFiles1Idx++;
+                inputFiles2Idx++;
+
+                // go on to the next file(s)
+                if (inputFiles2Idx < inputFiles1.Length){
+                    SetUpEvaluation();
+                // it's ALL over
+                } else {
+                    print("*** All Evaluation Files Finished ***");
+                    UnityEditor.EditorApplication.isPlaying = false;
+                }
+            }
+        } else {
+            CreateEvalMatch();
+        }
+    }
+
+    IEnumerator EvalWait(){      
+        // yield on a new YieldInstruction that waits for 10 seconds.
+        yield return new WaitForSeconds(matchTime);
+        EvalMatchOver();
     }
 
 

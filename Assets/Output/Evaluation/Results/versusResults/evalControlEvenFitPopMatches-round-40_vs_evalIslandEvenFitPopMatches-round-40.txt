@@ -1,0 +1,133 @@
+evalControlEvenFitPopMatches-round-40 VS. evalIslandEvenFitPopMatches-round-40
+
+Starting Round: 0
+55 30
+10 60
+15 15
+55 15
+25 15
+35 75
+50 60
+0 45
+10 75
+0 0
+Round over. Player1 Avg Damage: 25.5, Player2 Avg Damage: 39
+
+Starting Round: 1
+30 15
+0 60
+10 15
+25 60
+0 90
+0 0
+0 135
+10 75
+15 45
+60 0
+Round over. Player1 Avg Damage: 15, Player2 Avg Damage: 49.5
+
+Starting Round: 2
+30 45
+10 45
+100 105
+30 15
+20 105
+10 60
+0 0
+0 60
+45 75
+15 0
+Round over. Player1 Avg Damage: 26, Player2 Avg Damage: 51
+
+Starting Round: 3
+0 15
+30 135
+15 45
+10 0
+15 0
+0 15
+25 120
+15 90
+10 75
+30 105
+Round over. Player1 Avg Damage: 15, Player2 Avg Damage: 60
+
+Starting Round: 4
+10 15
+10 60
+15 0
+30 105
+10 30
+10 30
+20 30
+0 15
+20 0
+10 45
+Round over. Player1 Avg Damage: 13.5, Player2 Avg Damage: 33
+
+Starting Round: 5
+10 0
+25 30
+85 45
+10 15
+15 0
+15 60
+0 60
+40 90
+70 120
+30 0
+Round over. Player1 Avg Damage: 30, Player2 Avg Damage: 42
+
+Starting Round: 6
+10 45
+10 0
+10 15
+15 60
+0 0
+10 45
+60 75
+0 0
+15 15
+10 0
+Round over. Player1 Avg Damage: 14, Player2 Avg Damage: 25.5
+
+Starting Round: 7
+60 90
+0 105
+0 30
+20 15
+20 105
+0 120
+0 75
+20 0
+15 15
+25 105
+Round over. Player1 Avg Damage: 16, Player2 Avg Damage: 66
+
+Starting Round: 8
+55 90
+20 0
+0 45
+20 90
+10 0
+0 60
+15 60
+0 0
+10 30
+30 105
+Round over. Player1 Avg Damage: 16, Player2 Avg Damage: 48
+
+Starting Round: 9
+10 0
+15 105
+15 150
+0 30
+40 0
+60 15
+30 30
+30 195
+20 135
+10 0
+Round over. Player1 Avg Damage: 23, Player2 Avg Damage: 66
+
+Evaluation over. Player1 Overall Avg Damage Done: 19.4, Player2 Avg Damage Done: 48
